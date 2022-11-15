@@ -222,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.1" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-colonnes-dun-tableau"><i class="fa fa-check"></i><b>7.1</b> Sélection de colonnes d’un tableau</a></li>
 <li class="chapter" data-level="7.2" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-lignes-dun-tableau"><i class="fa fa-check"></i><b>7.2</b> Sélection de lignes d’un tableau</a></li>
-<li class="chapter" data-level="7.3" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#formulation-plus-intuitive"><i class="fa fa-check"></i><b>7.3</b> formulation plus intuitive</a></li>
+<li class="chapter" data-level="7.3" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#formulation-plus-intuitive"><i class="fa fa-check"></i><b>7.3</b> Formulation plus intuitive</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html"><i class="fa fa-check"></i><b>8</b> Visualisation des données</a>
 <ul>
@@ -315,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.1</span> C’est quoi un MA plot<a href="analyse-dexpression-différentielle-ma-plot.html#cest-quoi-un-ma-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="nos-data" class="section level3 hasAnchor" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Nos data<a href="analyse-dexpression-différentielle-ma-plot.html#nos-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs, <span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##                 id    WT1   WT2    KO1   KO2
 ## 1  ENSG00000034510 235960 94264 202381 91336
 ## 2  ENSG00000064201    116    71     64    56
@@ -345,7 +345,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>Calcul de moyennes par ligne (<code>rowMeans</code>) pour un sous-ensemble donné des colonnes (WT1 et WT2).</li>
 </ol>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>,<span class="st">&quot;WT2&quot;</span>)])</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>,<span class="st">&quot;WT2&quot;</span>)])</span></code></pre></div>
 <pre><code>##  [1] 165112.0     93.5    146.0    552.5   4877.5   8812.5   2019.5   5401.0
 ##  [9]   3284.5   4774.0  16571.0   2954.0   2229.5  10023.5   1995.5     94.0
 ## [17]    531.0    164.5  16827.5    807.0  48148.5   1350.0   1117.5    409.5
@@ -356,12 +356,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="2" style="list-style-type: decimal">
 <li>Ajout de colonnes avec les expressions moyennes des WT et des KO</li>
 </ol>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb171-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>meanWT <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>,<span class="st">&quot;WT2&quot;</span>)])</span>
-<span id="cb171-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb171-2" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>meanKO <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;KO1&quot;</span>,<span class="st">&quot;KO2&quot;</span>)])</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb169-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>meanWT <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>,<span class="st">&quot;WT2&quot;</span>)])</span>
+<span id="cb169-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb169-2" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>meanKO <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;KO1&quot;</span>,<span class="st">&quot;KO2&quot;</span>)])</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Vérification des résultats</li>
 </ol>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs) </span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs) </span></code></pre></div>
 <pre><code>##                id    WT1   WT2    KO1   KO2   meanWT   meanKO
 ## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5
 ## 2 ENSG00000064201    116    71     64    56     93.5     60.0
@@ -372,11 +372,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="4" style="list-style-type: decimal">
 <li>Fold-change KO vs WT</li>
 </ol>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb174-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>FC <span class="ot">&lt;-</span> exprs<span class="sc">$</span>meanKO <span class="sc">/</span> exprs<span class="sc">$</span>meanWT</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb172-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>FC <span class="ot">&lt;-</span> exprs<span class="sc">$</span>meanKO <span class="sc">/</span> exprs<span class="sc">$</span>meanWT</span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Vérification des résultats</li>
 </ol>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs) </span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs) </span></code></pre></div>
 <pre><code>##                id    WT1   WT2    KO1   KO2   meanWT   meanKO        FC
 ## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5 0.8894478
 ## 2 ENSG00000064201    116    71     64    56     93.5     60.0 0.6417112
@@ -387,11 +387,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="6" style="list-style-type: decimal">
 <li>Moyenne de tous les échantillons</li>
 </ol>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb177-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>mean <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)])</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb175-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>mean <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)])</span></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>Vérification des résultats</li>
 </ol>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs) </span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs) </span></code></pre></div>
 <pre><code>##                id    WT1   WT2    KO1   KO2   meanWT   meanKO        FC
 ## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5 0.8894478
 ## 2 ENSG00000064201    116    71     64    56     93.5     60.0 0.6417112
@@ -411,16 +411,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.3</span> MA-plot : log2FC vs intensité<a href="analyse-dexpression-différentielle-ma-plot.html#ma-plot-log2fc-vs-intensité" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="calcul-de-m-et-a" class="section level3 hasAnchor" number="9.3.1">
 <h3><span class="header-section-number">9.3.1</span> Calcul de M et A<a href="analyse-dexpression-différentielle-ma-plot.html#calcul-de-m-et-a" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>M <span class="ot">&lt;-</span> <span class="fu">log2</span>(exprs<span class="sc">$</span>FC)</span>
-<span id="cb180-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-2" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>A <span class="ot">&lt;-</span> (<span class="fu">log2</span>(exprs<span class="sc">$</span>meanKO) <span class="sc">+</span> <span class="fu">log2</span>(exprs<span class="sc">$</span>meanWT)) <span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb178-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>M <span class="ot">&lt;-</span> <span class="fu">log2</span>(exprs<span class="sc">$</span>FC)</span>
+<span id="cb178-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb178-2" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>A <span class="ot">&lt;-</span> (<span class="fu">log2</span>(exprs<span class="sc">$</span>meanKO) <span class="sc">+</span> <span class="fu">log2</span>(exprs<span class="sc">$</span>meanWT)) <span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
 </div>
 <div id="visualisation" class="section level3 hasAnchor" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> Visualisation<a href="analyse-dexpression-différentielle-ma-plot.html#visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On peut ensuite dessiner un nuage de points (en l’agrémentant un peu)</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> exprs<span class="sc">$</span>A, <span class="at">y =</span> exprs<span class="sc">$</span>M, <span class="at">main =</span> <span class="st">&quot;MA plot&quot;</span>,</span>
-<span id="cb181-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">xlab =</span> <span class="st">&quot;A = intensity&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;M = log2FC&quot;</span>)</span>
-<span id="cb181-3"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>(<span class="at">lty =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
-<span id="cb181-4"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> exprs<span class="sc">$</span>A, <span class="at">y =</span> exprs<span class="sc">$</span>M, <span class="at">main =</span> <span class="st">&quot;MA plot&quot;</span>,</span>
+<span id="cb179-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb179-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">xlab =</span> <span class="st">&quot;A = intensity&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;M = log2FC&quot;</span>)</span>
+<span id="cb179-3"><a href="analyse-dexpression-différentielle-ma-plot.html#cb179-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>(<span class="at">lty =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb179-4"><a href="analyse-dexpression-différentielle-ma-plot.html#cb179-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>)</span></code></pre></div>
 <p><img src="images/unnamed-chunk-97-1.png" width="672" /></p>
 </div>
 </div>
@@ -428,169 +428,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.4</span> Appliquer une fonction sur les lignes/colonnes<a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-sur-les-lignescolonnes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="appliquer-une-fonction-moyenne-variance-sur-chaque-ligne-dun-tableau" class="section level3 hasAnchor" number="9.4.1">
 <h3><span class="header-section-number">9.4.1</span> Appliquer une fonction (moyenne, variance, …) sur chaque ligne d’un tableau<a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-ligne-dun-tableau" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-1" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">1</span>, mean)</span>
-<span id="cb182-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-3"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-3" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)], <span class="dv">1</span>, mean)</span>
-<span id="cb182-4"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb182-5"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-5" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="sc">-</span><span class="dv">1</span> ], <span class="dv">1</span>, mean)</span>
-<span id="cb182-6"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-7"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-7" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">which</span>(<span class="fu">sapply</span>(exprs, class) <span class="sc">!=</span> <span class="st">&quot;factor&quot;</span>)], <span class="dv">1</span>, mean)</span></code></pre></div>
-<pre><code>## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA
-
-## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
-## returning NA</code></pre>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb184-1" aria-hidden="true" tabindex="-1"></a>var_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">1</span>, var)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-1" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">1</span>, mean)</span>
+<span id="cb180-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb180-3"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-3" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)], <span class="dv">1</span>, mean)</span>
+<span id="cb180-4"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb180-5"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-5" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="sc">-</span><span class="dv">1</span> ], <span class="dv">1</span>, mean)</span>
+<span id="cb180-6"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb180-7"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-7" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">which</span>(<span class="fu">sapply</span>(exprs, class) <span class="sc">!=</span> <span class="st">&quot;factor&quot;</span>)], <span class="dv">1</span>, mean)</span>
+<span id="cb180-8"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb180-9"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-9" aria-hidden="true" tabindex="-1"></a>var_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">1</span>, var)</span></code></pre></div>
 </div>
 <div id="appliquer-une-fonction-moyenne-variance-sur-chaque-colonne-dun-tableau" class="section level3 hasAnchor" number="9.4.2">
 <h3><span class="header-section-number">9.4.2</span> Appliquer une fonction (moyenne, variance, …) sur chaque colonne d’un tableau<a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-colonne-dun-tableau" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb185-1" aria-hidden="true" tabindex="-1"></a>mean_per_col <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">2</span>, mean)</span>
-<span id="cb185-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb185-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb185-3"><a href="analyse-dexpression-différentielle-ma-plot.html#cb185-3" aria-hidden="true" tabindex="-1"></a>var_per_col <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">2</span>, var)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-1" aria-hidden="true" tabindex="-1"></a>mean_per_col <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">2</span>, mean)</span>
+<span id="cb181-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb181-3"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-3" aria-hidden="true" tabindex="-1"></a>var_per_col <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">2</span>, var)</span></code></pre></div>
 
 </div>
 </div>

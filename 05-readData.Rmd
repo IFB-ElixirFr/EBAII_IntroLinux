@@ -65,7 +65,7 @@ View(exprs)
 
 **Note**: vous pouvez cliquer sur une en-tête de colonne pour trier les données
 
-Explorer le tableau avec le package [DT](https://rstudio.github.io/DT/)
+Explorer le tableau avec le package [DT](https://rstudio.github.io/DT/){target="_blank"}.
 
 ```{r}
 library(DT)

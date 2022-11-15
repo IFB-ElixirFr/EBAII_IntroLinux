@@ -222,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.1" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-colonnes-dun-tableau"><i class="fa fa-check"></i><b>7.1</b> Sélection de colonnes d’un tableau</a></li>
 <li class="chapter" data-level="7.2" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-lignes-dun-tableau"><i class="fa fa-check"></i><b>7.2</b> Sélection de lignes d’un tableau</a></li>
-<li class="chapter" data-level="7.3" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#formulation-plus-intuitive"><i class="fa fa-check"></i><b>7.3</b> formulation plus intuitive</a></li>
+<li class="chapter" data-level="7.3" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#formulation-plus-intuitive"><i class="fa fa-check"></i><b>7.3</b> Formulation plus intuitive</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html"><i class="fa fa-check"></i><b>8</b> Visualisation des données</a>
 <ul>
@@ -335,8 +335,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="téléchargez-les-fichiers-sur-votre-machine" class="section level3 hasAnchor" number="5.1.4">
 <h3><span class="header-section-number">5.1.4</span> Téléchargez les fichiers sur votre machine<a href="import-de-données.html#téléchargez-les-fichiers-sur-votre-machine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A partir d’un navigateur Web, téléchargez et enregistrez sur votre ordi les fichiers de données
-- <a href="https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt">expression.txt</a>: données d’expressions pour 4 échantillons
-- <a href="https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv">annotation.csv</a>: informations sur les gènes (id, name, chr, start, stop)</p>
+- <a href="https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt" target="_blank">expression.txt</a>: données d’expressions pour 4 échantillons
+- <a href="https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv" target="_blank">annotation.csv</a>: informations sur les gènes (id, name, chr, start, stop)</p>
 <p>Attention: veillez à sauvegarder les fichiers
 - sous leur nom original,
 - avec les extensions .txt et .csv respectives (certains navigateurs omettent l’extension, ce qui poserait problème pour la suite du TP)</p>
@@ -456,58 +456,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## /shared/ifbstor1/projects/form_2022_32/EBAII_IntroR</code></pre>
 <p>Téléchargez les données</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href="import-de-données.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt <span class="at">--output-document</span><span class="op">=</span>expression.txt</span></code></pre></div>
-<pre><code>## --2022-11-15 21:40:42--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.110.133, 185.199.109.133, ...
-## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+<pre><code>## --2022-11-15 22:04:39--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.108.133, 185.199.110.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 1747 (1.7K) [text/plain]
 ## Saving to: ‘expression.txt’
 ## 
-##      0K .                                                     100% 19.0M=0s
+##      0K .                                                     100% 17.5M=0s
 ## 
-## 2022-11-15 21:40:42 (19.0 MB/s) - ‘expression.txt’ saved [1747/1747]</code></pre>
+## 2022-11-15 22:04:39 (17.5 MB/s) - ‘expression.txt’ saved [1747/1747]</code></pre>
 <div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="import-de-données.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv <span class="at">-O</span> annotation.csv</span></code></pre></div>
-<pre><code>## --2022-11-15 21:40:42--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.108.133, 185.199.110.133, ...
-## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+<pre><code>## --2022-11-15 22:04:39--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.111.133, 185.199.110.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 2326 (2.3K) [text/plain]
 ## Saving to: ‘annotation.csv’
 ## 
-##      0K ..                                                    100% 25.6M=0s
+##      0K ..                                                    100% 24.6M=0s
 ## 
-## 2022-11-15 21:40:42 (25.6 MB/s) - ‘annotation.csv’ saved [2326/2326]</code></pre>
+## 2022-11-15 22:04:39 (24.6 MB/s) - ‘annotation.csv’ saved [2326/2326]</code></pre>
 <p>Qu’y a-t-il ici ?</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb79-1"><a href="import-de-données.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span></span></code></pre></div>
 <pre><code>## total 133
-## -rw-r--r--+ 1 tdenecker tdenecker  1843 Nov 15 09:19 01-intro.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker   996 Nov 15 09:40 02-how.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1860 Nov 15 21:44 01-intro.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1139 Nov 15 21:45 02-how.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  1478 Nov 15 09:48 03-firstSteps.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker  5467 Nov 15 10:30 04-uploadData.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker  1790 Nov 15 10:46 05-readData.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker  1419 Nov 15 11:57 06-manipulate.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  5501 Nov 15 21:49 04-uploadData.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1808 Nov 15 21:49 05-readData.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1419 Nov 15 21:49 06-manipulate.Rmd
 ## -rw-r-----+ 1 tdenecker tdenecker  1882 Nov 15 21:38 07-plots.Rmd
 ## -rw-r-----+ 1 tdenecker tdenecker  2491 Nov 15 21:37 08-analyseDiff.Rmd
 ## -rw-r-----+ 1 tdenecker tdenecker  1490 Nov 15 21:37 09-integration.Rmd
-## -rw-r-----+ 1 tdenecker tdenecker  1423 Nov 15 21:38 10-visu.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  1783 Nov 15 22:04 10-visu.Rmd
 ## -rw-r-----+ 1 tdenecker tdenecker  1128 Nov 15 12:35 11-conclusion.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 12-references.Rmd
-## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 21:40 annotation.csv
+## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 22:04 annotation.csv
 ## -rw-r--r--+ 1 tdenecker tdenecker   267 Nov 14 21:51 book.bib
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 21:40 _bookdown_files
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 22:04 _bookdown_files
 ## -rw-r--r--+ 1 tdenecker tdenecker   113 Nov 15 16:00 _bookdown.yml
-## drwxrwx---+ 5 tdenecker tdenecker 12288 Nov 15 21:40 docs
+## drwxrwx---+ 5 tdenecker tdenecker 12288 Nov 15 22:04 docs
 ## -rw-rw----+ 1 tdenecker tdenecker   247 Nov 15 21:33 EBAII_IntroR.Rproj
-## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 21:40 expression.txt
-## -rw-rw----+ 1 tdenecker tdenecker   244 Nov 15 21:39 exprs_chr8.txt
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 12:35 images
-## -rw-r--r--+ 1 tdenecker tdenecker  1539 Nov 15 21:40 index.Rmd
+## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 22:04 expression.txt
+## -rw-rw----+ 1 tdenecker tdenecker   244 Nov 15 21:54 exprs_chr8.txt
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 21:40 images
+## -rw-r--r--+ 1 tdenecker tdenecker  1554 Nov 15 21:53 index.Rmd
 ## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:25 intro_R
 ## -rw-rw----+ 1 tdenecker tdenecker  1551 Nov 14 21:50 LICENSE
-## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 21:39 _main_files
-## -rw-r--r--+ 1 tdenecker tdenecker 23476 Nov 15 21:40 _main.Rmd
+## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 21:54 _main_files
+## -rw-r--r--+ 1 tdenecker tdenecker 24063 Nov 15 22:04 _main.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   500 Nov 14 21:52 _output.yml
-## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 21:40 packages.bib
+## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 22:04 packages.bib
 ## -rw-r--r--+ 1 tdenecker tdenecker    22 Nov 14 21:51 preamble.tex
 ## -rw-r--r--+ 1 tdenecker tdenecker   311 Nov 15 09:29 README.md
 ## -rw-r--r--+ 1 tdenecker tdenecker   172 Nov 14 21:51 style.css</code></pre>

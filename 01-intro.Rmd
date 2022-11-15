@@ -8,7 +8,7 @@ Langage de programmation qui permet de :
 
 ## Comment l'avoir ? 
 
-Disponible sur [RCRAN](https://cran.r-project.org/)
+Disponible sur [RCRAN](https://cran.r-project.org/){target="_blank"}
 
 ## Sur quel OS ? 
 

@@ -48,11 +48,11 @@ plot_ly(data = exprs_annot, x = ~A, y = ~M, text = paste("Gene name :", exprs_an
 library(echarts4r)
 library(dplyr)
 
-exprs  %>%
+exprs_annot  %>%
   mutate(interst = ifelse(abs(M) <= 1, 1,2))|> 
   group_by(interst)|>          
   e_charts(A) |> 
-  e_scatter(M, symbol_size=10) |> 
+  e_scatter(M, bind = name, symbol_size=10) |> 
   e_legend(FALSE) |>
   e_tooltip() |>
   e_color(
@@ -62,7 +62,18 @@ exprs  %>%
   e_axis_labels(y = "M = log2FC", x = "A = intensity") |>
   e_toolbox_feature(feature = "saveAsImage")  |>
   e_toolbox_feature(feature = "dataZoom")  |>
-  e_toolbox_feature(feature = "dataView")
+  e_toolbox_feature(feature = "dataView") |> 
+  e_mark_line(data = list(yAxis = -1.5)) |>
+  e_mark_line(data = list(yAxis = 1.5)) |> 
+  e_tooltip(
+    formatter = htmlwidgets::JS("
+      function(params){
+        return('<strong>' + params.name + 
+                '</strong><br />M: ' + params.value[1] + 
+                '<br />A: ' + params.value[0]) 
+                }
+    ")
+  )
   
 
 ```

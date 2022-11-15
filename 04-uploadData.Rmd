@@ -23,8 +23,8 @@
 ### Téléchargez les fichiers sur votre machine
 
 A partir d’un navigateur Web, téléchargez et enregistrez sur votre ordi les fichiers de données
-- [expression.txt](https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt): données d’expressions pour 4 échantillons
-- [annotation.csv](https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv): informations sur les gènes (id, name, chr, start, stop)
+- [expression.txt](https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt){target="_blank"}: données d’expressions pour 4 échantillons
+- [annotation.csv](https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv){target="_blank"}: informations sur les gènes (id, name, chr, start, stop)
 
 Attention: veillez à sauvegarder les fichiers 
 - sous leur nom original, 

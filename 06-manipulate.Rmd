@@ -65,7 +65,7 @@ Afficher les lignes correspondantes
 exprs[which(exprs$id %in% my_genes),   ]
 ```
 
-## formulation plus intuitive
+## Formulation plus intuitive
 ```{r}
 subset(x = exprs, id %in% my_genes)		
 ```

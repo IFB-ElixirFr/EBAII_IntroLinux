@@ -15,7 +15,7 @@
 1. Ouvrir RStudio sur votre propre ordinateur (si installé)
 
 2. Vous connecter au serveur Web RStudio de l’IFB 
-https://rstudio.cluster.france-bioinformatique.fr
+[https://rstudio.cluster.france-bioinformatique.fr](https://rstudio.cluster.france-bioinformatique.fr){target="_blank"}
 puis vous identifier
 
 
@@ -23,7 +23,7 @@ puis vous identifier
 
 
 3. Vous connecter via Jupyter lab de l’IFB
-https://jupyterhub.cluster.france-bioinformatique.fr
+[https://jupyterhub.cluster.france-bioinformatique.fr](https://jupyterhub.cluster.france-bioinformatique.fr){target="_blank"}
 puis cliquer sur l'icône RStudio
 
 ![](images/jupyterRstudio.png)
