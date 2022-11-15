@@ -28,3 +28,10 @@ puis cliquer sur l'icône RStudio
 
 ![](images/jupyterRstudio.png)
 
+## RStudio
+
+- Disponible depuis 2011
+- Logiciel facilitant l'utilisation de R via 4 panneaux
+- Chaque panneau présente plusieurs onglets (fonctionnalités complémentaires)
+
+![](images/rstudio.png)

@@ -119,23 +119,6 @@
 \author{Thomas Denecker \& Stevenn Volant}
 \date{2022-11-15}
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\theoremstyle{definition}
-\newtheorem{example}{Example}[chapter]
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[chapter]
-\theoremstyle{definition}
-\newtheorem{hypothesis}{Hypothesis}[chapter]
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -156,18 +139,27 @@ L'objectif de ce livre est d'accompagné les apprenants de l'école EBAII.
 \hypertarget{demandez-le-programme}{%
 \section{Demandez le programme}\label{demandez-le-programme}}
 
-\begin{verbatim}
-10:15   01:45   HDF 
-\end{verbatim}
-
 \begin{longtable}[]{@{}llll@{}}
 \toprule()
 Debut & Fin & Durée & Lieu \\
 \midrule()
 \endhead
-8:30 & 10:15 & 01:45 & (Re)decouverte de R \\
+8:30 & 10:15 & 01:45 & HDF \\
 \bottomrule()
 \end{longtable}
+
+\hypertarget{intervenants}{%
+\section{Intervenants}\label{intervenants}}
+
+\begin{itemize}
+\tightlist
+\item
+  Thomas Denecker -- \href{mailto:thomas.denecker@france-bioinformatique.fr}{\nolinkurl{thomas.denecker@france-bioinformatique.fr}}
+\item
+  Stevenn Volant - \href{mailto:stevenn.volant@pasteur.fr}{\nolinkurl{stevenn.volant@pasteur.fr}}
+\end{itemize}
+
+La version ``slides'' a été créée initialement par Hugo Varet -- \href{mailto:hugo.varet@pasteur.fr}{\nolinkurl{hugo.varet@pasteur.fr}}
 
 \hypertarget{r-en-quelques-mots}{%
 \chapter{R en quelques mots}\label{r-en-quelques-mots}}
@@ -417,67 +409,865 @@ Convertir des données
 
 \includegraphics{images/jupyterRstudio.png}
 
-\hypertarget{parts}{%
-\chapter{Parts}\label{parts}}
+\hypertarget{rstudio}{%
+\section{RStudio}\label{rstudio}}
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
+\begin{itemize}
+\tightlist
+\item
+  Disponible depuis 2011
+\item
+  Logiciel facilitant l'utilisation de R via 4 panneaux
+\item
+  Chaque panneau présente plusieurs onglets (fonctionnalités complémentaires)
+\end{itemize}
 
-Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+\includegraphics{images/rstudio.png}
 
-Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+\hypertarget{premiers-pas}{%
+\chapter{Premiers pas}\label{premiers-pas}}
 
-Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
+\hypertarget{r-sait-tout-faire-il-compte}{%
+\section{R sait tout faire : il compte !}\label{r-sait-tout-faire-il-compte}}
 
-\hypertarget{footnotes-and-citations}{%
-\chapter{Footnotes and citations}\label{footnotes-and-citations}}
+Tapez les commandes suivantes dans le panneau Console de RStudio
 
-\hypertarget{footnotes}{%
-\section{Footnotes}\label{footnotes}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{2} \SpecialCharTok{+} \DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
 
-Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
 
-\hypertarget{citations}{%
-\section{Citations}\label{citations}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{4} \SpecialCharTok{*} \DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
 
-Reference items in your bibliography file(s) using \texttt{@key}.
+\begin{verbatim}
+## [1] 20
+\end{verbatim}
 
-For example, we are using the \textbf{bookdown} package \citep{R-bookdown} (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015} (this citation was added manually in an external file book.bib).
-Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YAML \texttt{bibliography} key.
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{6} \SpecialCharTok{/} \DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
 
-The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
+\begin{verbatim}
+## [1] 1.5
+\end{verbatim}
 
-\hypertarget{blocks}{%
-\chapter{Blocks}\label{blocks}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
 
-\hypertarget{equations}{%
-\section{Equations}\label{equations}}
+\begin{verbatim}
+##  [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
 
-Here is an equation.
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{8}\SpecialCharTok{:{-}}\DecValTok{9}
+\end{Highlighting}
+\end{Shaded}
 
-\begin{equation} 
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \label{eq:binom}
-\end{equation}
+\begin{verbatim}
+##  [1]  8  7  6  5  4  3  2  1  0 -1 -2 -3 -4 -5 -6 -7 -8 -9
+\end{verbatim}
 
-You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation \eqref{eq:binom}.
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\NormalTok{,}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
 
-\hypertarget{theorems-and-proofs}{%
-\section{Theorems and proofs}\label{theorems-and-proofs}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{1.2}
+\end{Highlighting}
+\end{Shaded}
 
-Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
+\begin{verbatim}
+## [1] 1.2
+\end{verbatim}
 
-\begin{theorem}
-\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
-and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
-\[a^2 + b^2 = c^2\]
-\end{theorem}
+\hypertarget{notion-de-variableobjet}{%
+\section{Notion de variable/objet}\label{notion-de-variableobjet}}
 
-Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
+Créer une variable nommée a et lui assigner une valeur
 
-\hypertarget{callout-blocks}{%
-\section{Callout blocks}\label{callout-blocks}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
 
-The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
+Afficher la valeur de la variable a
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+Même résultat: si on évoque le nom de variable, R l'imprime
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+Assigner une valeur à une seconde variable
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b }\OtherTok{\textless{}{-}} \DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+Effectuer un calcul avec 2 variables
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a\_plus\_b }\OtherTok{\textless{}{-}}\NormalTok{ a }\SpecialCharTok{+}\NormalTok{ b}
+\end{Highlighting}
+\end{Shaded}
+
+Afficher le contenu de la variable a\_plus\_b
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(a\_plus\_b)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+Changer la valeur de a
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{7} 
+\end{Highlighting}
+\end{Shaded}
+
+Note: le contenu de a\_plus\_b n'est pas modifié
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(a\_plus\_b) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+On recalcule a\_plus\_b
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a\_plus\_b }\OtherTok{\textless{}{-}}\NormalTok{ a }\SpecialCharTok{+}\NormalTok{ b }
+\end{Highlighting}
+\end{Shaded}
+
+La nouvelle valeur tient compte de la modification de a
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(a\_plus\_b)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+Créer un vecteur
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vec1 }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Créer un vecteur contenant une séquence d'entiers de 1 à 10
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vec2 }\OtherTok{\textless{}{-}}  \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+Somme d'un vecteur et d'un nombre
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vec2 }\SpecialCharTok{+}\NormalTok{ a }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]  8  9 10 11 12 13 14 15 16 17
+\end{verbatim}
+
+Vecteur de chaînes de caractères
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vec3 }\OtherTok{\textless{}{-}}  \FunctionTok{c}\NormalTok{(}\StringTok{"riri"}\NormalTok{, }\StringTok{"fifi"}\NormalTok{, }\StringTok{"loulou"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Diviser un vecteur de nombres par un nombre
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vec2 }\SpecialCharTok{/} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0
+\end{verbatim}
+
+Diviser des chaînes de caractères par un nombre
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vec3  }\SpecialCharTok{/} \DecValTok{2}   
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Attention} : Noms de variables interdits: TRUE, FALSE, T, F, c, t, pi, data, LETTERS, letters, \ldots{}
+
+\hypertarget{import-de-donnuxe9es}{%
+\chapter{Import de données}\label{import-de-donnuxe9es}}
+
+\hypertarget{version-avec-les-boutons}{%
+\section{Version ``Avec les boutons''}\label{version-avec-les-boutons}}
+
+\hypertarget{cruxe9ation-dun-dossier-intro_r-pour-vos-ruxe9sultats-de-ce-tp}{%
+\subsection{Création d'un dossier intro\_R pour vos résultats de ce TP}\label{cruxe9ation-dun-dossier-intro_r-pour-vos-ruxe9sultats-de-ce-tp}}
+
+\textbf{Attention} Dans votre espace projet ou votre home.
+
+\includegraphics{images/createIntro.png}
+
+\hypertarget{duxe9placement-dans-le-dossier-intro_r}{%
+\subsection{Déplacement dans le dossier ``intro\_R''}\label{duxe9placement-dans-le-dossier-intro_r}}
+
+\includegraphics{images/moveIntro.png}
+
+\hypertarget{duxe9finissez-votre-dossier-espace-de-travail-working-directory}{%
+\subsection{Définissez votre dossier espace de travail (working directory)}\label{duxe9finissez-votre-dossier-espace-de-travail-working-directory}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Dans le menu ``Session'', lancez ``Choose Directory \ldots{}''
+\item
+  Naviguez jusqu'à votre dossier intro\_R
+\item
+  Double-cliquez dessus pour l'ouvrir
+\item
+  Cliquez Choose
+\end{enumerate}
+
+\includegraphics{images/setWd.png}
+
+\hypertarget{tuxe9luxe9chargez-les-fichiers-sur-votre-machine}{%
+\subsection{Téléchargez les fichiers sur votre machine}\label{tuxe9luxe9chargez-les-fichiers-sur-votre-machine}}
+
+A partir d'un navigateur Web, téléchargez et enregistrez sur votre ordi les fichiers de données
+- \href{https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt}{expression.txt}: données d'expressions pour 4 échantillons
+- \href{https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv}{annotation.csv}: informations sur les gènes (id, name, chr, start, stop)
+
+Attention: veillez à sauvegarder les fichiers
+- sous leur nom original,
+- avec les extensions .txt et .csv respectives (certains navigateurs omettent l'extension, ce qui poserait problème pour la suite du TP)
+
+\hypertarget{tuxe9luxe9versement-upload-des-donnuxe9es}{%
+\subsection{Téléversement (``upload'') des données}\label{tuxe9luxe9versement-upload-des-donnuxe9es}}
+
+Au moyen du bouton ``Upload'', téléversez les fichiers d'expression et d'annotation depuis votre ordinateur vers votre compte sur le serveur.
+
+\includegraphics{images/uploadData.png}
+
+\hypertarget{on-efface-tout-et-on-recommence}{%
+\subsection{On efface tout et on recommence}\label{on-efface-tout-et-on-recommence}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sélectionnez les deux fichiers
+\item
+  Effacez-les sans pitié
+\end{enumerate}
+
+\includegraphics{images/delete.png}
+
+(nous allons vous montrer deux autres façons de les téléverser)
+
+\hypertarget{the-r-geek-way-v2-directement-depuis-rstudio}{%
+\section{The ``R geek'' way (V2, directement depuis Rstudio)}\label{the-r-geek-way-v2-directement-depuis-rstudio}}
+
+Attention ! Dans votre espace projet !
+
+\hypertarget{creation-de-larborescence}{%
+\subsection{Creation de l'arborescence}\label{creation-de-larborescence}}
+
+Aller dans \textbf{votre} espace projet !
+
+Dans tous les commandes ci-dessous, remplacer toujours \texttt{form\_2022\_32/EBAII\_IntroR} par votre nom d'espace projet
+
+Note : Pour les personnes ne travaillant pas sur le cluster mais par exemple en local, vous pouvez sans soucis remplacer l'adresse par une adresse sur votre ordinateur.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"/shared/ifbstor1/projects/form\_2022\_32/EBAII\_IntroR"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Définir une variable qui indique le chemin du dossier de travail (working directory).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_work\_dir }\OtherTok{\textless{}{-}} \StringTok{"/shared/ifbstor1/projects/form\_2022\_32/EBAII\_IntroR/intro\_R"} 
+\end{Highlighting}
+\end{Shaded}
+
+S'il n'existe pas encore, créer le dossier de travail. (Commande Unix équivalente: \texttt{mkdir\ -p\ /shared/ifbstor1/projects/form\_2022\_32/EBAII\_IntroR/intro\_R})
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dir.create}\NormalTok{(my\_work\_dir, }\AttributeTok{recursive =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{showWarnings =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Où suis-je ? (Commande Unix équivalente: \texttt{pwd})
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "/shared/ifbstor1/projects/form_2022_32/EBAII_IntroR"
+\end{verbatim}
+
+Aller dans ce dossier de travail (Commande Unix équivalente: \texttt{cd\ /shared/ifbstor1/projects/form\_2022\_32/EBAII\_IntroR/intro\_R})
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(my\_work\_dir)}
+\end{Highlighting}
+\end{Shaded}
+
+Et maintenant, où suis-je ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "/shared/ifbstor1/projects/form_2022_32/EBAII_IntroR"
+\end{verbatim}
+
+Qu'y a-t-il par ici ? (Commande Unix équivalente: \texttt{ls})
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{list.files}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "_bookdown_files"    "_bookdown.yml"      "_main_files"       
+##  [4] "_main.Rmd"          "_output.yml"        "01-intro.Rmd"      
+##  [7] "02-how.Rmd"         "03-firstSteps.Rmd"  "04-uploadData.Rmd" 
+## [10] "05-readData.Rmd"    "06-share.Rmd"       "07-references.Rmd" 
+## [13] "annotation.csv"     "book.bib"           "docs"              
+## [16] "EBAII_IntroR.Rproj" "expression.txt"     "images"            
+## [19] "index.Rmd"          "intro_R"            "LICENSE"           
+## [22] "packages.bib"       "preamble.tex"       "README.md"         
+## [25] "style.css"
+\end{verbatim}
+
+Un autre nom pour la même commande
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dir}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "_bookdown_files"    "_bookdown.yml"      "_main_files"       
+##  [4] "_main.Rmd"          "_output.yml"        "01-intro.Rmd"      
+##  [7] "02-how.Rmd"         "03-firstSteps.Rmd"  "04-uploadData.Rmd" 
+## [10] "05-readData.Rmd"    "06-share.Rmd"       "07-references.Rmd" 
+## [13] "annotation.csv"     "book.bib"           "docs"              
+## [16] "EBAII_IntroR.Rproj" "expression.txt"     "images"            
+## [19] "index.Rmd"          "intro_R"            "LICENSE"           
+## [22] "packages.bib"       "preamble.tex"       "README.md"         
+## [25] "style.css"
+\end{verbatim}
+
+\hypertarget{tuxe9luxe9charger-un-fichier}{%
+\subsection{Télécharger un fichier}\label{tuxe9luxe9charger-un-fichier}}
+
+Nous avons montré ci-dessus comment télécharger des fichiers en utilisant l'interface graphique de RStudio.
+
+Alternativement, on peut télécharger des fichiers au moyen de la commande R download.file.
+
+Les deux commandes suivantes permettent de télécharger les fichiers utilisés pour les exercices.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{download.file}\NormalTok{(}\AttributeTok{url =} \StringTok{"https://raw.githubusercontent.com/IFB{-}ElixirFr/EBAII/master/2022/ebaiin1/intro\_R/expression.txt"}\NormalTok{, }\AttributeTok{destfile =} \StringTok{"expression.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{download.file}\NormalTok{(}\AttributeTok{url =} \StringTok{"https://raw.githubusercontent.com/IFB{-}ElixirFr/EBAII/master/2022/ebaiin1/intro\_R/annotation.csv"}\NormalTok{, }\AttributeTok{destfile =} \StringTok{"annotation.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Note : équivalent de la commande \texttt{wget} sous Unix.
+
+Qu'y a-t-il par ici ? (Commande Unix équivalente: \texttt{ls})
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{list.files}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "_bookdown_files"    "_bookdown.yml"      "_main_files"       
+##  [4] "_main.Rmd"          "_output.yml"        "01-intro.Rmd"      
+##  [7] "02-how.Rmd"         "03-firstSteps.Rmd"  "04-uploadData.Rmd" 
+## [10] "05-readData.Rmd"    "06-share.Rmd"       "07-references.Rmd" 
+## [13] "annotation.csv"     "book.bib"           "docs"              
+## [16] "EBAII_IntroR.Rproj" "expression.txt"     "images"            
+## [19] "index.Rmd"          "intro_R"            "LICENSE"           
+## [22] "packages.bib"       "preamble.tex"       "README.md"         
+## [25] "style.css"
+\end{verbatim}
+
+\hypertarget{on-efface-tout-et-on-recommence-1}{%
+\subsection{On efface tout et on recommence}\label{on-efface-tout-et-on-recommence-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sélectionnez les deux fichiers
+\item
+  Effacez-les sans pitié
+\end{enumerate}
+
+\includegraphics{images/delete.png}
+
+Nous allons vous montrer une dernière façon de les téléverser.
+
+\hypertarget{the-bash-geek-way-v3-directement-de-votre-home-du-cluster}{%
+\section{The ``bash geek'' way (V3, directement de votre home du cluster)}\label{the-bash-geek-way-v3-directement-de-votre-home-du-cluster}}
+
+Objectif
+
+Dans le terminal du cluster, téléchargez et enregistrez dans votre home les fichiers de données:
+- expression.txt: données d'expressions pour 4 échantillons
+- annotation.csv: informations sur les gènes (id, name, chr, start, stop)
+
+Ouvrez un connection ssh
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ssh}\NormalTok{ [votre\_login]@core.cluster.france{-}bioinformatique.fr}
+\end{Highlighting}
+\end{Shaded}
+
+Où suis-je ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{pwd}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## /shared/ifbstor1/projects/form_2022_32/EBAII_IntroR
+\end{verbatim}
+
+Créez un répertoire ``intro\_R''
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mkdir} \AttributeTok{{-}p}\NormalTok{ /shared/ifbstor1/projects/form\_2022\_32/EBAII\_IntroR/intro\_R}
+\end{Highlighting}
+\end{Shaded}
+
+Déplacez-vous dans votre dossier
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{cd}\NormalTok{ /shared/ifbstor1/projects/form\_2022\_32/EBAII\_IntroR/intro\_R}
+\end{Highlighting}
+\end{Shaded}
+
+Où suis-je maintenant ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{pwd}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## /shared/ifbstor1/projects/form_2022_32/EBAII_IntroR
+\end{verbatim}
+
+Téléchargez les données
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{wget}\NormalTok{ https://raw.githubusercontent.com/IFB{-}ElixirFr/EBAII/master/2022/ebaiin1/intro\_R/expression.txt }\AttributeTok{{-}{-}output{-}document}\OperatorTok{=}\NormalTok{expression.txt}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## --2022-11-15 10:40:52--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+## HTTP request sent, awaiting response... 200 OK
+## Length: 1747 (1.7K) [text/plain]
+## Saving to: ‘expression.txt’
+## 
+##      0K .                                                     100% 15.1M=0s
+## 
+## 2022-11-15 10:40:52 (15.1 MB/s) - ‘expression.txt’ saved [1747/1747]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{wget}\NormalTok{ https://raw.githubusercontent.com/IFB{-}ElixirFr/EBAII/master/2022/ebaiin1/intro\_R/annotation.csv }\AttributeTok{{-}O}\NormalTok{ annotation.csv}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## --2022-11-15 10:40:52--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+## HTTP request sent, awaiting response... 200 OK
+## Length: 2326 (2.3K) [text/plain]
+## Saving to: ‘annotation.csv’
+## 
+##      0K ..                                                    100% 21.2M=0s
+## 
+## 2022-11-15 10:40:52 (21.2 MB/s) - ‘annotation.csv’ saved [2326/2326]
+\end{verbatim}
+
+Qu'y a-t-il ici ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ls} \AttributeTok{{-}l}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## total 101
+## -rw-r--r--+ 1 tdenecker tdenecker  1843 Nov 15 09:19 01-intro.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker   996 Nov 15 09:40 02-how.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1478 Nov 15 09:48 03-firstSteps.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  5467 Nov 15 10:30 04-uploadData.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1218 Nov 15 10:39 05-readData.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1255 Nov 14 21:51 06-share.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 07-references.Rmd
+## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 10:40 annotation.csv
+## -rw-r--r--+ 1 tdenecker tdenecker   267 Nov 14 21:51 book.bib
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:40 _bookdown_files
+## -rw-r--r--+ 1 tdenecker tdenecker   113 Nov 15 10:39 _bookdown.yml
+## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 10:40 docs
+## -rw-rw----+ 1 tdenecker tdenecker   247 Nov 15 09:00 EBAII_IntroR.Rproj
+## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 10:40 expression.txt
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:34 images
+## -rw-r--r--+ 1 tdenecker tdenecker  1348 Nov 15 10:40 index.Rmd
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:25 intro_R
+## -rw-rw----+ 1 tdenecker tdenecker  1551 Nov 14 21:50 LICENSE
+## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 10:40 _main_files
+## -rw-r--r--+ 1 tdenecker tdenecker 13944 Nov 15 10:40 _main.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker   500 Nov 14 21:52 _output.yml
+## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 10:40 packages.bib
+## -rw-r--r--+ 1 tdenecker tdenecker    22 Nov 14 21:51 preamble.tex
+## -rw-r--r--+ 1 tdenecker tdenecker   311 Nov 15 09:29 README.md
+## -rw-r--r--+ 1 tdenecker tdenecker   172 Nov 14 21:51 style.css
+\end{verbatim}
+
+A quoi ressemblent ces fichiers ?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{ expression.txt}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## id   WT1 WT2 KO1 KO2
+## ENSG00000034510  235960  94264   202381  91336
+## ENSG00000064201  116 71  64  56
+## ENSG00000065717  118 174 124 182
+## ENSG00000099958  450 655 301 472
+## ENSG00000104164  4736    5019    4845    4934
+## ENSG00000104783  9002    8623    7720    7142
+## ENSG00000105229  1295    2744    1113    2887
+## ENSG00000105723  3353    7449    3589    7202
+## ENSG00000116199  2044    4525    2604    4902
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{ annotation.csv}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## id;name;chr;start;stop;strand
+## ENSG00000225630;MTND2P28;1;629640;630683;+
+## ENSG00000134198;TSPAN2;1;115048011;115089500;-
+## ENSG00000116199;FAM20B;1;179025804;179076562;+
+## ENSG00000119285;HEATR1;1;236549005;236604504;-
+## ENSG00000034510;TMSB10;2;84905625;84906675;+
+## ENSG00000198586;TLK1;2;170990823;171231314;-
+## ENSG00000157036;EXOG;3;38496127;38542161;+
+## ENSG00000157869;RAB28;4;13361354;13484365;-
+## ENSG00000250202;RP11-397E7.2;4;86876338;86876652;+
+\end{verbatim}
+
+\hypertarget{actualisation-du-dossier}{%
+\section{Actualisation du dossier}\label{actualisation-du-dossier}}
+
+Dans certains cas, il faut actualiser le contenu du dossier pour pouvoir voir le nouveau sous-dossier.
+Vérifiez ensuite si \texttt{intro\_R} apparaît bien dans le contenu de votre dossier principal.
+
+\includegraphics{images/actualiser.png}
+
+\hypertarget{lecture-des-donnuxe9es}{%
+\chapter{Lecture des données}\label{lecture-des-donnuxe9es}}
+
+\hypertarget{chargement-des-donnuxe9es-dans-la-muxe9moire-de-r}{%
+\section{Chargement des données (dans la mémoire de R)}\label{chargement-des-donnuxe9es-dans-la-muxe9moire-de-r}}
+
+Charger le contenu du fichier ``expression.txt'' dans une variable nommée ``exprs''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\AttributeTok{file =} \StringTok{"expression.txt"}\NormalTok{, }\AttributeTok{header =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{sep =} \StringTok{"}\SpecialCharTok{\textbackslash{}t}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Accéder à l'aide d'une fonction
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{help}\NormalTok{(read.table)}
+\end{Highlighting}
+\end{Shaded}
+
+Notation alternative
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?read.table}
+\end{Highlighting}
+\end{Shaded}
+
+Recherche interactive sous RStudio
+- Sélectionner l'onglet ``Help'' du panneau inférieur droit.
+- Taper ``read.table'' dans la boîte de recherche.
+
+\includegraphics{images/help.png}
+
+Sinon, une approche plus simple et plus pratique :
+- demande à Google ``Comment lire une table en R ?''
+- adapte l'exemple
+
+\hypertarget{affichage-de-lobjet-exprs}{%
+\section{Affichage de l'objet ``exprs''}\label{affichage-de-lobjet-exprs}}
+
+Imprimer toutes les valeurs.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 id    WT1   WT2    KO1   KO2
+## 1  ENSG00000034510 235960 94264 202381 91336
+## 2  ENSG00000064201    116    71     64    56
+## 3  ENSG00000065717    118   174    124   182
+## 4  ENSG00000099958    450   655    301   472
+## 5  ENSG00000104164   4736  5019   4845  4934
+## 6  ENSG00000104783   9002  8623   7720  7142
+## 7  ENSG00000105229   1295  2744   1113  2887
+## 8  ENSG00000105723   3353  7449   3589  7202
+## 9  ENSG00000116199   2044  4525   2604  4902
+## 10 ENSG00000118939   7022  2526   6269  3068
+## 11 ENSG00000119285  15783 17359  18591 20077
+## 12 ENSG00000121680   3133  2775   2045  2796
+## 13 ENSG00000125384   1380  3079    869  2419
+## 14 ENSG00000129562  12089  7958  10708  7683
+## 15 ENSG00000129932   1744  2247   1513  3104
+## 16 ENSG00000134198    122    66     44    16
+## 17 ENSG00000135452    635   427    662   291
+## 18 ENSG00000140416     83   246    136   267
+## 19 ENSG00000147274  16013 17642  15055 18804
+## 20 ENSG00000148090    552  1062    615  1082
+## 21 ENSG00000148248  62324 33973  56862 37710
+## 22 ENSG00000157036   1225  1475   1275  1373
+## 23 ENSG00000157869   1201  1034   1025   858
+## 24 ENSG00000159433     31   788     30   675
+## 25 ENSG00000161692    695  1825    746  1851
+## 26 ENSG00000167005  26866 23111  24888 22661
+## 27 ENSG00000168517    273   112    190    77
+## 28 ENSG00000169570    202   181    207   209
+## 29 ENSG00000172216   3515  1981   3204  3174
+## 30 ENSG00000175221   1988  4788   2115  5306
+## 31 ENSG00000183161   2238   974   2089   996
+## 32 ENSG00000185324   1236  2163   1048  2024
+## 33 ENSG00000188985   3415  1703   3587  2096
+## 34 ENSG00000196867    209   189    293   192
+## 35 ENSG00000197081  14741 36309  14941 29645
+## 36 ENSG00000198586   1216  4545   1660  3932
+## 37 ENSG00000214121   4044  2575   3019  2506
+## 38 ENSG00000225630   1405  8135   1569  7866
+## 39 ENSG00000226742    158    94    153   178
+## 40 ENSG00000238241     90    43    122   143
+## 41 ENSG00000248751    518   718    411   597
+## 42 ENSG00000250202    261   163    177   191
+## 43 ENSG00000251106     94   114     63    86
+## 44 ENSG00000253991     77    78    134    92
+## 45 ENSG00000254470   3025  3707   2558  4066
+## 46 ENSG00000262814  15470 11450  11656 13821
+## 47 ENSG00000267228   3801  2465   2787  2301
+## 48 ENSG00000267699   1488  1086   1374   939
+## 49 ENSG00000269293    424   162    310   120
+## 50 ENSG00000279329     55    76     58    70
+\end{verbatim}
+
+Affichage des premières lignes de l'objet
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                id    WT1   WT2    KO1   KO2
+## 1 ENSG00000034510 235960 94264 202381 91336
+## 2 ENSG00000064201    116    71     64    56
+## 3 ENSG00000065717    118   174    124   182
+## 4 ENSG00000099958    450   655    301   472
+## 5 ENSG00000104164   4736  5019   4845  4934
+## 6 ENSG00000104783   9002  8623   7720  7142
+\end{verbatim}
+
+Affichage des dernières lignes de l'objet
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tail}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 id   WT1   WT2   KO1   KO2
+## 45 ENSG00000254470  3025  3707  2558  4066
+## 46 ENSG00000262814 15470 11450 11656 13821
+## 47 ENSG00000267228  3801  2465  2787  2301
+## 48 ENSG00000267699  1488  1086  1374   939
+## 49 ENSG00000269293   424   162   310   120
+## 50 ENSG00000279329    55    76    58    70
+\end{verbatim}
+
+Un peu plus de lignes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(exprs, }\AttributeTok{n =} \DecValTok{15}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 id    WT1   WT2    KO1   KO2
+## 1  ENSG00000034510 235960 94264 202381 91336
+## 2  ENSG00000064201    116    71     64    56
+## 3  ENSG00000065717    118   174    124   182
+## 4  ENSG00000099958    450   655    301   472
+## 5  ENSG00000104164   4736  5019   4845  4934
+## 6  ENSG00000104783   9002  8623   7720  7142
+## 7  ENSG00000105229   1295  2744   1113  2887
+## 8  ENSG00000105723   3353  7449   3589  7202
+## 9  ENSG00000116199   2044  4525   2604  4902
+## 10 ENSG00000118939   7022  2526   6269  3068
+## 11 ENSG00000119285  15783 17359  18591 20077
+## 12 ENSG00000121680   3133  2775   2045  2796
+## 13 ENSG00000125384   1380  3079    869  2419
+## 14 ENSG00000129562  12089  7958  10708  7683
+## 15 ENSG00000129932   1744  2247   1513  3104
+\end{verbatim}
+
+Explorer le tableau dans un panneau de visualisation
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{View}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Note}: vous pouvez cliquer sur une en-tête de colonne pour trier les données
+
+Explorer le tableau avec le package \href{https://rstudio.github.io/DT/}{DT}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(DT)}
+\FunctionTok{datatable}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
 
 \hypertarget{sharing-your-book}{%
 \chapter{Sharing your book}\label{sharing-your-book}}

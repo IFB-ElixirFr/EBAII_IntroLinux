@@ -11,6 +11,7 @@ description: |
   Livre de cours pour EBAII : Introduction à R
 link-citations: yes
 github-repo: IFB-ElixirFr/EBAII_IntroR
+always_allow_html: true
 ---
 
 # Présentation du cours
@@ -23,11 +24,16 @@ L'objectif de ce livre est d'accompagné les apprenants de l'école EBAII.
 
 ## Demandez le programme
 
-	10:15	01:45	HDF	
 | Debut      | Fin | Durée | Lieu |
 | ----------- | ----------- |----------- |----------- |
-| 8:30      | 10:15       | 01:45 | (Re)decouverte de R |
+| 8:30      | 10:15       | 01:45 | HDF |
 
+## Intervenants
+
+- Thomas Denecker – thomas.denecker@france-bioinformatique.fr 
+- Stevenn Volant - stevenn.volant@pasteur.fr
+
+La version "slides" a été créée initialement par Hugo Varet – hugo.varet@pasteur.fr
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

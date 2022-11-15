@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="r-en-quelques-mots.html"/>
-<link rel="next" href="parts.html"/>
+<link rel="next" href="premiers-pas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,6 +52,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -119,28 +127,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -162,6 +148,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#a-propos-de-du-livre"><i class="fa fa-check"></i><b>1.1</b> A propos de du livre</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#demandez-le-programme"><i class="fa fa-check"></i><b>1.2</b> Demandez le programme</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#intervenants"><i class="fa fa-check"></i><b>1.3</b> Intervenants</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html"><i class="fa fa-check"></i><b>2</b> R en quelques mots</a>
 <ul>
@@ -185,18 +172,37 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html#modes-dutilisation-liste-non-exhaustive"><i class="fa fa-check"></i><b>3.1</b> Modes d’utilisation (liste non exhaustive)</a></li>
 <li class="chapter" data-level="3.2" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html#ouverture-ou-connexion-à-rstudio"><i class="fa fa-check"></i><b>3.2</b> Ouverture ou connexion à RStudio</a></li>
+<li class="chapter" data-level="3.3" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html#rstudio"><i class="fa fa-check"></i><b>3.3</b> RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a></li>
-<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
+<li class="chapter" data-level="4" data-path="premiers-pas.html"><a href="premiers-pas.html"><i class="fa fa-check"></i><b>4</b> Premiers pas</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
-<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
+<li class="chapter" data-level="4.1" data-path="premiers-pas.html"><a href="premiers-pas.html#r-sait-tout-faire-il-compte"><i class="fa fa-check"></i><b>4.1</b> R sait tout faire : il compte !</a></li>
+<li class="chapter" data-level="4.2" data-path="premiers-pas.html"><a href="premiers-pas.html#notion-de-variableobjet"><i class="fa fa-check"></i><b>4.2</b> Notion de variable/objet</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
+<li class="chapter" data-level="5" data-path="import-de-données.html"><a href="import-de-données.html"><i class="fa fa-check"></i><b>5</b> Import de données</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
-<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
+<li class="chapter" data-level="5.1" data-path="import-de-données.html"><a href="import-de-données.html#version-avec-les-boutons"><i class="fa fa-check"></i><b>5.1</b> Version “Avec les boutons”</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="import-de-données.html"><a href="import-de-données.html#création-dun-dossier-intro_r-pour-vos-résultats-de-ce-tp"><i class="fa fa-check"></i><b>5.1.1</b> Création d’un dossier intro_R pour vos résultats de ce TP</a></li>
+<li class="chapter" data-level="5.1.2" data-path="import-de-données.html"><a href="import-de-données.html#déplacement-dans-le-dossier-intro_r"><i class="fa fa-check"></i><b>5.1.2</b> Déplacement dans le dossier “intro_R”</a></li>
+<li class="chapter" data-level="5.1.3" data-path="import-de-données.html"><a href="import-de-données.html#définissez-votre-dossier-espace-de-travail-working-directory"><i class="fa fa-check"></i><b>5.1.3</b> Définissez votre dossier espace de travail (working directory)</a></li>
+<li class="chapter" data-level="5.1.4" data-path="import-de-données.html"><a href="import-de-données.html#téléchargez-les-fichiers-sur-votre-machine"><i class="fa fa-check"></i><b>5.1.4</b> Téléchargez les fichiers sur votre machine</a></li>
+<li class="chapter" data-level="5.1.5" data-path="import-de-données.html"><a href="import-de-données.html#téléversement-upload-des-données"><i class="fa fa-check"></i><b>5.1.5</b> Téléversement (“upload”) des données</a></li>
+<li class="chapter" data-level="5.1.6" data-path="import-de-données.html"><a href="import-de-données.html#on-efface-tout-et-on-recommence"><i class="fa fa-check"></i><b>5.1.6</b> On efface tout et on recommence</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="import-de-données.html"><a href="import-de-données.html#the-r-geek-way-v2-directement-depuis-rstudio"><i class="fa fa-check"></i><b>5.2</b> The “R geek” way (V2, directement depuis Rstudio)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="import-de-données.html"><a href="import-de-données.html#creation-de-larborescence"><i class="fa fa-check"></i><b>5.2.1</b> Creation de l’arborescence</a></li>
+<li class="chapter" data-level="5.2.2" data-path="import-de-données.html"><a href="import-de-données.html#télécharger-un-fichier"><i class="fa fa-check"></i><b>5.2.2</b> Télécharger un fichier</a></li>
+<li class="chapter" data-level="5.2.3" data-path="import-de-données.html"><a href="import-de-données.html#on-efface-tout-et-on-recommence-1"><i class="fa fa-check"></i><b>5.2.3</b> On efface tout et on recommence</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="import-de-données.html"><a href="import-de-données.html#the-bash-geek-way-v3-directement-de-votre-home-du-cluster"><i class="fa fa-check"></i><b>5.3</b> The “bash geek” way (V3, directement de votre home du cluster)</a></li>
+<li class="chapter" data-level="5.4" data-path="import-de-données.html"><a href="import-de-données.html#actualisation-du-dossier"><i class="fa fa-check"></i><b>5.4</b> Actualisation du dossier</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lecture-des-données.html"><a href="lecture-des-données.html"><i class="fa fa-check"></i><b>6</b> Lecture des données</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lecture-des-données.html"><a href="lecture-des-données.html#chargement-des-données-dans-la-mémoire-de-r"><i class="fa fa-check"></i><b>6.1</b> Chargement des données (dans la mémoire de R)</a></li>
+<li class="chapter" data-level="6.2" data-path="lecture-des-données.html"><a href="lecture-des-données.html#affichage-de-lobjet-exprs"><i class="fa fa-check"></i><b>6.2</b> Affichage de l’objet “exprs”</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
 <ul>
@@ -253,6 +259,15 @@ puis vous identifier</p></li>
 puis cliquer sur l’icône RStudio</li>
 </ol>
 <p><img src="images/jupyterRstudio.png" /></p>
+</div>
+<div id="rstudio" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> RStudio<a href="comment-utiliser-r.html#rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Disponible depuis 2011</li>
+<li>Logiciel facilitant l’utilisation de R via 4 panneaux</li>
+<li>Chaque panneau présente plusieurs onglets (fonctionnalités complémentaires)</li>
+</ul>
+<p><img src="images/rstudio.png" /></p>
 
 </div>
 </div>
@@ -262,7 +277,7 @@ puis cliquer sur l’icône RStudio</li>
         </div>
       </div>
 <a href="r-en-quelques-mots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="parts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="premiers-pas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -316,20 +331,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
