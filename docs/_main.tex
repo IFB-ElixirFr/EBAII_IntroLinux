@@ -117,7 +117,7 @@
 
 \title{Introduction à R}
 \author{Thomas Denecker \& Stevenn Volant}
-\date{2022-11-14}
+\date{2022-11-15}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -143,116 +143,279 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{about}{%
-\chapter{About}\label{about}}
+\hypertarget{pruxe9sentation-du-cours}{%
+\chapter{Présentation du cours}\label{pruxe9sentation-du-cours}}
+
+Bienvenues dans le cour Introduction à R de l'EBAII ! Pour accompagner ce cours, Thomas Denecker et Stevenn Volant vous proposent ce livre. C'est une grande première alors n'hésitez pas à nous faire des retours.
+
+\hypertarget{a-propos-de-du-livre}{%
+\section{A propos de du livre}\label{a-propos-de-du-livre}}
 
 L'objectif de ce livre est d'accompagné les apprenants de l'école EBAII.
 
-\hypertarget{hello-bookdown}{%
-\chapter{Hello bookdown}\label{hello-bookdown}}
+\hypertarget{demandez-le-programme}{%
+\section{Demandez le programme}\label{demandez-le-programme}}
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (\texttt{\#}) per .Rmd file.
+\begin{verbatim}
+10:15   01:45   HDF 
+\end{verbatim}
 
-\hypertarget{a-section}{%
-\section{A section}\label{a-section}}
+\begin{longtable}[]{@{}llll@{}}
+\toprule()
+Debut & Fin & Durée & Lieu \\
+\midrule()
+\endhead
+8:30 & 10:15 & 01:45 & (Re)decouverte de R \\
+\bottomrule()
+\end{longtable}
 
-All chapter sections start with a second-level (\texttt{\#\#}) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+\hypertarget{r-en-quelques-mots}{%
+\chapter{R en quelques mots}\label{r-en-quelques-mots}}
 
-\hypertarget{an-unnumbered-section}{%
-\subsection*{An unnumbered section}\label{an-unnumbered-section}}
-\addcontentsline{toc}{subsection}{An unnumbered section}
+\hypertarget{pourquoi}{%
+\section{Pourquoi ?}\label{pourquoi}}
 
-Chapters and sections are numbered by default. To un-number a heading, add a \texttt{\{.unnumbered\}} or the shorter \texttt{\{-\}} at the end of the heading, like in this section.
+Langage de programmation qui permet de :
+- manipuler des données : importer, transformer, exporter faire des analyses statistiques plus ou moins complexes : description, exploration, modélisation\ldots{}
+- créer des (jolies) figures
 
-\hypertarget{cross}{%
-\chapter{Cross-references}\label{cross}}
+\hypertarget{comment-lavoir}{%
+\section{Comment l'avoir ?}\label{comment-lavoir}}
 
-Cross-references make it easier for your readers to find and link to elements in your book.
+Disponible sur \href{https://cran.r-project.org/}{RCRAN}
 
-\hypertarget{chapters-and-sub-chapters}{%
-\section{Chapters and sub-chapters}\label{chapters-and-sub-chapters}}
+\hypertarget{sur-quel-os}{%
+\section{Sur quel OS ?}\label{sur-quel-os}}
 
-There are two steps to cross-reference any heading:
+Tous !
+
+\hypertarget{historique}{%
+\section{Historique}\label{historique}}
+
+\begin{itemize}
+\tightlist
+\item
+  1993 : Début du projet R
+\item
+  2000 : sortie de R 1.0.0
+\item
+  2022 : R 4.2.2
+\end{itemize}
+
+\hypertarget{r-vs-excel}{%
+\section{R vs Excel}\label{r-vs-excel}}
+
+\includegraphics{images/rblogger.png}
+Source: R-bloggers
+
+\hypertarget{pourquoi-plus-excel}{%
+\subsection{Pourquoi plus Excel ?}\label{pourquoi-plus-excel}}
+
+Un exemple parmi tant d'autres !
+
+\includegraphics{images/covid.png}
+
+Source Alexandre Counis, Les Echos, 5 oct. 2020
+
+\hypertarget{avantages-et-inconvuxe9nients}{%
+\section{Avantages et inconvénients}\label{avantages-et-inconvuxe9nients}}
+
+\hypertarget{avantages}{%
+\subsection{Avantages}\label{avantages}}
+
+\begin{itemize}
+\tightlist
+\item
+  Souplesse d'utilisation pour réaliser des analyses statistiques
+\item
+  Libre et gratuit, même s'il existe maintenant des versions payantes de RStudio (shiny et/ou server)
+\item
+  Reproductibilité des analyses en écrivant/sauvegardant les commandes R dans des scripts
+\item
+  Large communauté d'utilisateurs/aide en ligne
+\item
+  Grand nombre de packages spécifiques
+\end{itemize}
+
+\hypertarget{inconvuxe9nients}{%
+\subsection{Inconvénients}\label{inconvuxe9nients}}
+
+\hypertarget{geeks-and-repetitive-tasks}{%
+\section{Geeks and repetitive tasks}\label{geeks-and-repetitive-tasks}}
+
+\includegraphics{images/geeks.png}
+
+\hypertarget{r-sait-tout-faire}{%
+\section{R sait tout faire}\label{r-sait-tout-faire}}
+
+Lire un tableau de données
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read.table}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Fusionner deux tableaux
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{merge}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Filtrer des lignes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data[data}\SpecialCharTok{$}\NormalTok{x }\SpecialCharTok{\textgreater{}} \DecValTok{10}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+Sélectionner des colonnes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data[,}\FunctionTok{c}\NormalTok{(“x”,”y”)]}
+\end{Highlighting}
+\end{Shaded}
+
+Rechercher une chaîne de caractères
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{grep}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Réaliser une ACP
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{prcomp}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Calculer une moyenne
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Additionner deux matrices
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mat1 }\SpecialCharTok{+}\NormalTok{ mat2}
+\end{Highlighting}
+\end{Shaded}
+
+Exporter un tableau de données
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{write.table}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Calculer une variance
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{var}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Régression linéaire
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lm}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Tracer une courbe
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Tester une hypothèse
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Dessiner un histogramme
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Convertir des données
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{as.matrix}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{comment-utiliser-r}{%
+\chapter{Comment utiliser R ?}\label{comment-utiliser-r}}
+
+\hypertarget{modes-dutilisation-liste-non-exhaustive}{%
+\section{Modes d'utilisation (liste non exhaustive)}\label{modes-dutilisation-liste-non-exhaustive}}
+
+\begin{itemize}
+\tightlist
+\item
+  Localement via le terminal
+\item
+  Localement via RStudio (utilisation classique)
+\item
+  Sur un serveur via le terminal et une connexion ssh
+\item
+  Sur un serveur via un navigateur web pour accéder à RStudio server
+\item
+  Sur un serveur via un navigateur web pour accéder à RStudio server par Jupyter
+\end{itemize}
+
+\hypertarget{ouverture-ou-connexion-uxe0-rstudio}{%
+\section{Ouverture ou connexion à RStudio}\label{ouverture-ou-connexion-uxe0-rstudio}}
+
+3 alternatives :
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  Label the heading: \texttt{\#\ Hello\ world\ \{\#nice-label\}}.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Leave the label off if you like the automated heading generated based on your heading title: for example, \texttt{\#\ Hello\ world} = \texttt{\#\ Hello\ world\ \{\#hello-world\}}.
-  \item
-    To label an un-numbered heading, use: \texttt{\#\ Hello\ world\ \{-\#nice-label\}} or \texttt{\{\#\ Hello\ world\ .unnumbered\}}.
-  \end{itemize}
+  Ouvrir RStudio sur votre propre ordinateur (si installé)
 \item
-  Next, reference the labeled heading anywhere in the text using \texttt{\textbackslash{}@ref(nice-label)}; for example, please see Chapter \ref{cross}.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    If you prefer text as the link instead of a numbered reference use: \protect\hyperlink{cross}{any text you want can go here}.
-  \end{itemize}
+  Vous connecter au serveur Web RStudio de l'IFB
+  \url{https://rstudio.cluster.france-bioinformatique.fr}
+  puis vous identifier
 \end{enumerate}
 
-\hypertarget{captioned-figures-and-tables}{%
-\section{Captioned figures and tables}\label{captioned-figures-and-tables}}
+\includegraphics{images/coRstudio.png}
 
-Figures and tables \emph{with captions} can also be cross-referenced from elsewhere in your book using \texttt{\textbackslash{}@ref(fig:chunk-label)} and \texttt{\textbackslash{}@ref(tab:chunk-label)}, respectively.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Vous connecter via Jupyter lab de l'IFB
+  \url{https://jupyterhub.cluster.france-bioinformatique.fr}
+  puis cliquer sur l'icône RStudio
+\end{enumerate}
 
-See Figure \ref{fig:nice-fig}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
-\FunctionTok{plot}\NormalTok{(pressure, }\AttributeTok{type =} \StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{_main_files/figure-latex/nice-fig-1} 
-
-}
-
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
-
-Don't miss Table \ref{tab:nice-tab}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
-  \FunctionTok{head}\NormalTok{(pressure, }\DecValTok{10}\NormalTok{), }\AttributeTok{caption =} \StringTok{\textquotesingle{}Here is a nice table!\textquotesingle{}}\NormalTok{,}
-  \AttributeTok{booktabs =} \ConstantTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{table}
-
-\caption{\label{tab:nice-tab}Here is a nice table!}
-\centering
-\begin{tabular}[t]{rr}
-\toprule
-temperature & pressure\\
-\midrule
-0 & 0.0002\\
-20 & 0.0012\\
-40 & 0.0060\\
-60 & 0.0300\\
-80 & 0.0900\\
-\addlinespace
-100 & 0.2700\\
-120 & 0.7500\\
-140 & 1.8500\\
-160 & 4.2000\\
-180 & 8.8000\\
-\bottomrule
-\end{tabular}
-\end{table}
+\includegraphics{images/jupyterRstudio.png}
 
 \hypertarget{parts}{%
 \chapter{Parts}\label{parts}}

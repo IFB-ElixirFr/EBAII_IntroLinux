@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+url: https://ifb-elixirfr.github.io/EBAII_IntroR/
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
   Livre de cours pour EBAII : Introduction à R
@@ -13,9 +13,21 @@ link-citations: yes
 github-repo: IFB-ElixirFr/EBAII_IntroR
 ---
 
-# About
+# Présentation du cours
+
+Bienvenues dans le cour Introduction à R de l'EBAII ! Pour accompagner ce cours, Thomas Denecker et Stevenn Volant vous proposent ce livre. C'est une grande première alors n'hésitez pas à nous faire des retours.
+
+## A propos de du livre
 
 L'objectif de ce livre est d'accompagné les apprenants de l'école EBAII.
+
+## Demandez le programme
+
+	10:15	01:45	HDF	
+| Debut      | Fin | Durée | Lieu |
+| ----------- | ----------- |----------- |----------- |
+| 8:30      | 10:15       | 01:45 | (Re)decouverte de R |
+
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
