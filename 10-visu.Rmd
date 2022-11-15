@@ -10,6 +10,7 @@ plot(x = exprs$A, y = exprs$M, main = "MA plot",
 grid(lty = "solid", col = "lightgray")
 abline(h = 0)
 ```
+
 ## ggplot2
 
 ```{r}
