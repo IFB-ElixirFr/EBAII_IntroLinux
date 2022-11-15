@@ -38,6 +38,10 @@ actualisation-du-dossier
 lecture-des-données
 chargement-des-données-dans-la-mémoire-de-r
 affichage-de-lobjet-exprs
+caractéristiques-dun-tableau-de-données
+dimensions
+noms-des-colonnes-et-des-lignes
+résumé-rapide-des-données-par-colonne
 sharing-your-book
 publishing
 pages

@@ -203,6 +203,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.1" data-path="lecture-des-données.html"><a href="lecture-des-données.html#chargement-des-données-dans-la-mémoire-de-r"><i class="fa fa-check"></i><b>6.1</b> Chargement des données (dans la mémoire de R)</a></li>
 <li class="chapter" data-level="6.2" data-path="lecture-des-données.html"><a href="lecture-des-données.html#affichage-de-lobjet-exprs"><i class="fa fa-check"></i><b>6.2</b> Affichage de l’objet “exprs”</a></li>
+<li class="chapter" data-level="6.3" data-path="lecture-des-données.html"><a href="lecture-des-données.html#caractéristiques-dun-tableau-de-données"><i class="fa fa-check"></i><b>6.3</b> Caractéristiques d’un tableau de données</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="lecture-des-données.html"><a href="lecture-des-données.html#dimensions"><i class="fa fa-check"></i><b>6.3.1</b> Dimensions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="lecture-des-données.html"><a href="lecture-des-données.html#noms-des-colonnes-et-des-lignes"><i class="fa fa-check"></i><b>6.3.2</b> Noms des colonnes et des lignes</a></li>
+<li class="chapter" data-level="6.3.3" data-path="lecture-des-données.html"><a href="lecture-des-données.html#résumé-rapide-des-données-par-colonne"><i class="fa fa-check"></i><b>6.3.3</b> Résumé rapide des données par colonne</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
 <ul>
@@ -304,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##  [1] &quot;_bookdown_files&quot;    &quot;_bookdown.yml&quot;      &quot;_main_files&quot;       
 ##  [4] &quot;_main.Rmd&quot;          &quot;_output.yml&quot;        &quot;01-intro.Rmd&quot;      
 ##  [7] &quot;02-how.Rmd&quot;         &quot;03-firstSteps.Rmd&quot;  &quot;04-uploadData.Rmd&quot; 
-## [10] &quot;05-readData.Rmd&quot;    &quot;06-share.Rmd&quot;       &quot;07-references.Rmd&quot; 
+## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-references.Rmd&quot; 
 ## [13] &quot;annotation.csv&quot;     &quot;book.bib&quot;           &quot;docs&quot;              
 ## [16] &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;     &quot;images&quot;            
 ## [19] &quot;index.Rmd&quot;          &quot;intro_R&quot;            &quot;LICENSE&quot;           
@@ -315,7 +321,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##  [1] &quot;_bookdown_files&quot;    &quot;_bookdown.yml&quot;      &quot;_main_files&quot;       
 ##  [4] &quot;_main.Rmd&quot;          &quot;_output.yml&quot;        &quot;01-intro.Rmd&quot;      
 ##  [7] &quot;02-how.Rmd&quot;         &quot;03-firstSteps.Rmd&quot;  &quot;04-uploadData.Rmd&quot; 
-## [10] &quot;05-readData.Rmd&quot;    &quot;06-share.Rmd&quot;       &quot;07-references.Rmd&quot; 
+## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-references.Rmd&quot; 
 ## [13] &quot;annotation.csv&quot;     &quot;book.bib&quot;           &quot;docs&quot;              
 ## [16] &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;     &quot;images&quot;            
 ## [19] &quot;index.Rmd&quot;          &quot;intro_R&quot;            &quot;LICENSE&quot;           
@@ -335,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##  [1] &quot;_bookdown_files&quot;    &quot;_bookdown.yml&quot;      &quot;_main_files&quot;       
 ##  [4] &quot;_main.Rmd&quot;          &quot;_output.yml&quot;        &quot;01-intro.Rmd&quot;      
 ##  [7] &quot;02-how.Rmd&quot;         &quot;03-firstSteps.Rmd&quot;  &quot;04-uploadData.Rmd&quot; 
-## [10] &quot;05-readData.Rmd&quot;    &quot;06-share.Rmd&quot;       &quot;07-references.Rmd&quot; 
+## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-references.Rmd&quot; 
 ## [13] &quot;annotation.csv&quot;     &quot;book.bib&quot;           &quot;docs&quot;              
 ## [16] &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;     &quot;images&quot;            
 ## [19] &quot;index.Rmd&quot;          &quot;intro_R&quot;            &quot;LICENSE&quot;           
@@ -372,27 +378,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## /shared/ifbstor1/projects/form_2022_32/EBAII_IntroR</code></pre>
 <p>Téléchargez les données</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href="import-de-données.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt <span class="at">--output-document</span><span class="op">=</span>expression.txt</span></code></pre></div>
-<pre><code>## --2022-11-15 10:40:47--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.111.133, ...
+<pre><code>## --2022-11-15 10:46:59--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.111.133, 185.199.110.133, ...
 ## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 1747 (1.7K) [text/plain]
 ## Saving to: ‘expression.txt’
 ## 
-##      0K .                                                     100% 17.9M=0s
+##      0K .                                                     100% 16.5M=0s
 ## 
-## 2022-11-15 10:40:47 (17.9 MB/s) - ‘expression.txt’ saved [1747/1747]</code></pre>
+## 2022-11-15 10:46:59 (16.5 MB/s) - ‘expression.txt’ saved [1747/1747]</code></pre>
 <div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="import-de-données.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv <span class="at">-O</span> annotation.csv</span></code></pre></div>
-<pre><code>## --2022-11-15 10:40:47--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.111.133, 185.199.108.133, ...
-## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+<pre><code>## --2022-11-15 10:46:59--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 2326 (2.3K) [text/plain]
 ## Saving to: ‘annotation.csv’
 ## 
-##      0K ..                                                    100% 23.7M=0s
+##      0K ..                                                    100% 23.1M=0s
 ## 
-## 2022-11-15 10:40:47 (23.7 MB/s) - ‘annotation.csv’ saved [2326/2326]</code></pre>
+## 2022-11-15 10:46:59 (23.1 MB/s) - ‘annotation.csv’ saved [2326/2326]</code></pre>
 <p>Qu’y a-t-il ici ?</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb79-1"><a href="import-de-données.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span></span></code></pre></div>
 <pre><code>## total 101
@@ -400,24 +406,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## -rw-r--r--+ 1 tdenecker tdenecker   996 Nov 15 09:40 02-how.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  1478 Nov 15 09:48 03-firstSteps.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  5467 Nov 15 10:30 04-uploadData.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker  1218 Nov 15 10:39 05-readData.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker  1255 Nov 14 21:51 06-share.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1790 Nov 15 10:46 05-readData.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1255 Nov 14 21:51 06-manipulate.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 07-references.Rmd
-## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 10:40 annotation.csv
+## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 10:46 annotation.csv
 ## -rw-r--r--+ 1 tdenecker tdenecker   267 Nov 14 21:51 book.bib
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:40 _bookdown_files
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:46 _bookdown_files
 ## -rw-r--r--+ 1 tdenecker tdenecker   113 Nov 15 10:39 _bookdown.yml
-## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 10:39 docs
+## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 10:46 docs
 ## -rw-rw----+ 1 tdenecker tdenecker   247 Nov 15 09:00 EBAII_IntroR.Rproj
-## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 10:40 expression.txt
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:34 images
+## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 10:46 expression.txt
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:46 images
 ## -rw-r--r--+ 1 tdenecker tdenecker  1348 Nov 15 10:40 index.Rmd
 ## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:25 intro_R
 ## -rw-rw----+ 1 tdenecker tdenecker  1551 Nov 14 21:50 LICENSE
-## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 10:39 _main_files
-## -rw-r--r--+ 1 tdenecker tdenecker 13944 Nov 15 10:40 _main.Rmd
+## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 10:41 _main_files
+## -rw-r--r--+ 1 tdenecker tdenecker 14521 Nov 15 10:46 _main.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   500 Nov 14 21:52 _output.yml
-## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 10:40 packages.bib
+## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 10:46 packages.bib
 ## -rw-r--r--+ 1 tdenecker tdenecker    22 Nov 14 21:51 preamble.tex
 ## -rw-r--r--+ 1 tdenecker tdenecker   311 Nov 15 09:29 README.md
 ## -rw-r--r--+ 1 tdenecker tdenecker   172 Nov 14 21:51 style.css</code></pre>

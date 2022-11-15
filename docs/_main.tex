@@ -809,7 +809,7 @@ Qu'y a-t-il par ici ? (Commande Unix équivalente: \texttt{ls})
 ##  [1] "_bookdown_files"    "_bookdown.yml"      "_main_files"       
 ##  [4] "_main.Rmd"          "_output.yml"        "01-intro.Rmd"      
 ##  [7] "02-how.Rmd"         "03-firstSteps.Rmd"  "04-uploadData.Rmd" 
-## [10] "05-readData.Rmd"    "06-share.Rmd"       "07-references.Rmd" 
+## [10] "05-readData.Rmd"    "06-manipulate.Rmd"  "07-references.Rmd" 
 ## [13] "annotation.csv"     "book.bib"           "docs"              
 ## [16] "EBAII_IntroR.Rproj" "expression.txt"     "images"            
 ## [19] "index.Rmd"          "intro_R"            "LICENSE"           
@@ -829,7 +829,7 @@ Un autre nom pour la même commande
 ##  [1] "_bookdown_files"    "_bookdown.yml"      "_main_files"       
 ##  [4] "_main.Rmd"          "_output.yml"        "01-intro.Rmd"      
 ##  [7] "02-how.Rmd"         "03-firstSteps.Rmd"  "04-uploadData.Rmd" 
-## [10] "05-readData.Rmd"    "06-share.Rmd"       "07-references.Rmd" 
+## [10] "05-readData.Rmd"    "06-manipulate.Rmd"  "07-references.Rmd" 
 ## [13] "annotation.csv"     "book.bib"           "docs"              
 ## [16] "EBAII_IntroR.Rproj" "expression.txt"     "images"            
 ## [19] "index.Rmd"          "intro_R"            "LICENSE"           
@@ -872,7 +872,7 @@ Qu'y a-t-il par ici ? (Commande Unix équivalente: \texttt{ls})
 ##  [1] "_bookdown_files"    "_bookdown.yml"      "_main_files"       
 ##  [4] "_main.Rmd"          "_output.yml"        "01-intro.Rmd"      
 ##  [7] "02-how.Rmd"         "03-firstSteps.Rmd"  "04-uploadData.Rmd" 
-## [10] "05-readData.Rmd"    "06-share.Rmd"       "07-references.Rmd" 
+## [10] "05-readData.Rmd"    "06-manipulate.Rmd"  "07-references.Rmd" 
 ## [13] "annotation.csv"     "book.bib"           "docs"              
 ## [16] "EBAII_IntroR.Rproj" "expression.txt"     "images"            
 ## [19] "index.Rmd"          "intro_R"            "LICENSE"           
@@ -962,16 +962,16 @@ Téléchargez les données
 \end{Shaded}
 
 \begin{verbatim}
-## --2022-11-15 10:40:52--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...
-## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+## --2022-11-15 10:47:03--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.108.133, 185.199.111.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 1747 (1.7K) [text/plain]
 ## Saving to: ‘expression.txt’
 ## 
-##      0K .                                                     100% 15.1M=0s
+##      0K .                                                     100% 15.8M=0s
 ## 
-## 2022-11-15 10:40:52 (15.1 MB/s) - ‘expression.txt’ saved [1747/1747]
+## 2022-11-15 10:47:03 (15.8 MB/s) - ‘expression.txt’ saved [1747/1747]
 \end{verbatim}
 
 \begin{Shaded}
@@ -981,16 +981,16 @@ Téléchargez les données
 \end{Shaded}
 
 \begin{verbatim}
-## --2022-11-15 10:40:52--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...
-## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+## --2022-11-15 10:47:04--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.109.133, 185.199.108.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 2326 (2.3K) [text/plain]
 ## Saving to: ‘annotation.csv’
 ## 
-##      0K ..                                                    100% 21.2M=0s
+##      0K ..                                                    100% 25.8M=0s
 ## 
-## 2022-11-15 10:40:52 (21.2 MB/s) - ‘annotation.csv’ saved [2326/2326]
+## 2022-11-15 10:47:04 (25.8 MB/s) - ‘annotation.csv’ saved [2326/2326]
 \end{verbatim}
 
 Qu'y a-t-il ici ?
@@ -1002,29 +1002,29 @@ Qu'y a-t-il ici ?
 \end{Shaded}
 
 \begin{verbatim}
-## total 101
+## total 116
 ## -rw-r--r--+ 1 tdenecker tdenecker  1843 Nov 15 09:19 01-intro.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   996 Nov 15 09:40 02-how.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  1478 Nov 15 09:48 03-firstSteps.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  5467 Nov 15 10:30 04-uploadData.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker  1218 Nov 15 10:39 05-readData.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker  1255 Nov 14 21:51 06-share.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1790 Nov 15 10:46 05-readData.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1255 Nov 14 21:51 06-manipulate.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 07-references.Rmd
-## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 10:40 annotation.csv
+## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 10:47 annotation.csv
 ## -rw-r--r--+ 1 tdenecker tdenecker   267 Nov 14 21:51 book.bib
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:40 _bookdown_files
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:47 _bookdown_files
 ## -rw-r--r--+ 1 tdenecker tdenecker   113 Nov 15 10:39 _bookdown.yml
-## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 10:40 docs
+## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 10:47 docs
 ## -rw-rw----+ 1 tdenecker tdenecker   247 Nov 15 09:00 EBAII_IntroR.Rproj
-## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 10:40 expression.txt
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:34 images
+## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 10:47 expression.txt
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:46 images
 ## -rw-r--r--+ 1 tdenecker tdenecker  1348 Nov 15 10:40 index.Rmd
 ## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:25 intro_R
 ## -rw-rw----+ 1 tdenecker tdenecker  1551 Nov 14 21:50 LICENSE
-## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 10:40 _main_files
-## -rw-r--r--+ 1 tdenecker tdenecker 13944 Nov 15 10:40 _main.Rmd
+## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 10:47 _main_files
+## -rw-r--r--+ 1 tdenecker tdenecker 14521 Nov 15 10:47 _main.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   500 Nov 14 21:52 _output.yml
-## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 10:40 packages.bib
+## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 10:47 packages.bib
 ## -rw-r--r--+ 1 tdenecker tdenecker    22 Nov 14 21:51 preamble.tex
 ## -rw-r--r--+ 1 tdenecker tdenecker   311 Nov 15 09:29 README.md
 ## -rw-r--r--+ 1 tdenecker tdenecker   172 Nov 14 21:51 style.css
@@ -1268,6 +1268,139 @@ Explorer le tableau avec le package \href{https://rstudio.github.io/DT/}{DT}
 \begin{verbatim}
 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
 \end{verbatim}
+
+\hypertarget{caractuxe9ristiques-dun-tableau-de-donnuxe9es}{%
+\section{Caractéristiques d'un tableau de données}\label{caractuxe9ristiques-dun-tableau-de-donnuxe9es}}
+
+\hypertarget{dimensions}{%
+\subsection{Dimensions}\label{dimensions}}
+
+Nombre de colonnes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ncol}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+Nombre de lignes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(exprs) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 50
+\end{verbatim}
+
+Dimensions
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 50  5
+\end{verbatim}
+
+\hypertarget{noms-des-colonnes-et-des-lignes}{%
+\subsection{Noms des colonnes et des lignes}\label{noms-des-colonnes-et-des-lignes}}
+
+Noms des colonnes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "id"  "WT1" "WT2" "KO1" "KO2"
+\end{verbatim}
+
+Idem
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(exprs) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "id"  "WT1" "WT2" "KO1" "KO2"
+\end{verbatim}
+
+Noms des lignes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rownames}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12" "13" "14" "15"
+## [16] "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30"
+## [31] "31" "32" "33" "34" "35" "36" "37" "38" "39" "40" "41" "42" "43" "44" "45"
+## [46] "46" "47" "48" "49" "50"
+\end{verbatim}
+
+\hypertarget{ruxe9sumuxe9-rapide-des-donnuxe9es-par-colonne}{%
+\subsection{Résumé rapide des données par colonne}\label{ruxe9sumuxe9-rapide-des-donnuxe9es-par-colonne}}
+
+Statistiques par colonne
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       id                 WT1              WT2               KO1          
+##  Length:50          Min.   :    31   Min.   :   43.0   Min.   :    30.0  
+##  Class :character   1st Qu.:   264   1st Qu.:  203.2   1st Qu.:   228.5  
+##  Mode  :character   Median :  1338   Median : 1903.0   Median :  1324.5  
+##                     Mean   :  9358   Mean   : 6498.6   Mean   :  8356.0  
+##                     3rd Qu.:  3730   3rd Qu.: 4727.2   3rd Qu.:  3491.2  
+##                     Max.   :235960   Max.   :94264.0   Max.   :202381.0  
+##       KO2         
+##  Min.   :   16.0  
+##  1st Qu.:  223.5  
+##  Median : 2060.0  
+##  Mean   : 6489.5  
+##  3rd Qu.: 4926.0  
+##  Max.   :91336.0
+\end{verbatim}
+
+Structure de la variable
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    50 obs. of  5 variables:
+##  $ id : chr  "ENSG00000034510" "ENSG00000064201" "ENSG00000065717" "ENSG00000099958" ...
+##  $ WT1: int  235960 116 118 450 4736 9002 1295 3353 2044 7022 ...
+##  $ WT2: int  94264 71 174 655 5019 8623 2744 7449 4525 2526 ...
+##  $ KO1: int  202381 64 124 301 4845 7720 1113 3589 2604 6269 ...
+##  $ KO2: int  91336 56 182 472 4934 7142 2887 7202 4902 3068 ...
+\end{verbatim}
+
+Même résultat que dans le panneau ``Environment''
+
+\includegraphics{images/envExpr.png}
 
 \hypertarget{sharing-your-book}{%
 \chapter{Sharing your book}\label{sharing-your-book}}
