@@ -18,6 +18,8 @@ always_allow_html: true
 
 Bienvenues dans le cour Introduction à R de l'EBAII ! Pour accompagner ce cours, Thomas Denecker et Stevenn Volant vous proposent ce livre. C'est une grande première alors n'hésitez pas à nous faire des retours.
 
+<a href='https://zenodo.org/badge/latestdoi/565986541'><img src='https://zenodo.org/badge/565986541.svg'></a> 
+
 ## A propos de du livre
 
 L'objectif de ce livre est d'accompagné les apprenants de l'école EBAII.
