@@ -64,6 +64,10 @@
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="libs/echarts4r-4.8.0/echarts-en.min.js"></script>
+<script src="libs/echarts4r-4.8.0/ecStat.min.js"></script>
+<script src="libs/echarts4r-4.8.0/dataTool.min.js"></script>
+<script src="libs/echarts4r-binding-0.4.4/echarts4r.js"></script>
 
 
 <style type="text/css">
@@ -257,8 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#charger-les-annotations-des-gènes"><i class="fa fa-check"></i><b>10.1</b> Charger les annotations des gènes</a></li>
 <li class="chapter" data-level="10.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#combien"><i class="fa fa-check"></i><b>10.2</b> Combien ?</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#quizz"><i class="fa fa-check"></i><b>10.2.1</b> Quizz</a></li>
-<li class="chapter" data-level="10.2.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#solution-pour-y-répondre"><i class="fa fa-check"></i><b>10.2.2</b> Solution pour y répondre</a></li>
+<li class="chapter" data-level="10.2.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#solution-pour-y-répondre"><i class="fa fa-check"></i><b>10.2.1</b> Solution pour y répondre</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="intégration-des-données.html"><a href="intégration-des-données.html#ma-première-bioinformatique-intégrative"><i class="fa fa-check"></i><b>10.3</b> Ma première bioinformatique intégrative</a>
 <ul>
@@ -268,11 +271,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="intégration-des-données.html"><a href="intégration-des-données.html#visualisation-1"><i class="fa fa-check"></i><b>10.4</b> Visualisation</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>11</b> Conclusion</a>
+<li class="chapter" data-level="11" data-path="bonus.html"><a href="bonus.html"><i class="fa fa-check"></i><b>11</b> Bonus</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="conclusion.html"><a href="conclusion.html#take-home-messages"><i class="fa fa-check"></i><b>11.1</b> Take home messages</a></li>
-<li class="chapter" data-level="11.2" data-path="conclusion.html"><a href="conclusion.html#ressources-ifb"><i class="fa fa-check"></i><b>11.2</b> Ressources IFB</a></li>
-<li class="chapter" data-level="11.3" data-path="conclusion.html"><a href="conclusion.html#resource"><i class="fa fa-check"></i><b>11.3</b> Resource</a></li>
+<li class="chapter" data-level="11.1" data-path="bonus.html"><a href="bonus.html#r-de-base"><i class="fa fa-check"></i><b>11.1</b> R de base</a></li>
+<li class="chapter" data-level="11.2" data-path="bonus.html"><a href="bonus.html#plotly"><i class="fa fa-check"></i><b>11.2</b> Plotly</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="bonus.html"><a href="bonus.html#a-partir-de-ggplot2"><i class="fa fa-check"></i><b>11.2.1</b> A partir de ggplot2</a></li>
+<li class="chapter" data-level="11.2.2" data-path="bonus.html"><a href="bonus.html#en-plotly-pur"><i class="fa fa-check"></i><b>11.2.2</b> En plotly pur</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="bonus.html"><a href="bonus.html#echarts"><i class="fa fa-check"></i><b>11.3</b> echarts</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>12</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="conclusion.html"><a href="conclusion.html#take-home-messages"><i class="fa fa-check"></i><b>12.1</b> Take home messages</a></li>
+<li class="chapter" data-level="12.2" data-path="conclusion.html"><a href="conclusion.html#ressources-ifb"><i class="fa fa-check"></i><b>12.2</b> Ressources IFB</a></li>
+<li class="chapter" data-level="12.3" data-path="conclusion.html"><a href="conclusion.html#resource"><i class="fa fa-check"></i><b>12.3</b> Resource</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -369,24 +382,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  [4] &quot;_main.Rmd&quot;          &quot;_output.yml&quot;        &quot;01-intro.Rmd&quot;      
 ##  [7] &quot;02-how.Rmd&quot;         &quot;03-firstSteps.Rmd&quot;  &quot;04-uploadData.Rmd&quot; 
 ## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-plots.Rmd&quot;      
-## [13] &quot;08-analyseDiff.Rmd&quot; &quot;09-integration.Rmd&quot; &quot;10-conclusion.Rmd&quot; 
-## [16] &quot;11-references.Rmd&quot;  &quot;annotation.csv&quot;     &quot;book.bib&quot;          
-## [19] &quot;docs&quot;               &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;    
-## [22] &quot;exprs_chr8.txt&quot;     &quot;images&quot;             &quot;index.Rmd&quot;         
-## [25] &quot;intro_R&quot;            &quot;LICENSE&quot;            &quot;packages.bib&quot;      
-## [28] &quot;preamble.tex&quot;       &quot;README.md&quot;          &quot;style.css&quot;</code></pre>
+## [13] &quot;08-analyseDiff.Rmd&quot; &quot;09-integration.Rmd&quot; &quot;10-visu.Rmd&quot;       
+## [16] &quot;11-conclusion.Rmd&quot;  &quot;12-references.Rmd&quot;  &quot;annotation.csv&quot;    
+## [19] &quot;book.bib&quot;           &quot;docs&quot;               &quot;EBAII_IntroR.Rproj&quot;
+## [22] &quot;expression.txt&quot;     &quot;exprs_chr8.txt&quot;     &quot;images&quot;            
+## [25] &quot;index.Rmd&quot;          &quot;intro_R&quot;            &quot;LICENSE&quot;           
+## [28] &quot;packages.bib&quot;       &quot;preamble.tex&quot;       &quot;README.md&quot;         
+## [31] &quot;style.css&quot;</code></pre>
 <p>Un autre nom pour la même commande</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="import-de-données.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>()</span></code></pre></div>
 <pre><code>##  [1] &quot;_bookdown_files&quot;    &quot;_bookdown.yml&quot;      &quot;_main_files&quot;       
 ##  [4] &quot;_main.Rmd&quot;          &quot;_output.yml&quot;        &quot;01-intro.Rmd&quot;      
 ##  [7] &quot;02-how.Rmd&quot;         &quot;03-firstSteps.Rmd&quot;  &quot;04-uploadData.Rmd&quot; 
 ## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-plots.Rmd&quot;      
-## [13] &quot;08-analyseDiff.Rmd&quot; &quot;09-integration.Rmd&quot; &quot;10-conclusion.Rmd&quot; 
-## [16] &quot;11-references.Rmd&quot;  &quot;annotation.csv&quot;     &quot;book.bib&quot;          
-## [19] &quot;docs&quot;               &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;    
-## [22] &quot;exprs_chr8.txt&quot;     &quot;images&quot;             &quot;index.Rmd&quot;         
-## [25] &quot;intro_R&quot;            &quot;LICENSE&quot;            &quot;packages.bib&quot;      
-## [28] &quot;preamble.tex&quot;       &quot;README.md&quot;          &quot;style.css&quot;</code></pre>
+## [13] &quot;08-analyseDiff.Rmd&quot; &quot;09-integration.Rmd&quot; &quot;10-visu.Rmd&quot;       
+## [16] &quot;11-conclusion.Rmd&quot;  &quot;12-references.Rmd&quot;  &quot;annotation.csv&quot;    
+## [19] &quot;book.bib&quot;           &quot;docs&quot;               &quot;EBAII_IntroR.Rproj&quot;
+## [22] &quot;expression.txt&quot;     &quot;exprs_chr8.txt&quot;     &quot;images&quot;            
+## [25] &quot;index.Rmd&quot;          &quot;intro_R&quot;            &quot;LICENSE&quot;           
+## [28] &quot;packages.bib&quot;       &quot;preamble.tex&quot;       &quot;README.md&quot;         
+## [31] &quot;style.css&quot;</code></pre>
 </div>
 <div id="télécharger-un-fichier" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Télécharger un fichier<a href="import-de-données.html#télécharger-un-fichier" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -402,12 +417,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  [4] &quot;_main.Rmd&quot;          &quot;_output.yml&quot;        &quot;01-intro.Rmd&quot;      
 ##  [7] &quot;02-how.Rmd&quot;         &quot;03-firstSteps.Rmd&quot;  &quot;04-uploadData.Rmd&quot; 
 ## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-plots.Rmd&quot;      
-## [13] &quot;08-analyseDiff.Rmd&quot; &quot;09-integration.Rmd&quot; &quot;10-conclusion.Rmd&quot; 
-## [16] &quot;11-references.Rmd&quot;  &quot;annotation.csv&quot;     &quot;book.bib&quot;          
-## [19] &quot;docs&quot;               &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;    
-## [22] &quot;exprs_chr8.txt&quot;     &quot;images&quot;             &quot;index.Rmd&quot;         
-## [25] &quot;intro_R&quot;            &quot;LICENSE&quot;            &quot;packages.bib&quot;      
-## [28] &quot;preamble.tex&quot;       &quot;README.md&quot;          &quot;style.css&quot;</code></pre>
+## [13] &quot;08-analyseDiff.Rmd&quot; &quot;09-integration.Rmd&quot; &quot;10-visu.Rmd&quot;       
+## [16] &quot;11-conclusion.Rmd&quot;  &quot;12-references.Rmd&quot;  &quot;annotation.csv&quot;    
+## [19] &quot;book.bib&quot;           &quot;docs&quot;               &quot;EBAII_IntroR.Rproj&quot;
+## [22] &quot;expression.txt&quot;     &quot;exprs_chr8.txt&quot;     &quot;images&quot;            
+## [25] &quot;index.Rmd&quot;          &quot;intro_R&quot;            &quot;LICENSE&quot;           
+## [28] &quot;packages.bib&quot;       &quot;preamble.tex&quot;       &quot;README.md&quot;         
+## [31] &quot;style.css&quot;</code></pre>
 </div>
 <div id="on-efface-tout-et-on-recommence-1" class="section level3 hasAnchor" number="5.2.3">
 <h3><span class="header-section-number">5.2.3</span> On efface tout et on recommence<a href="import-de-données.html#on-efface-tout-et-on-recommence-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -439,30 +455,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## /shared/ifbstor1/projects/form_2022_32/EBAII_IntroR</code></pre>
 <p>Téléchargez les données</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href="import-de-données.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt <span class="at">--output-document</span><span class="op">=</span>expression.txt</span></code></pre></div>
-<pre><code>## --2022-11-15 12:51:09--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+<pre><code>## --2022-11-15 17:19:24--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.108.133, ...
 ## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 1747 (1.7K) [text/plain]
 ## Saving to: ‘expression.txt’
 ## 
-##      0K .                                                     100% 11.1M=0s
+##      0K .                                                     100% 16.6M=0s
 ## 
-## 2022-11-15 12:51:09 (11.1 MB/s) - ‘expression.txt’ saved [1747/1747]</code></pre>
+## 2022-11-15 17:19:24 (16.6 MB/s) - ‘expression.txt’ saved [1747/1747]</code></pre>
 <div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="import-de-données.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv <span class="at">-O</span> annotation.csv</span></code></pre></div>
-<pre><code>## --2022-11-15 12:51:09--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+<pre><code>## --2022-11-15 17:19:24--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.109.133, 185.199.110.133, ...
 ## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 2326 (2.3K) [text/plain]
 ## Saving to: ‘annotation.csv’
 ## 
-##      0K ..                                                    100% 12.6M=0s
+##      0K ..                                                    100% 25.9M=0s
 ## 
-## 2022-11-15 12:51:09 (12.6 MB/s) - ‘annotation.csv’ saved [2326/2326]</code></pre>
+## 2022-11-15 17:19:24 (25.9 MB/s) - ‘annotation.csv’ saved [2326/2326]</code></pre>
 <p>Qu’y a-t-il ici ?</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb79-1"><a href="import-de-données.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span></span></code></pre></div>
-<pre><code>## total 121
+<pre><code>## total 133
 ## -rw-r--r--+ 1 tdenecker tdenecker  1843 Nov 15 09:19 01-intro.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   996 Nov 15 09:40 02-how.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  1478 Nov 15 09:48 03-firstSteps.Rmd
@@ -471,25 +487,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## -rw-r--r--+ 1 tdenecker tdenecker  1419 Nov 15 11:57 06-manipulate.Rmd
 ## -rw-r-----+ 1 tdenecker tdenecker  1882 Nov 15 12:20 07-plots.Rmd
 ## -rw-r-----+ 1 tdenecker tdenecker  2490 Nov 15 12:38 08-analyseDiff.Rmd
-## -rw-r-----+ 1 tdenecker tdenecker  1497 Nov 15 12:50 09-integration.Rmd
-## -rw-r-----+ 1 tdenecker tdenecker  1128 Nov 15 12:35 10-conclusion.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 11-references.Rmd
-## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 12:51 annotation.csv
+## -rw-r-----+ 1 tdenecker tdenecker  1490 Nov 15 15:51 09-integration.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  1422 Nov 15 17:19 10-visu.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  1128 Nov 15 12:35 11-conclusion.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 12-references.Rmd
+## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 17:19 annotation.csv
 ## -rw-r--r--+ 1 tdenecker tdenecker   267 Nov 14 21:51 book.bib
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 12:51 _bookdown_files
-## -rw-r--r--+ 1 tdenecker tdenecker   113 Nov 15 10:39 _bookdown.yml
-## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 12:45 docs
-## -rw-rw----+ 1 tdenecker tdenecker   247 Nov 15 09:00 EBAII_IntroR.Rproj
-## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 12:51 expression.txt
-## -rw-rw----+ 1 tdenecker tdenecker   244 Nov 15 12:40 exprs_chr8.txt
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 17:19 _bookdown_files
+## -rw-r--r--+ 1 tdenecker tdenecker   113 Nov 15 16:00 _bookdown.yml
+## drwxrwx---+ 5 tdenecker tdenecker 12288 Nov 15 17:19 docs
+## -rw-rw----+ 1 tdenecker tdenecker   247 Nov 15 15:48 EBAII_IntroR.Rproj
+## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 17:19 expression.txt
+## -rw-rw----+ 1 tdenecker tdenecker   244 Nov 15 17:18 exprs_chr8.txt
 ## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 12:35 images
-## -rw-r--r--+ 1 tdenecker tdenecker  1348 Nov 15 10:40 index.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker  1348 Nov 15 15:58 index.Rmd
 ## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:25 intro_R
 ## -rw-rw----+ 1 tdenecker tdenecker  1551 Nov 14 21:50 LICENSE
-## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 12:49 _main_files
-## -rw-r--r--+ 1 tdenecker tdenecker 21835 Nov 15 12:51 _main.Rmd
+## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 17:18 _main_files
+## -rw-r--r--+ 1 tdenecker tdenecker 23283 Nov 15 17:19 _main.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   500 Nov 14 21:52 _output.yml
-## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 12:51 packages.bib
+## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 17:19 packages.bib
 ## -rw-r--r--+ 1 tdenecker tdenecker    22 Nov 14 21:51 preamble.tex
 ## -rw-r--r--+ 1 tdenecker tdenecker   311 Nov 15 09:29 README.md
 ## -rw-r--r--+ 1 tdenecker tdenecker   172 Nov 14 21:51 style.css</code></pre>

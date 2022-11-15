@@ -38,11 +38,9 @@ head(annot)
 
 
 ## Combien ?
-### Quizz
 
-Combien de gènes sur le chromosome 18 ?
-
-Combien de gènes sur le chromosome X ?
+- Combien de gènes sur le chromosome 18 ?
+- Combien de gènes sur le chromosome X ?
 
 ### Solution pour y répondre
 

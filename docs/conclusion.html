@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 Conclusion | Introduction à R</title>
+  <title>Chapter 12 Conclusion | Introduction à R</title>
   <meta name="description" content="Livre de cours pour EBAII : Introduction à R" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 Conclusion | Introduction à R" />
+  <meta property="og:title" content="Chapter 12 Conclusion | Introduction à R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Livre de cours pour EBAII : Introduction à R" />
   <meta name="github-repo" content="IFB-ElixirFr/EBAII_IntroR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 Conclusion | Introduction à R" />
+  <meta name="twitter:title" content="Chapter 12 Conclusion | Introduction à R" />
   
   <meta name="twitter:description" content="Livre de cours pour EBAII : Introduction à R" />
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="intégration-des-données.html"/>
+<link rel="prev" href="bonus.html"/>
 <link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -64,6 +64,10 @@
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="libs/echarts4r-4.8.0/echarts-en.min.js"></script>
+<script src="libs/echarts4r-4.8.0/ecStat.min.js"></script>
+<script src="libs/echarts4r-4.8.0/dataTool.min.js"></script>
+<script src="libs/echarts4r-binding-0.4.4/echarts4r.js"></script>
 
 
 <style type="text/css">
@@ -257,8 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#charger-les-annotations-des-gènes"><i class="fa fa-check"></i><b>10.1</b> Charger les annotations des gènes</a></li>
 <li class="chapter" data-level="10.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#combien"><i class="fa fa-check"></i><b>10.2</b> Combien ?</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#quizz"><i class="fa fa-check"></i><b>10.2.1</b> Quizz</a></li>
-<li class="chapter" data-level="10.2.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#solution-pour-y-répondre"><i class="fa fa-check"></i><b>10.2.2</b> Solution pour y répondre</a></li>
+<li class="chapter" data-level="10.2.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#solution-pour-y-répondre"><i class="fa fa-check"></i><b>10.2.1</b> Solution pour y répondre</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="intégration-des-données.html"><a href="intégration-des-données.html#ma-première-bioinformatique-intégrative"><i class="fa fa-check"></i><b>10.3</b> Ma première bioinformatique intégrative</a>
 <ul>
@@ -268,11 +271,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="intégration-des-données.html"><a href="intégration-des-données.html#visualisation-1"><i class="fa fa-check"></i><b>10.4</b> Visualisation</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>11</b> Conclusion</a>
+<li class="chapter" data-level="11" data-path="bonus.html"><a href="bonus.html"><i class="fa fa-check"></i><b>11</b> Bonus</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="conclusion.html"><a href="conclusion.html#take-home-messages"><i class="fa fa-check"></i><b>11.1</b> Take home messages</a></li>
-<li class="chapter" data-level="11.2" data-path="conclusion.html"><a href="conclusion.html#ressources-ifb"><i class="fa fa-check"></i><b>11.2</b> Ressources IFB</a></li>
-<li class="chapter" data-level="11.3" data-path="conclusion.html"><a href="conclusion.html#resource"><i class="fa fa-check"></i><b>11.3</b> Resource</a></li>
+<li class="chapter" data-level="11.1" data-path="bonus.html"><a href="bonus.html#r-de-base"><i class="fa fa-check"></i><b>11.1</b> R de base</a></li>
+<li class="chapter" data-level="11.2" data-path="bonus.html"><a href="bonus.html#plotly"><i class="fa fa-check"></i><b>11.2</b> Plotly</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="bonus.html"><a href="bonus.html#a-partir-de-ggplot2"><i class="fa fa-check"></i><b>11.2.1</b> A partir de ggplot2</a></li>
+<li class="chapter" data-level="11.2.2" data-path="bonus.html"><a href="bonus.html#en-plotly-pur"><i class="fa fa-check"></i><b>11.2.2</b> En plotly pur</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="bonus.html"><a href="bonus.html#echarts"><i class="fa fa-check"></i><b>11.3</b> echarts</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>12</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="conclusion.html"><a href="conclusion.html#take-home-messages"><i class="fa fa-check"></i><b>12.1</b> Take home messages</a></li>
+<li class="chapter" data-level="12.2" data-path="conclusion.html"><a href="conclusion.html#ressources-ifb"><i class="fa fa-check"></i><b>12.2</b> Ressources IFB</a></li>
+<li class="chapter" data-level="12.3" data-path="conclusion.html"><a href="conclusion.html#resource"><i class="fa fa-check"></i><b>12.3</b> Resource</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -295,10 +308,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conclusion" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">Chapter 11</span> Conclusion<a href="conclusion.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="take-home-messages" class="section level2 hasAnchor" number="11.1">
-<h2><span class="header-section-number">11.1</span> Take home messages<a href="conclusion.html#take-home-messages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="conclusion" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Chapter 12</span> Conclusion<a href="conclusion.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="take-home-messages" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Take home messages<a href="conclusion.html#take-home-messages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Tout est faisable avec R</li>
 <li><strong>Définir et comprendre l’opération mathématique/statistique</strong> avant de chercher la fonction R correspondante</li>
@@ -316,16 +329,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Bonnes pratiques : <a href="https://style.tidyverse.org/syntax.html" class="uri">https://style.tidyverse.org/syntax.html</a></p>
 </div>
-<div id="ressources-ifb" class="section level2 hasAnchor" number="11.2">
-<h2><span class="header-section-number">11.2</span> Ressources IFB<a href="conclusion.html#ressources-ifb" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ressources-ifb" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Ressources IFB<a href="conclusion.html#ressources-ifb" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Serveur RStudio: <a href="https://rstudio.cluster.france-bioinformatique.fr/" class="uri">https://rstudio.cluster.france-bioinformatique.fr/</a></li>
 <li>Jupyter lab (inclut un serveur RStudio et plein d’autres choses : <a href="http://jupyterhub.cluster.france-bioinformatique.fr/" class="uri">http://jupyterhub.cluster.france-bioinformatique.fr/</a></li>
 <li>Une question ? Un besoin ? Un problème ? Contactez la communauté IFB : <a href="https://community.france-bioinformatique.fr/" class="uri">https://community.france-bioinformatique.fr/</a></li>
 </ul>
 </div>
-<div id="resource" class="section level2 hasAnchor" number="11.3">
-<h2><span class="header-section-number">11.3</span> Resource<a href="conclusion.html#resource" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="resource" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> Resource<a href="conclusion.html#resource" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>R : <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></li>
 <li>RStudio : <a href="https://rstudio.com/" class="uri">https://rstudio.com/</a></li>
@@ -342,7 +355,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="intégration-des-données.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bonus.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -374,7 +387,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/IFB-ElixirFr/EBAII_IntroR/edit/BRANCH/10-conclusion.Rmd",
+"link": "https://github.com/IFB-ElixirFr/EBAII_IntroR/edit/BRANCH/11-conclusion.Rmd",
 "text": "Edit"
 },
 "history": {

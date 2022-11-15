@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="analyse-dexpression-différentielle-ma-plot.html"/>
-<link rel="next" href="conclusion.html"/>
+<link rel="next" href="bonus.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -64,6 +64,10 @@
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="libs/echarts4r-4.8.0/echarts-en.min.js"></script>
+<script src="libs/echarts4r-4.8.0/ecStat.min.js"></script>
+<script src="libs/echarts4r-4.8.0/dataTool.min.js"></script>
+<script src="libs/echarts4r-binding-0.4.4/echarts4r.js"></script>
 
 
 <style type="text/css">
@@ -257,8 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#charger-les-annotations-des-gènes"><i class="fa fa-check"></i><b>10.1</b> Charger les annotations des gènes</a></li>
 <li class="chapter" data-level="10.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#combien"><i class="fa fa-check"></i><b>10.2</b> Combien ?</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#quizz"><i class="fa fa-check"></i><b>10.2.1</b> Quizz</a></li>
-<li class="chapter" data-level="10.2.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#solution-pour-y-répondre"><i class="fa fa-check"></i><b>10.2.2</b> Solution pour y répondre</a></li>
+<li class="chapter" data-level="10.2.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#solution-pour-y-répondre"><i class="fa fa-check"></i><b>10.2.1</b> Solution pour y répondre</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="intégration-des-données.html"><a href="intégration-des-données.html#ma-première-bioinformatique-intégrative"><i class="fa fa-check"></i><b>10.3</b> Ma première bioinformatique intégrative</a>
 <ul>
@@ -268,11 +271,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="intégration-des-données.html"><a href="intégration-des-données.html#visualisation-1"><i class="fa fa-check"></i><b>10.4</b> Visualisation</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>11</b> Conclusion</a>
+<li class="chapter" data-level="11" data-path="bonus.html"><a href="bonus.html"><i class="fa fa-check"></i><b>11</b> Bonus</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="conclusion.html"><a href="conclusion.html#take-home-messages"><i class="fa fa-check"></i><b>11.1</b> Take home messages</a></li>
-<li class="chapter" data-level="11.2" data-path="conclusion.html"><a href="conclusion.html#ressources-ifb"><i class="fa fa-check"></i><b>11.2</b> Ressources IFB</a></li>
-<li class="chapter" data-level="11.3" data-path="conclusion.html"><a href="conclusion.html#resource"><i class="fa fa-check"></i><b>11.3</b> Resource</a></li>
+<li class="chapter" data-level="11.1" data-path="bonus.html"><a href="bonus.html#r-de-base"><i class="fa fa-check"></i><b>11.1</b> R de base</a></li>
+<li class="chapter" data-level="11.2" data-path="bonus.html"><a href="bonus.html#plotly"><i class="fa fa-check"></i><b>11.2</b> Plotly</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="bonus.html"><a href="bonus.html#a-partir-de-ggplot2"><i class="fa fa-check"></i><b>11.2.1</b> A partir de ggplot2</a></li>
+<li class="chapter" data-level="11.2.2" data-path="bonus.html"><a href="bonus.html#en-plotly-pur"><i class="fa fa-check"></i><b>11.2.2</b> En plotly pur</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="bonus.html"><a href="bonus.html#echarts"><i class="fa fa-check"></i><b>11.3</b> echarts</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>12</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="conclusion.html"><a href="conclusion.html#take-home-messages"><i class="fa fa-check"></i><b>12.1</b> Take home messages</a></li>
+<li class="chapter" data-level="12.2" data-path="conclusion.html"><a href="conclusion.html#ressources-ifb"><i class="fa fa-check"></i><b>12.2</b> Ressources IFB</a></li>
+<li class="chapter" data-level="12.3" data-path="conclusion.html"><a href="conclusion.html#resource"><i class="fa fa-check"></i><b>12.3</b> Resource</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -476,13 +489,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="combien" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Combien ?<a href="intégration-des-données.html#combien" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="quizz" class="section level3 hasAnchor" number="10.2.1">
-<h3><span class="header-section-number">10.2.1</span> Quizz<a href="intégration-des-données.html#quizz" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Combien de gènes sur le chromosome 18 ?</p>
-<p>Combien de gènes sur le chromosome X ?</p>
-</div>
-<div id="solution-pour-y-répondre" class="section level3 hasAnchor" number="10.2.2">
-<h3><span class="header-section-number">10.2.2</span> Solution pour y répondre<a href="intégration-des-données.html#solution-pour-y-répondre" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Combien de gènes sur le chromosome 18 ?</li>
+<li>Combien de gènes sur le chromosome X ?</li>
+</ul>
+<div id="solution-pour-y-répondre" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Solution pour y répondre<a href="intégration-des-données.html#solution-pour-y-répondre" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="intégration-des-données.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(annot<span class="sc">$</span>chr)</span></code></pre></div>
 <pre><code>## 
 ##  1 11 12 13 14 15 16 17 18 19  2 20 22  3  4  5  6  8  9  X 
@@ -546,8 +558,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ##     layout</code></pre>
 <div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="intégration-des-données.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(<span class="at">data =</span> exprs_annot, <span class="at">x =</span> <span class="sc">~</span>A, <span class="at">y =</span> <span class="sc">~</span>M, <span class="at">text =</span> <span class="fu">paste</span>(<span class="st">&quot;Gene name :&quot;</span>, exprs_annot<span class="sc">$</span>name), <span class="at">type =</span> <span class="st">&#39;scatter&#39;</span>, <span class="at">mode =</span> <span class="st">&#39;markers&#39;</span>)</span></code></pre></div>
-<div id="htmlwidget-00932e8a290508e92f10" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-00932e8a290508e92f10">{"x":{"visdat":{"12a26420f846":["function () ","plotlyVisDat"]},"cur_data":"12a26420f846","attrs":{"12a26420f846":{"x":{},"y":{},"text":["Gene name : TMSB10","Gene name : TSPAN32","Gene name : TLE2","Gene name : DERL3","Gene name : BLOC1S6","Gene name : KCNN4","Gene name : PIAS4","Gene name : GSK3A","Gene name : FAM20B","Gene name : UCHL3","Gene name : HEATR1","Gene name : PEX16","Gene name : PTGER2","Gene name : DAD1","Gene name : DOHH","Gene name : TSPAN2","Gene name : TSPAN31","Gene name : TPM1","Gene name : RBMX","Gene name : AUH","Gene name : SURF4","Gene name : EXOG","Gene name : RAB28","Gene name : STARD9","Gene name : DBF4B","Gene name : NUDT21","Gene name : HEXIM2","Gene name : DTWD2","Gene name : CEBPB","Gene name : MED16","Gene name : FANCF","Gene name : CDK10","Gene name : DHFRP1","Gene name : ZFP28","Gene name : IGF2R","Gene name : TLK1","Gene name : TDPX2","Gene name : MTND2P28","Gene name : HSBP1L1","Gene name : CCR12P","Gene name : RP1-130H16.18","Gene name : RP11-397E7.2","Gene name : FAM206BP","Gene name : KB-1562D12.2","Gene name : AP5B1","Gene name : MRPL12","Gene name : IER3IP1","Gene name : RP11-729L2.2","Gene name : ZSCAN16-AS1","Gene name : CTD-2553L13.9"],"mode":"markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"A"},"yaxis":{"domain":[0,1],"automargin":true,"title":"M"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[17.2485763473185,6.22689252774808,7.22360620078634,8.85207762910182,12.2536986924817,12.9823381455142,10.9727833576826,12.3982758889043,11.7776433125486,12.2048631094154,14.1276127862433,11.3847717448128,10.9027495339978,13.2289055213127,11.0676372902803,5.73073972364308,8.97445022735705,7.5082899011316,14.0428924903631,9.69259785641022,15.5421643598617,10.3847155493727,10.0024382003425,8.56959954446358,10.3209191585328,14.5730520308803,7.32470528363491,7.64082015003302,11.5315273355352,11.7918080255167,10.620155475777,10.6579285736314,11.3969007160454,7.77923277880907,14.5419632476706,11.4706260939273,11.5620781523173,12.2117901766903,7.17398366515357,6.55256549247588,9.12437147570214,7.62574120531011,6.45980411930163,6.54815168384471,11.7051532094146,13.6766492872937,11.4631060048277,10.2526729444284,7.97147485200585,6.01671150076873],"y":[-0.169018206566461,-0.640003864279118,0.0675632838126345,-0.515506050353947,0.00354506997067856,-0.245994983093361,-0.0139981460409995,-0.00146988809545429,0.192370524676702,-0.0322394833327353,0.222479480144723,-0.287364731903933,-0.439509900632222,-0.124386428342456,0.210205453538095,-1.64769825606912,-0.156235646894212,0.292692254792726,0.00871850828073924,0.0723459862648831,-0.0260777465714224,-0.0280562851309756,-0.247241831456452,-0.216240194354853,0.0434222802911284,-0.0718493023075115,-0.52801870389471,0.119239136216135,0.214722093434161,0.13117973236909,-0.0582014034805343,-0.145932145820516,0.151072568011883,0.285216316530841,-0.195320185963851,-0.0429548971037934,-0.260638806302329,-0.0159667484050662,0.393407483307301,0.994566113949372,-0.294183104404458,-0.204358498506186,-0.481271197678931,0.54405455714095,-0.0233325038306237,-0.07948300440801,-0.300446099086698,-0.154246787584511,-0.446564004832788,-0.0334230015374503],"text":["Gene name : TMSB10","Gene name : TSPAN32","Gene name : TLE2","Gene name : DERL3","Gene name : BLOC1S6","Gene name : KCNN4","Gene name : PIAS4","Gene name : GSK3A","Gene name : FAM20B","Gene name : UCHL3","Gene name : HEATR1","Gene name : PEX16","Gene name : PTGER2","Gene name : DAD1","Gene name : DOHH","Gene name : TSPAN2","Gene name : TSPAN31","Gene name : TPM1","Gene name : RBMX","Gene name : AUH","Gene name : SURF4","Gene name : EXOG","Gene name : RAB28","Gene name : STARD9","Gene name : DBF4B","Gene name : NUDT21","Gene name : HEXIM2","Gene name : DTWD2","Gene name : CEBPB","Gene name : MED16","Gene name : FANCF","Gene name : CDK10","Gene name : DHFRP1","Gene name : ZFP28","Gene name : IGF2R","Gene name : TLK1","Gene name : TDPX2","Gene name : MTND2P28","Gene name : HSBP1L1","Gene name : CCR12P","Gene name : RP1-130H16.18","Gene name : RP11-397E7.2","Gene name : FAM206BP","Gene name : KB-1562D12.2","Gene name : AP5B1","Gene name : MRPL12","Gene name : IER3IP1","Gene name : RP11-729L2.2","Gene name : ZSCAN16-AS1","Gene name : CTD-2553L13.9"],"mode":"markers","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-75385ca279525cc7dc90" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-75385ca279525cc7dc90">{"x":{"visdat":{"4f1f1599070d":["function () ","plotlyVisDat"]},"cur_data":"4f1f1599070d","attrs":{"4f1f1599070d":{"x":{},"y":{},"text":["Gene name : TMSB10","Gene name : TSPAN32","Gene name : TLE2","Gene name : DERL3","Gene name : BLOC1S6","Gene name : KCNN4","Gene name : PIAS4","Gene name : GSK3A","Gene name : FAM20B","Gene name : UCHL3","Gene name : HEATR1","Gene name : PEX16","Gene name : PTGER2","Gene name : DAD1","Gene name : DOHH","Gene name : TSPAN2","Gene name : TSPAN31","Gene name : TPM1","Gene name : RBMX","Gene name : AUH","Gene name : SURF4","Gene name : EXOG","Gene name : RAB28","Gene name : STARD9","Gene name : DBF4B","Gene name : NUDT21","Gene name : HEXIM2","Gene name : DTWD2","Gene name : CEBPB","Gene name : MED16","Gene name : FANCF","Gene name : CDK10","Gene name : DHFRP1","Gene name : ZFP28","Gene name : IGF2R","Gene name : TLK1","Gene name : TDPX2","Gene name : MTND2P28","Gene name : HSBP1L1","Gene name : CCR12P","Gene name : RP1-130H16.18","Gene name : RP11-397E7.2","Gene name : FAM206BP","Gene name : KB-1562D12.2","Gene name : AP5B1","Gene name : MRPL12","Gene name : IER3IP1","Gene name : RP11-729L2.2","Gene name : ZSCAN16-AS1","Gene name : CTD-2553L13.9"],"mode":"markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"A"},"yaxis":{"domain":[0,1],"automargin":true,"title":"M"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[17.2485763473185,6.22689252774808,7.22360620078634,8.85207762910182,12.2536986924817,12.9823381455142,10.9727833576826,12.3982758889043,11.7776433125486,12.2048631094154,14.1276127862433,11.3847717448128,10.9027495339978,13.2289055213127,11.0676372902803,5.73073972364308,8.97445022735705,7.5082899011316,14.0428924903631,9.69259785641022,15.5421643598617,10.3847155493727,10.0024382003425,8.56959954446358,10.3209191585328,14.5730520308803,7.32470528363491,7.64082015003302,11.5315273355352,11.7918080255167,10.620155475777,10.6579285736314,11.3969007160454,7.77923277880907,14.5419632476706,11.4706260939273,11.5620781523173,12.2117901766903,7.17398366515357,6.55256549247588,9.12437147570214,7.62574120531011,6.45980411930163,6.54815168384471,11.7051532094146,13.6766492872937,11.4631060048277,10.2526729444284,7.97147485200585,6.01671150076873],"y":[-0.169018206566461,-0.640003864279118,0.0675632838126345,-0.515506050353947,0.00354506997067856,-0.245994983093361,-0.0139981460409995,-0.00146988809545429,0.192370524676702,-0.0322394833327353,0.222479480144723,-0.287364731903933,-0.439509900632222,-0.124386428342456,0.210205453538095,-1.64769825606912,-0.156235646894212,0.292692254792726,0.00871850828073924,0.0723459862648831,-0.0260777465714224,-0.0280562851309756,-0.247241831456452,-0.216240194354853,0.0434222802911284,-0.0718493023075115,-0.52801870389471,0.119239136216135,0.214722093434161,0.13117973236909,-0.0582014034805343,-0.145932145820516,0.151072568011883,0.285216316530841,-0.195320185963851,-0.0429548971037934,-0.260638806302329,-0.0159667484050662,0.393407483307301,0.994566113949372,-0.294183104404458,-0.204358498506186,-0.481271197678931,0.54405455714095,-0.0233325038306237,-0.07948300440801,-0.300446099086698,-0.154246787584511,-0.446564004832788,-0.0334230015374503],"text":["Gene name : TMSB10","Gene name : TSPAN32","Gene name : TLE2","Gene name : DERL3","Gene name : BLOC1S6","Gene name : KCNN4","Gene name : PIAS4","Gene name : GSK3A","Gene name : FAM20B","Gene name : UCHL3","Gene name : HEATR1","Gene name : PEX16","Gene name : PTGER2","Gene name : DAD1","Gene name : DOHH","Gene name : TSPAN2","Gene name : TSPAN31","Gene name : TPM1","Gene name : RBMX","Gene name : AUH","Gene name : SURF4","Gene name : EXOG","Gene name : RAB28","Gene name : STARD9","Gene name : DBF4B","Gene name : NUDT21","Gene name : HEXIM2","Gene name : DTWD2","Gene name : CEBPB","Gene name : MED16","Gene name : FANCF","Gene name : CDK10","Gene name : DHFRP1","Gene name : ZFP28","Gene name : IGF2R","Gene name : TLK1","Gene name : TDPX2","Gene name : MTND2P28","Gene name : HSBP1L1","Gene name : CCR12P","Gene name : RP1-130H16.18","Gene name : RP11-397E7.2","Gene name : FAM206BP","Gene name : KB-1562D12.2","Gene name : AP5B1","Gene name : MRPL12","Gene name : IER3IP1","Gene name : RP11-729L2.2","Gene name : ZSCAN16-AS1","Gene name : CTD-2553L13.9"],"mode":"markers","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 
 </div>
 </div>
@@ -557,7 +569,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="analyse-dexpression-différentielle-ma-plot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="conclusion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bonus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
