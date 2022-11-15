@@ -809,12 +809,13 @@ Qu'y a-t-il par ici ? (Commande Unix équivalente: \texttt{ls})
 ##  [1] "_bookdown_files"    "_bookdown.yml"      "_main_files"       
 ##  [4] "_main.Rmd"          "_output.yml"        "01-intro.Rmd"      
 ##  [7] "02-how.Rmd"         "03-firstSteps.Rmd"  "04-uploadData.Rmd" 
-## [10] "05-readData.Rmd"    "06-manipulate.Rmd"  "07-references.Rmd" 
-## [13] "annotation.csv"     "book.bib"           "docs"              
-## [16] "EBAII_IntroR.Rproj" "expression.txt"     "images"            
-## [19] "index.Rmd"          "intro_R"            "LICENSE"           
-## [22] "packages.bib"       "preamble.tex"       "README.md"         
-## [25] "style.css"
+## [10] "05-readData.Rmd"    "06-manipulate.Rmd"  "07-plots.Rmd"      
+## [13] "08-analyseDiff.Rmd" "09-integration.Rmd" "10-conclusion.Rmd" 
+## [16] "11-references.Rmd"  "annotation.csv"     "book.bib"          
+## [19] "docs"               "EBAII_IntroR.Rproj" "expression.txt"    
+## [22] "exprs_chr8.txt"     "images"             "index.Rmd"         
+## [25] "intro_R"            "LICENSE"            "packages.bib"      
+## [28] "preamble.tex"       "README.md"          "style.css"
 \end{verbatim}
 
 Un autre nom pour la même commande
@@ -829,12 +830,13 @@ Un autre nom pour la même commande
 ##  [1] "_bookdown_files"    "_bookdown.yml"      "_main_files"       
 ##  [4] "_main.Rmd"          "_output.yml"        "01-intro.Rmd"      
 ##  [7] "02-how.Rmd"         "03-firstSteps.Rmd"  "04-uploadData.Rmd" 
-## [10] "05-readData.Rmd"    "06-manipulate.Rmd"  "07-references.Rmd" 
-## [13] "annotation.csv"     "book.bib"           "docs"              
-## [16] "EBAII_IntroR.Rproj" "expression.txt"     "images"            
-## [19] "index.Rmd"          "intro_R"            "LICENSE"           
-## [22] "packages.bib"       "preamble.tex"       "README.md"         
-## [25] "style.css"
+## [10] "05-readData.Rmd"    "06-manipulate.Rmd"  "07-plots.Rmd"      
+## [13] "08-analyseDiff.Rmd" "09-integration.Rmd" "10-conclusion.Rmd" 
+## [16] "11-references.Rmd"  "annotation.csv"     "book.bib"          
+## [19] "docs"               "EBAII_IntroR.Rproj" "expression.txt"    
+## [22] "exprs_chr8.txt"     "images"             "index.Rmd"         
+## [25] "intro_R"            "LICENSE"            "packages.bib"      
+## [28] "preamble.tex"       "README.md"          "style.css"
 \end{verbatim}
 
 \hypertarget{tuxe9luxe9charger-un-fichier}{%
@@ -872,12 +874,13 @@ Qu'y a-t-il par ici ? (Commande Unix équivalente: \texttt{ls})
 ##  [1] "_bookdown_files"    "_bookdown.yml"      "_main_files"       
 ##  [4] "_main.Rmd"          "_output.yml"        "01-intro.Rmd"      
 ##  [7] "02-how.Rmd"         "03-firstSteps.Rmd"  "04-uploadData.Rmd" 
-## [10] "05-readData.Rmd"    "06-manipulate.Rmd"  "07-references.Rmd" 
-## [13] "annotation.csv"     "book.bib"           "docs"              
-## [16] "EBAII_IntroR.Rproj" "expression.txt"     "images"            
-## [19] "index.Rmd"          "intro_R"            "LICENSE"           
-## [22] "packages.bib"       "preamble.tex"       "README.md"         
-## [25] "style.css"
+## [10] "05-readData.Rmd"    "06-manipulate.Rmd"  "07-plots.Rmd"      
+## [13] "08-analyseDiff.Rmd" "09-integration.Rmd" "10-conclusion.Rmd" 
+## [16] "11-references.Rmd"  "annotation.csv"     "book.bib"          
+## [19] "docs"               "EBAII_IntroR.Rproj" "expression.txt"    
+## [22] "exprs_chr8.txt"     "images"             "index.Rmd"         
+## [25] "intro_R"            "LICENSE"            "packages.bib"      
+## [28] "preamble.tex"       "README.md"          "style.css"
 \end{verbatim}
 
 \hypertarget{on-efface-tout-et-on-recommence-1}{%
@@ -962,16 +965,16 @@ Téléchargez les données
 \end{Shaded}
 
 \begin{verbatim}
-## --2022-11-15 10:47:03--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.108.133, 185.199.111.133, ...
-## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
+## --2022-11-15 12:51:30--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.111.133, 185.199.109.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 1747 (1.7K) [text/plain]
 ## Saving to: ‘expression.txt’
 ## 
-##      0K .                                                     100% 15.8M=0s
+##      0K .                                                     100% 12.0M=0s
 ## 
-## 2022-11-15 10:47:03 (15.8 MB/s) - ‘expression.txt’ saved [1747/1747]
+## 2022-11-15 12:51:30 (12.0 MB/s) - ‘expression.txt’ saved [1747/1747]
 \end{verbatim}
 
 \begin{Shaded}
@@ -981,16 +984,16 @@ Téléchargez les données
 \end{Shaded}
 
 \begin{verbatim}
-## --2022-11-15 10:47:04--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.109.133, 185.199.108.133, ...
+## --2022-11-15 12:51:30--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.110.133, ...
 ## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 2326 (2.3K) [text/plain]
 ## Saving to: ‘annotation.csv’
 ## 
-##      0K ..                                                    100% 25.8M=0s
+##      0K ..                                                    100% 9.01M=0s
 ## 
-## 2022-11-15 10:47:04 (25.8 MB/s) - ‘annotation.csv’ saved [2326/2326]
+## 2022-11-15 12:51:30 (9.01 MB/s) - ‘annotation.csv’ saved [2326/2326]
 \end{verbatim}
 
 Qu'y a-t-il ici ?
@@ -1002,29 +1005,34 @@ Qu'y a-t-il ici ?
 \end{Shaded}
 
 \begin{verbatim}
-## total 116
+## total 144
 ## -rw-r--r--+ 1 tdenecker tdenecker  1843 Nov 15 09:19 01-intro.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   996 Nov 15 09:40 02-how.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  1478 Nov 15 09:48 03-firstSteps.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  5467 Nov 15 10:30 04-uploadData.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  1790 Nov 15 10:46 05-readData.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker  1255 Nov 14 21:51 06-manipulate.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 07-references.Rmd
-## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 10:47 annotation.csv
+## -rw-r--r--+ 1 tdenecker tdenecker  1419 Nov 15 11:57 06-manipulate.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  1882 Nov 15 12:20 07-plots.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  2490 Nov 15 12:38 08-analyseDiff.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  1497 Nov 15 12:50 09-integration.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  1128 Nov 15 12:35 10-conclusion.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 11-references.Rmd
+## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 12:51 annotation.csv
 ## -rw-r--r--+ 1 tdenecker tdenecker   267 Nov 14 21:51 book.bib
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:47 _bookdown_files
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 12:51 _bookdown_files
 ## -rw-r--r--+ 1 tdenecker tdenecker   113 Nov 15 10:39 _bookdown.yml
-## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 10:47 docs
+## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 12:51 docs
 ## -rw-rw----+ 1 tdenecker tdenecker   247 Nov 15 09:00 EBAII_IntroR.Rproj
-## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 10:47 expression.txt
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:46 images
+## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 12:51 expression.txt
+## -rw-rw----+ 1 tdenecker tdenecker   244 Nov 15 12:51 exprs_chr8.txt
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 12:35 images
 ## -rw-r--r--+ 1 tdenecker tdenecker  1348 Nov 15 10:40 index.Rmd
 ## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:25 intro_R
 ## -rw-rw----+ 1 tdenecker tdenecker  1551 Nov 14 21:50 LICENSE
-## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 10:47 _main_files
-## -rw-r--r--+ 1 tdenecker tdenecker 14521 Nov 15 10:47 _main.Rmd
+## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 12:51 _main_files
+## -rw-r--r--+ 1 tdenecker tdenecker 21835 Nov 15 12:51 _main.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   500 Nov 14 21:52 _output.yml
-## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 10:47 packages.bib
+## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 12:51 packages.bib
 ## -rw-r--r--+ 1 tdenecker tdenecker    22 Nov 14 21:51 preamble.tex
 ## -rw-r--r--+ 1 tdenecker tdenecker   311 Nov 15 09:29 README.md
 ## -rw-r--r--+ 1 tdenecker tdenecker   172 Nov 14 21:51 style.css
@@ -1402,40 +1410,1375 @@ Même résultat que dans le panneau ``Environment''
 
 \includegraphics{images/envExpr.png}
 
-\hypertarget{sharing-your-book}{%
-\chapter{Sharing your book}\label{sharing-your-book}}
+\hypertarget{manipuler-les-donnuxe9es-dans-r}{%
+\chapter{Manipuler les données dans R}\label{manipuler-les-donnuxe9es-dans-r}}
 
-\hypertarget{publishing}{%
-\section{Publishing}\label{publishing}}
+\hypertarget{suxe9lection-de-colonnes-dun-tableau}{%
+\section{Sélection de colonnes d'un tableau}\label{suxe9lection-de-colonnes-dun-tableau}}
 
-HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
-
-\hypertarget{pages}{%
-\section{404 pages}\label{pages}}
-
-By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
-
-\hypertarget{metadata-for-sharing}{%
-\section{Metadata for sharing}\label{metadata-for-sharing}}
-
-Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
-
-This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
-
-Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
-
-Read more about the features of this output format here:
-
-\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
-
-Or use:
+Afficher les noms des colonnes
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
+\FunctionTok{colnames}\NormalTok{(exprs)}
 \end{Highlighting}
 \end{Shaded}
 
+\begin{verbatim}
+## [1] "id"  "WT1" "WT2" "KO1" "KO2"
+\end{verbatim}
+
+Valeurs stockées dans la colonne nommée ``WT1''
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs}\SpecialCharTok{$}\NormalTok{WT1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 235960    116    118    450   4736   9002   1295   3353   2044   7022
+## [11]  15783   3133   1380  12089   1744    122    635     83  16013    552
+## [21]  62324   1225   1201     31    695  26866    273    202   3515   1988
+## [31]   2238   1236   3415    209  14741   1216   4044   1405    158     90
+## [41]    518    261     94     77   3025  15470   3801   1488    424     55
+\end{verbatim}
+
+Notation alternative
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs[ , }\StringTok{"WT1"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 235960    116    118    450   4736   9002   1295   3353   2044   7022
+## [11]  15783   3133   1380  12089   1744    122    635     83  16013    552
+## [21]  62324   1225   1201     31    695  26866    273    202   3515   1988
+## [31]   2238   1236   3415    209  14741   1216   4044   1405    158     90
+## [41]    518    261     94     77   3025  15470   3801   1488    424     55
+\end{verbatim}
+
+Sélection de plusieurs colonnes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs[ , }\FunctionTok{c}\NormalTok{(}\StringTok{"WT1"}\NormalTok{, }\StringTok{"WT2"}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       WT1   WT2
+## 1  235960 94264
+## 2     116    71
+## 3     118   174
+## 4     450   655
+## 5    4736  5019
+## 6    9002  8623
+## 7    1295  2744
+## 8    3353  7449
+## 9    2044  4525
+## 10   7022  2526
+## 11  15783 17359
+## 12   3133  2775
+## 13   1380  3079
+## 14  12089  7958
+## 15   1744  2247
+## 16    122    66
+## 17    635   427
+## 18     83   246
+## 19  16013 17642
+## 20    552  1062
+## 21  62324 33973
+## 22   1225  1475
+## 23   1201  1034
+## 24     31   788
+## 25    695  1825
+## 26  26866 23111
+## 27    273   112
+## 28    202   181
+## 29   3515  1981
+## 30   1988  4788
+## 31   2238   974
+## 32   1236  2163
+## 33   3415  1703
+## 34    209   189
+## 35  14741 36309
+## 36   1216  4545
+## 37   4044  2575
+## 38   1405  8135
+## 39    158    94
+## 40     90    43
+## 41    518   718
+## 42    261   163
+## 43     94   114
+## 44     77    78
+## 45   3025  3707
+## 46  15470 11450
+## 47   3801  2465
+## 48   1488  1086
+## 49    424   162
+## 50     55    76
+\end{verbatim}
+
+Sélection de colonnes par leur indice
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs[ , }\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 235960    116    118    450   4736   9002   1295   3353   2044   7022
+## [11]  15783   3133   1380  12089   1744    122    635     83  16013    552
+## [21]  62324   1225   1201     31    695  26866    273    202   3515   1988
+## [31]   2238   1236   3415    209  14741   1216   4044   1405    158     90
+## [41]    518    261     94     77   3025  15470   3801   1488    424     55
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs[ , }\FunctionTok{c}\NormalTok{( }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      WT2    WT1
+## 1  94264 235960
+## 2     71    116
+## 3    174    118
+## 4    655    450
+## 5   5019   4736
+## 6   8623   9002
+## 7   2744   1295
+## 8   7449   3353
+## 9   4525   2044
+## 10  2526   7022
+## 11 17359  15783
+## 12  2775   3133
+## 13  3079   1380
+## 14  7958  12089
+## 15  2247   1744
+## 16    66    122
+## 17   427    635
+## 18   246     83
+## 19 17642  16013
+## 20  1062    552
+## 21 33973  62324
+## 22  1475   1225
+## 23  1034   1201
+## 24   788     31
+## 25  1825    695
+## 26 23111  26866
+## 27   112    273
+## 28   181    202
+## 29  1981   3515
+## 30  4788   1988
+## 31   974   2238
+## 32  2163   1236
+## 33  1703   3415
+## 34   189    209
+## 35 36309  14741
+## 36  4545   1216
+## 37  2575   4044
+## 38  8135   1405
+## 39    94    158
+## 40    43     90
+## 41   718    518
+## 42   163    261
+## 43   114     94
+## 44    78     77
+## 45  3707   3025
+## 46 11450  15470
+## 47  2465   3801
+## 48  1086   1488
+## 49   162    424
+## 50    76     55
+\end{verbatim}
+
+\hypertarget{suxe9lection-de-lignes-dun-tableau}{%
+\section{Sélection de lignes d'un tableau}\label{suxe9lection-de-lignes-dun-tableau}}
+
+Sélection des lignes 4 et 11 du tableau des expressions
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs[}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{11}\NormalTok{), ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 id   WT1   WT2   KO1   KO2
+## 4  ENSG00000099958   450   655   301   472
+## 11 ENSG00000119285 15783 17359 18591 20077
+\end{verbatim}
+
+Sélection des identifiants de deux gènes d'intérêt
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my\_genes }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"ENSG00000253991"}\NormalTok{, }\StringTok{"ENSG00000099958"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Vecteur booléen indiquant si chaque ID du tableau fait partie des gènes d'intérêt
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs}\SpecialCharTok{$}\NormalTok{id }\SpecialCharTok{\%in\%}\NormalTok{ my\_genes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+## [49] FALSE FALSE
+\end{verbatim}
+
+Indices des lignes correspondant aux IDs des gènes d'intérêt
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{id }\SpecialCharTok{\%in\%}\NormalTok{ my\_genes)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  4 44
+\end{verbatim}
+
+Afficher les lignes correspondantes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs[}\FunctionTok{which}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{id }\SpecialCharTok{\%in\%}\NormalTok{ my\_genes),   ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 id WT1 WT2 KO1 KO2
+## 4  ENSG00000099958 450 655 301 472
+## 44 ENSG00000253991  77  78 134  92
+\end{verbatim}
+
+\hypertarget{formulation-plus-intuitive}{%
+\section{formulation plus intuitive}\label{formulation-plus-intuitive}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{subset}\NormalTok{(}\AttributeTok{x =}\NormalTok{ exprs, id }\SpecialCharTok{\%in\%}\NormalTok{ my\_genes)     }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 id WT1 WT2 KO1 KO2
+## 4  ENSG00000099958 450 655 301 472
+## 44 ENSG00000253991  77  78 134  92
+\end{verbatim}
+
+Approche plus moderne, avec le package dplyr
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# charger la librairie dplyr}
+\FunctionTok{library}\NormalTok{(dplyr)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# envoyer le tableau exprs à la commande filter()}
+\NormalTok{exprs }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(id }\SpecialCharTok{\%in\%}\NormalTok{ my\_genes)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                id WT1 WT2 KO1 KO2
+## 1 ENSG00000099958 450 655 301 472
+## 2 ENSG00000253991  77  78 134  92
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# plus avancé : enchaîner plusieurs commandes}
+\NormalTok{exprs }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(id }\SpecialCharTok{\%in\%}\NormalTok{ my\_genes) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{mean\_KO =}\NormalTok{ (KO1 }\SpecialCharTok{+}\NormalTok{ KO2)}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)   }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                id WT1 WT2 KO1 KO2 mean_KO
+## 1 ENSG00000099958 450 655 301 472   386.5
+## 2 ENSG00000253991  77  78 134  92   113.0
+\end{verbatim}
+
+\hypertarget{visualisation-des-donnuxe9es}{%
+\chapter{Visualisation des données}\label{visualisation-des-donnuxe9es}}
+
+\hypertarget{histogrammes}{%
+\section{Histogrammes}\label{histogrammes}}
+
+\hypertarget{avec-r-de-base}{%
+\subsection{Avec R de base}\label{avec-r-de-base}}
+
+Histogramme des valeurs d'expression pour l'échantillon WT1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-72-1.pdf}
+
+Histogramme du logarithme de ces valeurs
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(}\FunctionTok{log}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-73-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(}\FunctionTok{log10}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-74-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(}\FunctionTok{log2}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-75-1.pdf}
+
+\hypertarget{avec-ggplot2}{%
+\subsection{Avec ggplot2}\label{avec-ggplot2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(exprs, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{WT1)) }\SpecialCharTok{+} \FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-76-1.pdf}
+
+\hypertarget{bouxeetes-uxe0-moustaches-boxplots}{%
+\section{Boîtes à moustaches (boxplots)}\label{bouxeetes-uxe0-moustaches-boxplots}}
+
+\hypertarget{avec-r-de-base-1}{%
+\subsection{Avec R de base}\label{avec-r-de-base-1}}
+
+Boite à moustache des valeurs d'expression pour l'échantillon WT1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-77-1.pdf}
+
+Boite à moustache du logarithme de ces valeurs
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(}\FunctionTok{log}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-78-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(}\FunctionTok{log2}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-79-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(}\FunctionTok{log10}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-80-1.pdf}
+
+Boite à moustache des valeurs d'expression pour les 4 échantillons
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(exprs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# ignorer la première colonne}
+\FunctionTok{boxplot}\NormalTok{(exprs[,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{])     }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-81-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(}\FunctionTok{log2}\NormalTok{(exprs[,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-82-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(exprs[,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{], }\AttributeTok{log =} \StringTok{"y"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-83-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# afficher les étiquettes des axes horizontalement}
+\FunctionTok{boxplot}\NormalTok{(exprs[,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{], }\AttributeTok{log =} \StringTok{"y"}\NormalTok{, }\AttributeTok{las =} \DecValTok{1}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-84-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Encore plus beau}
+\FunctionTok{boxplot}\NormalTok{(exprs[,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{], }\AttributeTok{log =} \StringTok{"x"}\NormalTok{, }\AttributeTok{las =} \DecValTok{1}\NormalTok{, }\AttributeTok{horizontal =} \ConstantTok{TRUE}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-85-1.pdf}
+
+\hypertarget{nuage-de-points}{%
+\section{Nuage de points}\label{nuage-de-points}}
+
+Expressions KO1 vs WT1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\AttributeTok{x =} \FunctionTok{log}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1), }\AttributeTok{y =} \FunctionTok{log}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{KO1))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-86-1.pdf}
+
+Personnalisation des paramètres graphiques
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\AttributeTok{x =} \FunctionTok{log}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{WT1),                }\DocumentationTok{\#\# données pour l’abscisse}
+     \AttributeTok{y =} \FunctionTok{log}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{KO1),                    }\DocumentationTok{\#\# données pour l’ordonnée}
+     \AttributeTok{main =} \StringTok{"Expression KO1 vs WT1"}\NormalTok{,    }\DocumentationTok{\#\# Titre principal}
+     \AttributeTok{xlab =} \StringTok{"WT1"}\NormalTok{,                      }\DocumentationTok{\#\# légende de l’axe X}
+     \AttributeTok{ylab =} \StringTok{"KO1"}\NormalTok{,                      }\DocumentationTok{\#\# légende de l’axe Y}
+     \AttributeTok{pch =} \DecValTok{16}\NormalTok{,                          }\DocumentationTok{\#\# caractère pour marquer les points}
+     \AttributeTok{las =} \DecValTok{1}\NormalTok{,                           }\DocumentationTok{\#\# écrire les échelles horizontalement}
+     \AttributeTok{col =} \StringTok{"red"}\NormalTok{)                       }\DocumentationTok{\#\# couleur des points}
+\FunctionTok{grid}\NormalTok{()                              }\DocumentationTok{\#\# ajout d’une grille}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{a =} \DecValTok{0}\NormalTok{, }\AttributeTok{b =} \DecValTok{1}\NormalTok{)                        }\DocumentationTok{\#\# ajouter la droite X = Y (intercept a = 0, pente b = 1).}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-87-1.pdf}
+
+\hypertarget{analyse-dexpression-diffuxe9rentielle-ma-plot}{%
+\chapter{Analyse d'expression différentielle : MA-plot}\label{analyse-dexpression-diffuxe9rentielle-ma-plot}}
+
+\hypertarget{cest-quoi-un-ma-plot}{%
+\section{C'est quoi un MA plot}\label{cest-quoi-un-ma-plot}}
+
+\hypertarget{nos-data}{%
+\subsection{Nos data}\label{nos-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(exprs, }\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 id    WT1   WT2    KO1   KO2
+## 1  ENSG00000034510 235960 94264 202381 91336
+## 2  ENSG00000064201    116    71     64    56
+## 3  ENSG00000065717    118   174    124   182
+## 4  ENSG00000099958    450   655    301   472
+## 5  ENSG00000104164   4736  5019   4845  4934
+## 6  ENSG00000104783   9002  8623   7720  7142
+## 7  ENSG00000105229   1295  2744   1113  2887
+## 8  ENSG00000105723   3353  7449   3589  7202
+## 9  ENSG00000116199   2044  4525   2604  4902
+## 10 ENSG00000118939   7022  2526   6269  3068
+\end{verbatim}
+
+\hypertarget{la-thuxe9orie}{%
+\subsection{La théorie}\label{la-thuxe9orie}}
+
+\includegraphics{images/MAplot.png}
+
+Le MA plot représente le lien entre différence d'expression et intensité moyenne.
+- M (magnitude) est le logarithme en base 2 du rapport d'expression (``log2 fold-change'')
+- A (average intensity) est la moyenne des logarithmes des valeurs d'expression.
+
+\textbf{log2 fold change, ``magnitude''}
+
+\begin{verbatim}
+M = log2(KO/WT) =  log2(KO) - log2(WT)
+\end{verbatim}
+
+\textbf{average log2 value}
+
+\begin{verbatim}
+A = ½ log2(KO x WT) = ½ (log2(KO) + log2(WT))
+\end{verbatim}
+
+\hypertarget{calculs-sur-les-colonnes}{%
+\section{Calculs sur les colonnes}\label{calculs-sur-les-colonnes}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calcul de moyennes par ligne (\texttt{rowMeans}) pour un sous-ensemble donné des colonnes (WT1 et WT2).
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rowMeans}\NormalTok{(exprs[   , }\FunctionTok{c}\NormalTok{(}\StringTok{"WT1"}\NormalTok{,}\StringTok{"WT2"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 165112.0     93.5    146.0    552.5   4877.5   8812.5   2019.5   5401.0
+##  [9]   3284.5   4774.0  16571.0   2954.0   2229.5  10023.5   1995.5     94.0
+## [17]    531.0    164.5  16827.5    807.0  48148.5   1350.0   1117.5    409.5
+## [25]   1260.0  24988.5    192.5    191.5   2748.0   3388.0   1606.0   1699.5
+## [33]   2559.0    199.0  25525.0   2880.5   3309.5   4770.0    126.0     66.5
+## [41]    618.0    212.0    104.0     77.5   3366.0  13460.0   3133.0   1287.0
+## [49]    293.0     65.5
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Ajout de colonnes avec les expressions moyennes des WT et des KO
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs}\SpecialCharTok{$}\NormalTok{meanWT }\OtherTok{\textless{}{-}} \FunctionTok{rowMeans}\NormalTok{(exprs[   , }\FunctionTok{c}\NormalTok{(}\StringTok{"WT1"}\NormalTok{,}\StringTok{"WT2"}\NormalTok{)])}
+\NormalTok{exprs}\SpecialCharTok{$}\NormalTok{meanKO }\OtherTok{\textless{}{-}} \FunctionTok{rowMeans}\NormalTok{(exprs[   , }\FunctionTok{c}\NormalTok{(}\StringTok{"KO1"}\NormalTok{,}\StringTok{"KO2"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Vérification des résultats
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(exprs) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                id    WT1   WT2    KO1   KO2   meanWT   meanKO
+## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5
+## 2 ENSG00000064201    116    71     64    56     93.5     60.0
+## 3 ENSG00000065717    118   174    124   182    146.0    153.0
+## 4 ENSG00000099958    450   655    301   472    552.5    386.5
+## 5 ENSG00000104164   4736  5019   4845  4934   4877.5   4889.5
+## 6 ENSG00000104783   9002  8623   7720  7142   8812.5   7431.0
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Fold-change KO vs WT
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs}\SpecialCharTok{$}\NormalTok{FC }\OtherTok{\textless{}{-}}\NormalTok{ exprs}\SpecialCharTok{$}\NormalTok{meanKO }\SpecialCharTok{/}\NormalTok{ exprs}\SpecialCharTok{$}\NormalTok{meanWT}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Vérification des résultats
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(exprs) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                id    WT1   WT2    KO1   KO2   meanWT   meanKO        FC
+## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5 0.8894478
+## 2 ENSG00000064201    116    71     64    56     93.5     60.0 0.6417112
+## 3 ENSG00000065717    118   174    124   182    146.0    153.0 1.0479452
+## 4 ENSG00000099958    450   655    301   472    552.5    386.5 0.6995475
+## 5 ENSG00000104164   4736  5019   4845  4934   4877.5   4889.5 1.0024603
+## 6 ENSG00000104783   9002  8623   7720  7142   8812.5   7431.0 0.8432340
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Moyenne de tous les échantillons
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs}\SpecialCharTok{$}\NormalTok{mean }\OtherTok{\textless{}{-}} \FunctionTok{rowMeans}\NormalTok{(exprs[   , }\FunctionTok{c}\NormalTok{(}\StringTok{"WT1"}\NormalTok{, }\StringTok{"WT2"}\NormalTok{, }\StringTok{"KO1"}\NormalTok{, }\StringTok{"KO2"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Vérification des résultats
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(exprs) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                id    WT1   WT2    KO1   KO2   meanWT   meanKO        FC
+## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5 0.8894478
+## 2 ENSG00000064201    116    71     64    56     93.5     60.0 0.6417112
+## 3 ENSG00000065717    118   174    124   182    146.0    153.0 1.0479452
+## 4 ENSG00000099958    450   655    301   472    552.5    386.5 0.6995475
+## 5 ENSG00000104164   4736  5019   4845  4934   4877.5   4889.5 1.0024603
+## 6 ENSG00000104783   9002  8623   7720  7142   8812.5   7431.0 0.8432340
+##        mean
+## 1 155985.25
+## 2     76.75
+## 3    149.50
+## 4    469.50
+## 5   4883.50
+## 6   8121.75
+\end{verbatim}
+
+\hypertarget{ma-plot-log2fc-vs-intensituxe9}{%
+\section{MA-plot : log2FC vs intensité}\label{ma-plot-log2fc-vs-intensituxe9}}
+
+\hypertarget{calcul-de-m-et-a}{%
+\subsection{Calcul de M et A}\label{calcul-de-m-et-a}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs}\SpecialCharTok{$}\NormalTok{M }\OtherTok{\textless{}{-}} \FunctionTok{log2}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{FC)}
+\NormalTok{exprs}\SpecialCharTok{$}\NormalTok{A }\OtherTok{\textless{}{-}}\NormalTok{ (}\FunctionTok{log2}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{meanKO) }\SpecialCharTok{+} \FunctionTok{log2}\NormalTok{(exprs}\SpecialCharTok{$}\NormalTok{meanWT)) }\SpecialCharTok{/}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{visualisation}{%
+\subsection{Visualisation}\label{visualisation}}
+
+On peut ensuite dessiner un nuage de points (en l'agrémentant un peu)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(}\AttributeTok{x =}\NormalTok{ exprs}\SpecialCharTok{$}\NormalTok{A, }\AttributeTok{y =}\NormalTok{ exprs}\SpecialCharTok{$}\NormalTok{M, }\AttributeTok{main =} \StringTok{"MA plot"}\NormalTok{,}
+       \AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"A = intensity"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"M = log2FC"}\NormalTok{)}
+\FunctionTok{grid}\NormalTok{(}\AttributeTok{lty =} \StringTok{"solid"}\NormalTok{, }\AttributeTok{col =} \StringTok{"lightgray"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h =} \DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-97-1.pdf}
+
+\hypertarget{appliquer-une-fonction-sur-les-lignescolonnes}{%
+\section{Appliquer une fonction sur les lignes/colonnes}\label{appliquer-une-fonction-sur-les-lignescolonnes}}
+
+\hypertarget{appliquer-une-fonction-moyenne-variance-sur-chaque-ligne-dun-tableau}{%
+\subsection{Appliquer une fonction (moyenne, variance, \ldots) sur chaque ligne d'un tableau}\label{appliquer-une-fonction-moyenne-variance-sur-chaque-ligne-dun-tableau}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mean\_per\_row }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(exprs[ , }\FunctionTok{c}\NormalTok{(}\StringTok{"WT1"}\NormalTok{, }\StringTok{"WT2"}\NormalTok{, }\StringTok{"KO1"}\NormalTok{, }\StringTok{"KO2"}\NormalTok{)], }\DecValTok{1}\NormalTok{, mean)}
+
+\NormalTok{mean\_per\_row }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(exprs[ , }\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{)], }\DecValTok{1}\NormalTok{, mean)}
+  
+\NormalTok{mean\_per\_row }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(exprs[ , }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{ ], }\DecValTok{1}\NormalTok{, mean)}
+
+\NormalTok{mean\_per\_row }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(exprs[ , }\FunctionTok{which}\NormalTok{(}\FunctionTok{sapply}\NormalTok{(exprs, class) }\SpecialCharTok{!=} \StringTok{"factor"}\NormalTok{)], }\DecValTok{1}\NormalTok{, mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{var\_per\_row }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(exprs[ , }\FunctionTok{c}\NormalTok{(}\StringTok{"WT1"}\NormalTok{, }\StringTok{"WT2"}\NormalTok{, }\StringTok{"KO1"}\NormalTok{, }\StringTok{"KO2"}\NormalTok{)], }\DecValTok{1}\NormalTok{, var)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{appliquer-une-fonction-moyenne-variance-sur-chaque-colonne-dun-tableau}{%
+\subsection{Appliquer une fonction (moyenne, variance, \ldots) sur chaque colonne d'un tableau}\label{appliquer-une-fonction-moyenne-variance-sur-chaque-colonne-dun-tableau}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mean\_per\_col }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(exprs[ , }\FunctionTok{c}\NormalTok{(}\StringTok{"WT1"}\NormalTok{, }\StringTok{"WT2"}\NormalTok{, }\StringTok{"KO1"}\NormalTok{, }\StringTok{"KO2"}\NormalTok{)], }\DecValTok{2}\NormalTok{, mean)}
+
+\NormalTok{var\_per\_col }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(exprs[ , }\FunctionTok{c}\NormalTok{(}\StringTok{"WT1"}\NormalTok{, }\StringTok{"WT2"}\NormalTok{, }\StringTok{"KO1"}\NormalTok{, }\StringTok{"KO2"}\NormalTok{)], }\DecValTok{2}\NormalTok{, var)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{intuxe9gration-des-donnuxe9es}{%
+\chapter{Intégration des données}\label{intuxe9gration-des-donnuxe9es}}
+
+\hypertarget{charger-les-annotations-des-guxe8nes}{%
+\section{Charger les annotations des gènes}\label{charger-les-annotations-des-guxe8nes}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read.table}\NormalTok{(}\AttributeTok{file =} \StringTok{"annotation.csv"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                                                      V1
+## 1                         id;name;chr;start;stop;strand
+## 2            ENSG00000225630;MTND2P28;1;629640;630683;+
+## 3        ENSG00000134198;TSPAN2;1;115048011;115089500;-
+## 4        ENSG00000116199;FAM20B;1;179025804;179076562;+
+## 5        ENSG00000119285;HEATR1;1;236549005;236604504;-
+## 6          ENSG00000034510;TMSB10;2;84905625;84906675;+
+## 7          ENSG00000198586;TLK1;2;170990823;171231314;-
+## 8            ENSG00000157036;EXOG;3;38496127;38542161;+
+## 9           ENSG00000157869;RAB28;4;13361354;13484365;-
+## 10   ENSG00000250202;RP11-397E7.2;4;86876338;86876652;+
+## 11        ENSG00000169570;DTWD2;5;118837322;118988545;-
+## 12    ENSG00000269293;ZSCAN16-AS1;6;28121795;28137293;-
+## 13        ENSG00000197081;IGF2R;6;159969099;160113507;+
+## 14         ENSG00000147274;RBMX;X;136848004;136880764;-
+## 15 ENSG00000253991;KB-1562D12.2;8;101528723;101529569;-
+## 16          ENSG00000214121;TDPX2;9;12972843;12973438;-
+## 17            ENSG00000148090;AUH;9;91213815;91361913;-
+## 18        ENSG00000148248;SURF4;9;133361449;133376166;-
+## 19         ENSG00000064201;TSPAN32;11;2301997;2318200;+
+## 20         ENSG00000183161;FANCF;11;22622519;22626787;-
+## 21         ENSG00000121680;PEX16;11;45909669;45918812;-
+## 22         ENSG00000254470;AP5B1;11;65775893;65780802;-
+## 23       ENSG00000135452;TSPAN31;12;57738013;57750211;+
+## 24      ENSG00000251106;FAM206BP;13;46270077;46270617;+
+## 25         ENSG00000118939;UCHL3;13;75549480;75606020;+
+## 26        ENSG00000238241;CCR12P;13;99407781;99409062;-
+## 27          ENSG00000129562;DAD1;14;22564905;22589269;-
+## 28        ENSG00000125384;PTGER2;14;52314305;52328606;+
+## 29        ENSG00000159433;STARD9;15;42575659;42720981;+
+## 30       ENSG00000104164;BLOC1S6;15;45587123;45615999;+
+## 31          ENSG00000140416;TPM1;15;63042632;63071915;+
+## 32        ENSG00000167005;NUDT21;16;56429133;56452199;-
+## 33         ENSG00000185324;CDK10;16;89680737;89696364;+
+## 34         ENSG00000161692;DBF4B;17;44708608;44752264;+
+## 35        ENSG00000168517;HEXIM2;17;45160700;45170040;+
+## 36        ENSG00000262814;MRPL12;17;81703357;81707526;+
+## 37        ENSG00000188985;DHFRP1;18;26170726;26171284;-
+## 38       ENSG00000267228;IER3IP1;18;47134656;47176281;-
+## 39  ENSG00000267699;RP11-729L2.2;18;50968019;51058144;+
+## 40       ENSG00000226742;HSBP1L1;18;79964561;79970822;+
+## 41         ENSG00000172216;CEBPB;20;50190734;50192689;+
+## 42             ENSG00000175221;MED16;19;867630;893218;-
+## 43            ENSG00000065717;TLE2;19;2997638;3047635;-
+## 44            ENSG00000129932;DOHH;19;3490821;3500940;-
+## 45           ENSG00000105229;PIAS4;19;4007646;4039386;+
+## 46 ENSG00000279329;CTD-2553L13.9;19;34675717;34677581;-
+## 47         ENSG00000105723;GSK3A;19;42230186;42242625;-
+## 48         ENSG00000104783;KCNN4;19;43766533;43781257;-
+## 49         ENSG00000196867;ZFP28;19;56538948;56556810;+
+## 50         ENSG00000099958;DERL3;22;23834503;23839128;-
+## 51 ENSG00000248751;RP1-130H16.18;22;30285238;30299482;-
+\end{verbatim}
+
+Pas cool\ldots{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read.table}\NormalTok{(}\AttributeTok{file =} \StringTok{"annotation.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{";"}\NormalTok{)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 V1            V2  V3        V4        V5     V6
+## 1               id          name chr     start      stop strand
+## 2  ENSG00000225630      MTND2P28   1    629640    630683      +
+## 3  ENSG00000134198        TSPAN2   1 115048011 115089500      -
+## 4  ENSG00000116199        FAM20B   1 179025804 179076562      +
+## 5  ENSG00000119285        HEATR1   1 236549005 236604504      -
+## 6  ENSG00000034510        TMSB10   2  84905625  84906675      +
+## 7  ENSG00000198586          TLK1   2 170990823 171231314      -
+## 8  ENSG00000157036          EXOG   3  38496127  38542161      +
+## 9  ENSG00000157869         RAB28   4  13361354  13484365      -
+## 10 ENSG00000250202  RP11-397E7.2   4  86876338  86876652      +
+## 11 ENSG00000169570         DTWD2   5 118837322 118988545      -
+## 12 ENSG00000269293   ZSCAN16-AS1   6  28121795  28137293      -
+## 13 ENSG00000197081         IGF2R   6 159969099 160113507      +
+## 14 ENSG00000147274          RBMX   X 136848004 136880764      -
+## 15 ENSG00000253991  KB-1562D12.2   8 101528723 101529569      -
+## 16 ENSG00000214121         TDPX2   9  12972843  12973438      -
+## 17 ENSG00000148090           AUH   9  91213815  91361913      -
+## 18 ENSG00000148248         SURF4   9 133361449 133376166      -
+## 19 ENSG00000064201       TSPAN32  11   2301997   2318200      +
+## 20 ENSG00000183161         FANCF  11  22622519  22626787      -
+## 21 ENSG00000121680         PEX16  11  45909669  45918812      -
+## 22 ENSG00000254470         AP5B1  11  65775893  65780802      -
+## 23 ENSG00000135452       TSPAN31  12  57738013  57750211      +
+## 24 ENSG00000251106      FAM206BP  13  46270077  46270617      +
+## 25 ENSG00000118939         UCHL3  13  75549480  75606020      +
+## 26 ENSG00000238241        CCR12P  13  99407781  99409062      -
+## 27 ENSG00000129562          DAD1  14  22564905  22589269      -
+## 28 ENSG00000125384        PTGER2  14  52314305  52328606      +
+## 29 ENSG00000159433        STARD9  15  42575659  42720981      +
+## 30 ENSG00000104164       BLOC1S6  15  45587123  45615999      +
+## 31 ENSG00000140416          TPM1  15  63042632  63071915      +
+## 32 ENSG00000167005        NUDT21  16  56429133  56452199      -
+## 33 ENSG00000185324         CDK10  16  89680737  89696364      +
+## 34 ENSG00000161692         DBF4B  17  44708608  44752264      +
+## 35 ENSG00000168517        HEXIM2  17  45160700  45170040      +
+## 36 ENSG00000262814        MRPL12  17  81703357  81707526      +
+## 37 ENSG00000188985        DHFRP1  18  26170726  26171284      -
+## 38 ENSG00000267228       IER3IP1  18  47134656  47176281      -
+## 39 ENSG00000267699  RP11-729L2.2  18  50968019  51058144      +
+## 40 ENSG00000226742       HSBP1L1  18  79964561  79970822      +
+## 41 ENSG00000172216         CEBPB  20  50190734  50192689      +
+## 42 ENSG00000175221         MED16  19    867630    893218      -
+## 43 ENSG00000065717          TLE2  19   2997638   3047635      -
+## 44 ENSG00000129932          DOHH  19   3490821   3500940      -
+## 45 ENSG00000105229         PIAS4  19   4007646   4039386      +
+## 46 ENSG00000279329 CTD-2553L13.9  19  34675717  34677581      -
+## 47 ENSG00000105723         GSK3A  19  42230186  42242625      -
+## 48 ENSG00000104783         KCNN4  19  43766533  43781257      -
+## 49 ENSG00000196867         ZFP28  19  56538948  56556810      +
+## 50 ENSG00000099958         DERL3  22  23834503  23839128      -
+## 51 ENSG00000248751 RP1-130H16.18  22  30285238  30299482      -
+\end{verbatim}
+
+Pas encore parfait.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read.table}\NormalTok{(}\AttributeTok{file =} \StringTok{"annotation.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{";"}\NormalTok{, }\AttributeTok{header =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 id          name chr     start      stop strand
+## 1  ENSG00000225630      MTND2P28   1    629640    630683      +
+## 2  ENSG00000134198        TSPAN2   1 115048011 115089500      -
+## 3  ENSG00000116199        FAM20B   1 179025804 179076562      +
+## 4  ENSG00000119285        HEATR1   1 236549005 236604504      -
+## 5  ENSG00000034510        TMSB10   2  84905625  84906675      +
+## 6  ENSG00000198586          TLK1   2 170990823 171231314      -
+## 7  ENSG00000157036          EXOG   3  38496127  38542161      +
+## 8  ENSG00000157869         RAB28   4  13361354  13484365      -
+## 9  ENSG00000250202  RP11-397E7.2   4  86876338  86876652      +
+## 10 ENSG00000169570         DTWD2   5 118837322 118988545      -
+## 11 ENSG00000269293   ZSCAN16-AS1   6  28121795  28137293      -
+## 12 ENSG00000197081         IGF2R   6 159969099 160113507      +
+## 13 ENSG00000147274          RBMX   X 136848004 136880764      -
+## 14 ENSG00000253991  KB-1562D12.2   8 101528723 101529569      -
+## 15 ENSG00000214121         TDPX2   9  12972843  12973438      -
+## 16 ENSG00000148090           AUH   9  91213815  91361913      -
+## 17 ENSG00000148248         SURF4   9 133361449 133376166      -
+## 18 ENSG00000064201       TSPAN32  11   2301997   2318200      +
+## 19 ENSG00000183161         FANCF  11  22622519  22626787      -
+## 20 ENSG00000121680         PEX16  11  45909669  45918812      -
+## 21 ENSG00000254470         AP5B1  11  65775893  65780802      -
+## 22 ENSG00000135452       TSPAN31  12  57738013  57750211      +
+## 23 ENSG00000251106      FAM206BP  13  46270077  46270617      +
+## 24 ENSG00000118939         UCHL3  13  75549480  75606020      +
+## 25 ENSG00000238241        CCR12P  13  99407781  99409062      -
+## 26 ENSG00000129562          DAD1  14  22564905  22589269      -
+## 27 ENSG00000125384        PTGER2  14  52314305  52328606      +
+## 28 ENSG00000159433        STARD9  15  42575659  42720981      +
+## 29 ENSG00000104164       BLOC1S6  15  45587123  45615999      +
+## 30 ENSG00000140416          TPM1  15  63042632  63071915      +
+## 31 ENSG00000167005        NUDT21  16  56429133  56452199      -
+## 32 ENSG00000185324         CDK10  16  89680737  89696364      +
+## 33 ENSG00000161692         DBF4B  17  44708608  44752264      +
+## 34 ENSG00000168517        HEXIM2  17  45160700  45170040      +
+## 35 ENSG00000262814        MRPL12  17  81703357  81707526      +
+## 36 ENSG00000188985        DHFRP1  18  26170726  26171284      -
+## 37 ENSG00000267228       IER3IP1  18  47134656  47176281      -
+## 38 ENSG00000267699  RP11-729L2.2  18  50968019  51058144      +
+## 39 ENSG00000226742       HSBP1L1  18  79964561  79970822      +
+## 40 ENSG00000172216         CEBPB  20  50190734  50192689      +
+## 41 ENSG00000175221         MED16  19    867630    893218      -
+## 42 ENSG00000065717          TLE2  19   2997638   3047635      -
+## 43 ENSG00000129932          DOHH  19   3490821   3500940      -
+## 44 ENSG00000105229         PIAS4  19   4007646   4039386      +
+## 45 ENSG00000279329 CTD-2553L13.9  19  34675717  34677581      -
+## 46 ENSG00000105723         GSK3A  19  42230186  42242625      -
+## 47 ENSG00000104783         KCNN4  19  43766533  43781257      -
+## 48 ENSG00000196867         ZFP28  19  56538948  56556810      +
+## 49 ENSG00000099958         DERL3  22  23834503  23839128      -
+## 50 ENSG00000248751 RP1-130H16.18  22  30285238  30299482      -
+\end{verbatim}
+
+Parfait !
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{annot }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\AttributeTok{file =} \StringTok{"annotation.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{";"}\NormalTok{, }\AttributeTok{header =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Vérifier les dimensions
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(annot)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 50  6
+\end{verbatim}
+
+Afficher quelques lignes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(annot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                id     name chr     start      stop strand
+## 1 ENSG00000225630 MTND2P28   1    629640    630683      +
+## 2 ENSG00000134198   TSPAN2   1 115048011 115089500      -
+## 3 ENSG00000116199   FAM20B   1 179025804 179076562      +
+## 4 ENSG00000119285   HEATR1   1 236549005 236604504      -
+## 5 ENSG00000034510   TMSB10   2  84905625  84906675      +
+## 6 ENSG00000198586     TLK1   2 170990823 171231314      -
+\end{verbatim}
+
+\hypertarget{combien}{%
+\section{Combien ?}\label{combien}}
+
+\hypertarget{quizz}{%
+\subsection{Quizz}\label{quizz}}
+
+Combien de gènes sur le chromosome 18 ?
+
+Combien de gènes sur le chromosome X ?
+
+\hypertarget{solution-pour-y-ruxe9pondre}{%
+\subsection{Solution pour y répondre}\label{solution-pour-y-ruxe9pondre}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(annot}\SpecialCharTok{$}\NormalTok{chr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  1 11 12 13 14 15 16 17 18 19  2 20 22  3  4  5  6  8  9  X 
+##  4  4  1  3  2  3  2  3  4  8  2  1  2  1  2  1  2  1  3  1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(}\FunctionTok{sort}\NormalTok{(}\FunctionTok{table}\NormalTok{(annot}\SpecialCharTok{$}\NormalTok{chr)), }\AttributeTok{horiz =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{las =} \DecValTok{1}\NormalTok{,}
+            \AttributeTok{col =} \StringTok{"lightblue"}\NormalTok{,  }\AttributeTok{xlab =} \StringTok{"Number of genes"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{_main_files/figure-latex/unnamed-chunk-107-1.pdf}
+
+\hypertarget{ma-premiuxe8re-bioinformatique-intuxe9grative}{%
+\section{Ma première bioinformatique intégrative}\label{ma-premiuxe8re-bioinformatique-intuxe9grative}}
+
+\hypertarget{uxe9tape-1---fusionner-les-tableaux-dexpressions-et-dannotations}{%
+\subsection{Étape 1 - Fusionner les tableaux d'expressions et d'annotations :}\label{uxe9tape-1---fusionner-les-tableaux-dexpressions-et-dannotations}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?merge}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs\_annot }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(exprs, annot, }\AttributeTok{by =} \StringTok{"id"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(exprs\_annot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                id    WT1   WT2    KO1   KO2   meanWT   meanKO        FC
+## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5 0.8894478
+## 2 ENSG00000064201    116    71     64    56     93.5     60.0 0.6417112
+## 3 ENSG00000065717    118   174    124   182    146.0    153.0 1.0479452
+## 4 ENSG00000099958    450   655    301   472    552.5    386.5 0.6995475
+## 5 ENSG00000104164   4736  5019   4845  4934   4877.5   4889.5 1.0024603
+## 6 ENSG00000104783   9002  8623   7720  7142   8812.5   7431.0 0.8432340
+##        mean           M         A    name chr    start     stop strand
+## 1 155985.25 -0.16901821 17.248576  TMSB10   2 84905625 84906675      +
+## 2     76.75 -0.64000386  6.226893 TSPAN32  11  2301997  2318200      +
+## 3    149.50  0.06756328  7.223606    TLE2  19  2997638  3047635      -
+## 4    469.50 -0.51550605  8.852078   DERL3  22 23834503 23839128      -
+## 5   4883.50  0.00354507 12.253699 BLOC1S6  15 45587123 45615999      +
+## 6   8121.75 -0.24599498 12.982338   KCNN4  19 43766533 43781257      -
+\end{verbatim}
+
+\hypertarget{uxe9tape-2---sous-ensemble-des-lignes-pour-lesquelles-chr-vaut-8}{%
+\subsection{Étape 2 - Sous-ensemble des lignes pour lesquelles chr vaut 8 :}\label{uxe9tape-2---sous-ensemble-des-lignes-pour-lesquelles-chr-vaut-8}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exprs\_chr8 }\OtherTok{\textless{}{-}}\NormalTok{ exprs\_annot[}\FunctionTok{which}\NormalTok{(exprs\_annot}\SpecialCharTok{$}\NormalTok{chr }\SpecialCharTok{==} \DecValTok{8}\NormalTok{),   ]}
+\FunctionTok{print}\NormalTok{(exprs\_chr8)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                 id WT1 WT2 KO1 KO2 meanWT meanKO       FC  mean         M
+## 44 ENSG00000253991  77  78 134  92   77.5    113 1.458065 95.25 0.5440546
+##           A         name chr     start      stop strand
+## 44 6.548152 KB-1562D12.2   8 101528723 101529569      -
+\end{verbatim}
+
+\hypertarget{exporter-exprs_chr8-dans-un-fichier}{%
+\subsection{Exporter exprs\_chr8 dans un fichier}\label{exporter-exprs_chr8-dans-un-fichier}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{write.table}\NormalTok{(}\AttributeTok{x =}\NormalTok{ exprs\_chr8, }\AttributeTok{file =} \StringTok{"exprs\_chr8.txt"}\NormalTok{, }
+   \AttributeTok{sep =} \StringTok{"}\SpecialCharTok{\textbackslash{}t}\StringTok{"}\NormalTok{, }
+   \AttributeTok{row.names =} \ConstantTok{FALSE}\NormalTok{, }
+   \AttributeTok{col.names =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{visualisation-1}{%
+\section{Visualisation}\label{visualisation-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(plotly)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'plotly'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:ggplot2':
+## 
+##     last_plot
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:stats':
+## 
+##     filter
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:graphics':
+## 
+##     layout
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot\_ly}\NormalTok{(}\AttributeTok{data =}\NormalTok{ exprs\_annot, }\AttributeTok{x =} \SpecialCharTok{\textasciitilde{}}\NormalTok{A, }\AttributeTok{y =} \SpecialCharTok{\textasciitilde{}}\NormalTok{M, }\AttributeTok{text =} \FunctionTok{paste}\NormalTok{(}\StringTok{"Gene name :"}\NormalTok{, exprs\_annot}\SpecialCharTok{$}\NormalTok{name), }\AttributeTok{type =} \StringTok{\textquotesingle{}scatter\textquotesingle{}}\NormalTok{, }\AttributeTok{mode =} \StringTok{\textquotesingle{}markers\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{conclusion}{%
+\chapter{Conclusion}\label{conclusion}}
+
+\hypertarget{take-home-messages}{%
+\section{Take home messages}\label{take-home-messages}}
+
+\begin{itemize}
+\tightlist
+\item
+  Tout est faisable avec R
+\item
+  \textbf{Définir et comprendre l'opération mathématique/statistique} avant de chercher la fonction R correspondante
+\item
+  R est un langage :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    plusieurs types et structures de données (out of scope)
+  \item
+    énormément de commandes à découvrir (out of scope)
+  \item
+    Google est votre ami
+  \end{itemize}
+\item
+  Une infinité de :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ressources en ligne
+  \item
+    tutoriels pour des analyses spécifiques (e.g.~DESeq2 pour le RNA-Seq)
+  \end{itemize}
+\end{itemize}
+
+Bonnes pratiques : \url{https://style.tidyverse.org/syntax.html}
+
+\hypertarget{ressources-ifb}{%
+\section{Ressources IFB}\label{ressources-ifb}}
+
+\begin{itemize}
+\tightlist
+\item
+  Serveur RStudio: \url{https://rstudio.cluster.france-bioinformatique.fr/}
+\item
+  Jupyter lab (inclut un serveur RStudio et plein d'autres choses : \url{http://jupyterhub.cluster.france-bioinformatique.fr/}
+\item
+  Une question ? Un besoin ? Un problème ? Contactez la communauté IFB : \url{https://community.france-bioinformatique.fr/}
+\end{itemize}
+
+\hypertarget{resource}{%
+\section{Resource}\label{resource}}
+
+\begin{itemize}
+\tightlist
+\item
+  R : \url{https://www.r-project.org/}
+\item
+  RStudio : \url{https://rstudio.com/}
+\item
+  R bloggers : \url{https://www.r-bloggers.com/}
+\item
+  Thinkr : \url{https://thinkr.fr/}
+\item
+  Rstudio Cheatsheets (un tas de thèmes): \url{https://rstudio.com/resources/cheatsheets/}
+\end{itemize}
+
+\includegraphics{images/cheatSheet.png}
 
   \bibliography{book.bib,packages.bib}
 

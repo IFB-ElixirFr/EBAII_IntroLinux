@@ -60,6 +60,10 @@
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -210,11 +214,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.3" data-path="lecture-des-données.html"><a href="lecture-des-données.html#résumé-rapide-des-données-par-colonne"><i class="fa fa-check"></i><b>6.3.3</b> Résumé rapide des données par colonne</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
+<li class="chapter" data-level="7" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html"><i class="fa fa-check"></i><b>7</b> Manipuler les données dans R</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
-<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
-<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="7.1" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-colonnes-dun-tableau"><i class="fa fa-check"></i><b>7.1</b> Sélection de colonnes d’un tableau</a></li>
+<li class="chapter" data-level="7.2" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-lignes-dun-tableau"><i class="fa fa-check"></i><b>7.2</b> Sélection de lignes d’un tableau</a></li>
+<li class="chapter" data-level="7.3" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#formulation-plus-intuitive"><i class="fa fa-check"></i><b>7.3</b> formulation plus intuitive</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html"><i class="fa fa-check"></i><b>8</b> Visualisation des données</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#histogrammes"><i class="fa fa-check"></i><b>8.1</b> Histogrammes</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#avec-r-de-base"><i class="fa fa-check"></i><b>8.1.1</b> Avec R de base</a></li>
+<li class="chapter" data-level="8.1.2" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#avec-ggplot2"><i class="fa fa-check"></i><b>8.1.2</b> Avec ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#boîtes-à-moustaches-boxplots"><i class="fa fa-check"></i><b>8.2</b> Boîtes à moustaches (boxplots)</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#avec-r-de-base-1"><i class="fa fa-check"></i><b>8.2.1</b> Avec R de base</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#nuage-de-points"><i class="fa fa-check"></i><b>8.3</b> Nuage de points</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html"><i class="fa fa-check"></i><b>9</b> Analyse d’expression différentielle : MA-plot</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#cest-quoi-un-ma-plot"><i class="fa fa-check"></i><b>9.1</b> C’est quoi un MA plot</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#nos-data"><i class="fa fa-check"></i><b>9.1.1</b> Nos data</a></li>
+<li class="chapter" data-level="9.1.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#la-théorie"><i class="fa fa-check"></i><b>9.1.2</b> La théorie</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#calculs-sur-les-colonnes"><i class="fa fa-check"></i><b>9.2</b> Calculs sur les colonnes</a></li>
+<li class="chapter" data-level="9.3" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#ma-plot-log2fc-vs-intensité"><i class="fa fa-check"></i><b>9.3</b> MA-plot : log2FC vs intensité</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#calcul-de-m-et-a"><i class="fa fa-check"></i><b>9.3.1</b> Calcul de M et A</a></li>
+<li class="chapter" data-level="9.3.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#visualisation"><i class="fa fa-check"></i><b>9.3.2</b> Visualisation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-sur-les-lignescolonnes"><i class="fa fa-check"></i><b>9.4</b> Appliquer une fonction sur les lignes/colonnes</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-ligne-dun-tableau"><i class="fa fa-check"></i><b>9.4.1</b> Appliquer une fonction (moyenne, variance, …) sur chaque ligne d’un tableau</a></li>
+<li class="chapter" data-level="9.4.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-colonne-dun-tableau"><i class="fa fa-check"></i><b>9.4.2</b> Appliquer une fonction (moyenne, variance, …) sur chaque colonne d’un tableau</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="intégration-des-données.html"><a href="intégration-des-données.html"><i class="fa fa-check"></i><b>10</b> Intégration des données</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#charger-les-annotations-des-gènes"><i class="fa fa-check"></i><b>10.1</b> Charger les annotations des gènes</a></li>
+<li class="chapter" data-level="10.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#combien"><i class="fa fa-check"></i><b>10.2</b> Combien ?</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#quizz"><i class="fa fa-check"></i><b>10.2.1</b> Quizz</a></li>
+<li class="chapter" data-level="10.2.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#solution-pour-y-répondre"><i class="fa fa-check"></i><b>10.2.2</b> Solution pour y répondre</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="intégration-des-données.html"><a href="intégration-des-données.html#ma-première-bioinformatique-intégrative"><i class="fa fa-check"></i><b>10.3</b> Ma première bioinformatique intégrative</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#étape-1---fusionner-les-tableaux-dexpressions-et-dannotations"><i class="fa fa-check"></i><b>10.3.1</b> Étape 1 - Fusionner les tableaux d’expressions et d’annotations :</a></li>
+<li class="chapter" data-level="10.3.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#étape-2---sous-ensemble-des-lignes-pour-lesquelles-chr-vaut-8"><i class="fa fa-check"></i><b>10.3.2</b> Étape 2 - Sous-ensemble des lignes pour lesquelles chr vaut 8 :</a></li>
+<li class="chapter" data-level="10.3.3" data-path="intégration-des-données.html"><a href="intégration-des-données.html#exporter-exprs_chr8-dans-un-fichier"><i class="fa fa-check"></i><b>10.3.3</b> Exporter exprs_chr8 dans un fichier</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="intégration-des-données.html"><a href="intégration-des-données.html#visualisation-1"><i class="fa fa-check"></i><b>10.4</b> Visualisation</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>11</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="conclusion.html"><a href="conclusion.html#take-home-messages"><i class="fa fa-check"></i><b>11.1</b> Take home messages</a></li>
+<li class="chapter" data-level="11.2" data-path="conclusion.html"><a href="conclusion.html#ressources-ifb"><i class="fa fa-check"></i><b>11.2</b> Ressources IFB</a></li>
+<li class="chapter" data-level="11.3" data-path="conclusion.html"><a href="conclusion.html#resource"><i class="fa fa-check"></i><b>11.3</b> Resource</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -310,23 +368,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##  [1] &quot;_bookdown_files&quot;    &quot;_bookdown.yml&quot;      &quot;_main_files&quot;       
 ##  [4] &quot;_main.Rmd&quot;          &quot;_output.yml&quot;        &quot;01-intro.Rmd&quot;      
 ##  [7] &quot;02-how.Rmd&quot;         &quot;03-firstSteps.Rmd&quot;  &quot;04-uploadData.Rmd&quot; 
-## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-references.Rmd&quot; 
-## [13] &quot;annotation.csv&quot;     &quot;book.bib&quot;           &quot;docs&quot;              
-## [16] &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;     &quot;images&quot;            
-## [19] &quot;index.Rmd&quot;          &quot;intro_R&quot;            &quot;LICENSE&quot;           
-## [22] &quot;packages.bib&quot;       &quot;preamble.tex&quot;       &quot;README.md&quot;         
-## [25] &quot;style.css&quot;</code></pre>
+## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-plots.Rmd&quot;      
+## [13] &quot;08-analyseDiff.Rmd&quot; &quot;09-integration.Rmd&quot; &quot;10-conclusion.Rmd&quot; 
+## [16] &quot;11-references.Rmd&quot;  &quot;annotation.csv&quot;     &quot;book.bib&quot;          
+## [19] &quot;docs&quot;               &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;    
+## [22] &quot;exprs_chr8.txt&quot;     &quot;images&quot;             &quot;index.Rmd&quot;         
+## [25] &quot;intro_R&quot;            &quot;LICENSE&quot;            &quot;packages.bib&quot;      
+## [28] &quot;preamble.tex&quot;       &quot;README.md&quot;          &quot;style.css&quot;</code></pre>
 <p>Un autre nom pour la même commande</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="import-de-données.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>()</span></code></pre></div>
 <pre><code>##  [1] &quot;_bookdown_files&quot;    &quot;_bookdown.yml&quot;      &quot;_main_files&quot;       
 ##  [4] &quot;_main.Rmd&quot;          &quot;_output.yml&quot;        &quot;01-intro.Rmd&quot;      
 ##  [7] &quot;02-how.Rmd&quot;         &quot;03-firstSteps.Rmd&quot;  &quot;04-uploadData.Rmd&quot; 
-## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-references.Rmd&quot; 
-## [13] &quot;annotation.csv&quot;     &quot;book.bib&quot;           &quot;docs&quot;              
-## [16] &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;     &quot;images&quot;            
-## [19] &quot;index.Rmd&quot;          &quot;intro_R&quot;            &quot;LICENSE&quot;           
-## [22] &quot;packages.bib&quot;       &quot;preamble.tex&quot;       &quot;README.md&quot;         
-## [25] &quot;style.css&quot;</code></pre>
+## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-plots.Rmd&quot;      
+## [13] &quot;08-analyseDiff.Rmd&quot; &quot;09-integration.Rmd&quot; &quot;10-conclusion.Rmd&quot; 
+## [16] &quot;11-references.Rmd&quot;  &quot;annotation.csv&quot;     &quot;book.bib&quot;          
+## [19] &quot;docs&quot;               &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;    
+## [22] &quot;exprs_chr8.txt&quot;     &quot;images&quot;             &quot;index.Rmd&quot;         
+## [25] &quot;intro_R&quot;            &quot;LICENSE&quot;            &quot;packages.bib&quot;      
+## [28] &quot;preamble.tex&quot;       &quot;README.md&quot;          &quot;style.css&quot;</code></pre>
 </div>
 <div id="télécharger-un-fichier" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Télécharger un fichier<a href="import-de-données.html#télécharger-un-fichier" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -341,12 +401,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##  [1] &quot;_bookdown_files&quot;    &quot;_bookdown.yml&quot;      &quot;_main_files&quot;       
 ##  [4] &quot;_main.Rmd&quot;          &quot;_output.yml&quot;        &quot;01-intro.Rmd&quot;      
 ##  [7] &quot;02-how.Rmd&quot;         &quot;03-firstSteps.Rmd&quot;  &quot;04-uploadData.Rmd&quot; 
-## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-references.Rmd&quot; 
-## [13] &quot;annotation.csv&quot;     &quot;book.bib&quot;           &quot;docs&quot;              
-## [16] &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;     &quot;images&quot;            
-## [19] &quot;index.Rmd&quot;          &quot;intro_R&quot;            &quot;LICENSE&quot;           
-## [22] &quot;packages.bib&quot;       &quot;preamble.tex&quot;       &quot;README.md&quot;         
-## [25] &quot;style.css&quot;</code></pre>
+## [10] &quot;05-readData.Rmd&quot;    &quot;06-manipulate.Rmd&quot;  &quot;07-plots.Rmd&quot;      
+## [13] &quot;08-analyseDiff.Rmd&quot; &quot;09-integration.Rmd&quot; &quot;10-conclusion.Rmd&quot; 
+## [16] &quot;11-references.Rmd&quot;  &quot;annotation.csv&quot;     &quot;book.bib&quot;          
+## [19] &quot;docs&quot;               &quot;EBAII_IntroR.Rproj&quot; &quot;expression.txt&quot;    
+## [22] &quot;exprs_chr8.txt&quot;     &quot;images&quot;             &quot;index.Rmd&quot;         
+## [25] &quot;intro_R&quot;            &quot;LICENSE&quot;            &quot;packages.bib&quot;      
+## [28] &quot;preamble.tex&quot;       &quot;README.md&quot;          &quot;style.css&quot;</code></pre>
 </div>
 <div id="on-efface-tout-et-on-recommence-1" class="section level3 hasAnchor" number="5.2.3">
 <h3><span class="header-section-number">5.2.3</span> On efface tout et on recommence<a href="import-de-données.html#on-efface-tout-et-on-recommence-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -378,52 +439,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## /shared/ifbstor1/projects/form_2022_32/EBAII_IntroR</code></pre>
 <p>Téléchargez les données</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href="import-de-données.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt <span class="at">--output-document</span><span class="op">=</span>expression.txt</span></code></pre></div>
-<pre><code>## --2022-11-15 10:46:59--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.111.133, 185.199.110.133, ...
-## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+<pre><code>## --2022-11-15 12:51:09--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/expression.txt
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 1747 (1.7K) [text/plain]
 ## Saving to: ‘expression.txt’
 ## 
-##      0K .                                                     100% 16.5M=0s
+##      0K .                                                     100% 11.1M=0s
 ## 
-## 2022-11-15 10:46:59 (16.5 MB/s) - ‘expression.txt’ saved [1747/1747]</code></pre>
+## 2022-11-15 12:51:09 (11.1 MB/s) - ‘expression.txt’ saved [1747/1747]</code></pre>
 <div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="import-de-données.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv <span class="at">-O</span> annotation.csv</span></code></pre></div>
-<pre><code>## --2022-11-15 10:46:59--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
-## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
-## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.108.133|:443... connected.
+<pre><code>## --2022-11-15 12:51:09--  https://raw.githubusercontent.com/IFB-ElixirFr/EBAII/master/2022/ebaiin1/intro_R/annotation.csv
+## Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+## Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
 ## HTTP request sent, awaiting response... 200 OK
 ## Length: 2326 (2.3K) [text/plain]
 ## Saving to: ‘annotation.csv’
 ## 
-##      0K ..                                                    100% 23.1M=0s
+##      0K ..                                                    100% 12.6M=0s
 ## 
-## 2022-11-15 10:46:59 (23.1 MB/s) - ‘annotation.csv’ saved [2326/2326]</code></pre>
+## 2022-11-15 12:51:09 (12.6 MB/s) - ‘annotation.csv’ saved [2326/2326]</code></pre>
 <p>Qu’y a-t-il ici ?</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb79-1"><a href="import-de-données.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span></span></code></pre></div>
-<pre><code>## total 101
+<pre><code>## total 121
 ## -rw-r--r--+ 1 tdenecker tdenecker  1843 Nov 15 09:19 01-intro.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   996 Nov 15 09:40 02-how.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  1478 Nov 15 09:48 03-firstSteps.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  5467 Nov 15 10:30 04-uploadData.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker  1790 Nov 15 10:46 05-readData.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker  1255 Nov 14 21:51 06-manipulate.Rmd
-## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 07-references.Rmd
-## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 10:46 annotation.csv
+## -rw-r--r--+ 1 tdenecker tdenecker  1419 Nov 15 11:57 06-manipulate.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  1882 Nov 15 12:20 07-plots.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  2490 Nov 15 12:38 08-analyseDiff.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  1497 Nov 15 12:50 09-integration.Rmd
+## -rw-r-----+ 1 tdenecker tdenecker  1128 Nov 15 12:35 10-conclusion.Rmd
+## -rw-r--r--+ 1 tdenecker tdenecker    54 Nov 14 21:51 11-references.Rmd
+## -rw-rw----+ 1 tdenecker tdenecker  2326 Nov 15 12:51 annotation.csv
 ## -rw-r--r--+ 1 tdenecker tdenecker   267 Nov 14 21:51 book.bib
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:46 _bookdown_files
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 12:51 _bookdown_files
 ## -rw-r--r--+ 1 tdenecker tdenecker   113 Nov 15 10:39 _bookdown.yml
-## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 10:46 docs
+## drwxrwx---+ 5 tdenecker tdenecker  4096 Nov 15 12:45 docs
 ## -rw-rw----+ 1 tdenecker tdenecker   247 Nov 15 09:00 EBAII_IntroR.Rproj
-## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 10:46 expression.txt
-## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:46 images
+## -rw-rw----+ 1 tdenecker tdenecker  1747 Nov 15 12:51 expression.txt
+## -rw-rw----+ 1 tdenecker tdenecker   244 Nov 15 12:40 exprs_chr8.txt
+## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 12:35 images
 ## -rw-r--r--+ 1 tdenecker tdenecker  1348 Nov 15 10:40 index.Rmd
 ## drwxrwx---+ 2 tdenecker tdenecker  4096 Nov 15 10:25 intro_R
 ## -rw-rw----+ 1 tdenecker tdenecker  1551 Nov 14 21:50 LICENSE
-## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 10:41 _main_files
-## -rw-r--r--+ 1 tdenecker tdenecker 14521 Nov 15 10:46 _main.Rmd
+## drwxrwx---+ 4 tdenecker tdenecker  4096 Nov 15 12:49 _main_files
+## -rw-r--r--+ 1 tdenecker tdenecker 21835 Nov 15 12:51 _main.Rmd
 ## -rw-r--r--+ 1 tdenecker tdenecker   500 Nov 14 21:52 _output.yml
-## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 10:46 packages.bib
+## -rw-rw----+ 1 tdenecker tdenecker  2655 Nov 15 12:51 packages.bib
 ## -rw-r--r--+ 1 tdenecker tdenecker    22 Nov 14 21:51 preamble.tex
 ## -rw-r--r--+ 1 tdenecker tdenecker   311 Nov 15 09:29 README.md
 ## -rw-r--r--+ 1 tdenecker tdenecker   172 Nov 14 21:51 style.css</code></pre>

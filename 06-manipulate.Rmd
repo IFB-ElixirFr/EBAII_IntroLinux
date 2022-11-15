@@ -1,31 +1,92 @@
-# Sharing your book
+# Manipuler les données dans R
 
-## Publishing
+## Sélection de colonnes d’un tableau
 
-HTML books can be published online, see: https://bookdown.org/yihui/bookdown/publishing.html
+Afficher les noms des colonnes
 
-## 404 pages
+```{r}
+colnames(exprs)
+```
 
-By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a `_404.Rmd` or `_404.md` file to your project root and use code and/or Markdown syntax.
+Valeurs stockées dans la colonne nommée "WT1"
 
-## Metadata for sharing
+```{r}
+exprs$WT1
+```
 
-Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the `index.Rmd` YAML. To setup, set the `url` for your book and the path to your `cover-image` file. Your book's `title` and `description` are also used.
+Notation alternative
 
+```{r}
+exprs[ , "WT1"]
+```
 
+Sélection de plusieurs colonnes. 
 
-This `gitbook` uses the same social sharing data across all chapters in your book- all links shared will look the same.
+```{r}
+exprs[ , c("WT1", "WT2")]
+```
 
-Specify your book's source repository on GitHub using the `edit` key under the configuration options in the `_output.yml` file, which allows users to suggest an edit by linking to a chapter's source file. 
+Sélection de colonnes par leur indice
 
-Read more about the features of this output format here:
+```{r}
+exprs[ , 2]
+```
 
-https://pkgs.rstudio.com/bookdown/reference/gitbook.html
+```{r}
+exprs[ , c( 3, 2)]
+```
 
-Or use:
+## Sélection de lignes d’un tableau
 
-```{r eval=FALSE}
-?bookdown::gitbook
+Sélection des lignes 4 et 11 du tableau des expressions
+
+```{r}
+exprs[c(4, 11), ]
+```
+
+Sélection des identifiants de deux gènes d’intérêt
+
+```{r}
+my_genes <- c("ENSG00000253991", "ENSG00000099958")
+```
+
+Vecteur booléen indiquant si chaque ID du tableau fait partie des gènes d’intérêt
+```{r}
+exprs$id %in% my_genes
+```
+
+Indices des lignes correspondant aux IDs des gènes d’intérêt
+```{r}
+which(exprs$id %in% my_genes)
+```
+
+Afficher les lignes correspondantes
+```{r}
+exprs[which(exprs$id %in% my_genes),   ]
+```
+
+## formulation plus intuitive
+```{r}
+subset(x = exprs, id %in% my_genes)		
+```
+
+Approche plus moderne, avec le package dplyr
+
+```{r}
+## charger la librairie dplyr
+library(dplyr)	
+```
+
+```{r}
+## envoyer le tableau exprs à la commande filter()
+exprs %>% filter(id %in% my_genes)	
+```
+
+```{r}
+## plus avancé : enchaîner plusieurs commandes
+exprs %>% 
+  filter(id %in% my_genes) %>% 
+  mutate(mean_KO = (KO1 + KO2)/2)	
 ```
 
 

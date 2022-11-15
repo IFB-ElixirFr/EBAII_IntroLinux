@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Manipuler les données dans R | Introduction à R</title>
+  <meta name="description" content="Livre de cours pour EBAII : Introduction à R" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Manipuler les données dans R | Introduction à R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Livre de cours pour EBAII : Introduction à R" />
+  <meta name="github-repo" content="IFB-ElixirFr/EBAII_IntroR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Manipuler les données dans R | Introduction à R" />
+  
+  <meta name="twitter:description" content="Livre de cours pour EBAII : Introduction à R" />
+  
+
+<meta name="author" content="Thomas Denecker &amp; Stevenn Volant" />
+
+
+<meta name="date" content="2022-11-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lecture-des-données.html"/>
+<link rel="next" href="visualisation-des-données.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction à R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Présentation du cours</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#a-propos-de-du-livre"><i class="fa fa-check"></i><b>1.1</b> A propos de du livre</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#demandez-le-programme"><i class="fa fa-check"></i><b>1.2</b> Demandez le programme</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#intervenants"><i class="fa fa-check"></i><b>1.3</b> Intervenants</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html"><i class="fa fa-check"></i><b>2</b> R en quelques mots</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#pourquoi"><i class="fa fa-check"></i><b>2.1</b> Pourquoi ?</a></li>
+<li class="chapter" data-level="2.2" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#comment-lavoir"><i class="fa fa-check"></i><b>2.2</b> Comment l’avoir ?</a></li>
+<li class="chapter" data-level="2.3" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#sur-quel-os"><i class="fa fa-check"></i><b>2.3</b> Sur quel OS ?</a></li>
+<li class="chapter" data-level="2.4" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#historique"><i class="fa fa-check"></i><b>2.4</b> Historique</a></li>
+<li class="chapter" data-level="2.5" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#r-vs-excel"><i class="fa fa-check"></i><b>2.5</b> R vs Excel</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#pourquoi-plus-excel"><i class="fa fa-check"></i><b>2.5.1</b> Pourquoi plus Excel ?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#avantages-et-inconvénients"><i class="fa fa-check"></i><b>2.6</b> Avantages et inconvénients</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#avantages"><i class="fa fa-check"></i><b>2.6.1</b> Avantages</a></li>
+<li class="chapter" data-level="2.6.2" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#inconvénients"><i class="fa fa-check"></i><b>2.6.2</b> Inconvénients</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#geeks-and-repetitive-tasks"><i class="fa fa-check"></i><b>2.7</b> Geeks and repetitive tasks</a></li>
+<li class="chapter" data-level="2.8" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#r-sait-tout-faire"><i class="fa fa-check"></i><b>2.8</b> R sait tout faire</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html"><i class="fa fa-check"></i><b>3</b> Comment utiliser R ?</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html#modes-dutilisation-liste-non-exhaustive"><i class="fa fa-check"></i><b>3.1</b> Modes d’utilisation (liste non exhaustive)</a></li>
+<li class="chapter" data-level="3.2" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html#ouverture-ou-connexion-à-rstudio"><i class="fa fa-check"></i><b>3.2</b> Ouverture ou connexion à RStudio</a></li>
+<li class="chapter" data-level="3.3" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html#rstudio"><i class="fa fa-check"></i><b>3.3</b> RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="premiers-pas.html"><a href="premiers-pas.html"><i class="fa fa-check"></i><b>4</b> Premiers pas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="premiers-pas.html"><a href="premiers-pas.html#r-sait-tout-faire-il-compte"><i class="fa fa-check"></i><b>4.1</b> R sait tout faire : il compte !</a></li>
+<li class="chapter" data-level="4.2" data-path="premiers-pas.html"><a href="premiers-pas.html#notion-de-variableobjet"><i class="fa fa-check"></i><b>4.2</b> Notion de variable/objet</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="import-de-données.html"><a href="import-de-données.html"><i class="fa fa-check"></i><b>5</b> Import de données</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="import-de-données.html"><a href="import-de-données.html#version-avec-les-boutons"><i class="fa fa-check"></i><b>5.1</b> Version “Avec les boutons”</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="import-de-données.html"><a href="import-de-données.html#création-dun-dossier-intro_r-pour-vos-résultats-de-ce-tp"><i class="fa fa-check"></i><b>5.1.1</b> Création d’un dossier intro_R pour vos résultats de ce TP</a></li>
+<li class="chapter" data-level="5.1.2" data-path="import-de-données.html"><a href="import-de-données.html#déplacement-dans-le-dossier-intro_r"><i class="fa fa-check"></i><b>5.1.2</b> Déplacement dans le dossier “intro_R”</a></li>
+<li class="chapter" data-level="5.1.3" data-path="import-de-données.html"><a href="import-de-données.html#définissez-votre-dossier-espace-de-travail-working-directory"><i class="fa fa-check"></i><b>5.1.3</b> Définissez votre dossier espace de travail (working directory)</a></li>
+<li class="chapter" data-level="5.1.4" data-path="import-de-données.html"><a href="import-de-données.html#téléchargez-les-fichiers-sur-votre-machine"><i class="fa fa-check"></i><b>5.1.4</b> Téléchargez les fichiers sur votre machine</a></li>
+<li class="chapter" data-level="5.1.5" data-path="import-de-données.html"><a href="import-de-données.html#téléversement-upload-des-données"><i class="fa fa-check"></i><b>5.1.5</b> Téléversement (“upload”) des données</a></li>
+<li class="chapter" data-level="5.1.6" data-path="import-de-données.html"><a href="import-de-données.html#on-efface-tout-et-on-recommence"><i class="fa fa-check"></i><b>5.1.6</b> On efface tout et on recommence</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="import-de-données.html"><a href="import-de-données.html#the-r-geek-way-v2-directement-depuis-rstudio"><i class="fa fa-check"></i><b>5.2</b> The “R geek” way (V2, directement depuis Rstudio)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="import-de-données.html"><a href="import-de-données.html#creation-de-larborescence"><i class="fa fa-check"></i><b>5.2.1</b> Creation de l’arborescence</a></li>
+<li class="chapter" data-level="5.2.2" data-path="import-de-données.html"><a href="import-de-données.html#télécharger-un-fichier"><i class="fa fa-check"></i><b>5.2.2</b> Télécharger un fichier</a></li>
+<li class="chapter" data-level="5.2.3" data-path="import-de-données.html"><a href="import-de-données.html#on-efface-tout-et-on-recommence-1"><i class="fa fa-check"></i><b>5.2.3</b> On efface tout et on recommence</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="import-de-données.html"><a href="import-de-données.html#the-bash-geek-way-v3-directement-de-votre-home-du-cluster"><i class="fa fa-check"></i><b>5.3</b> The “bash geek” way (V3, directement de votre home du cluster)</a></li>
+<li class="chapter" data-level="5.4" data-path="import-de-données.html"><a href="import-de-données.html#actualisation-du-dossier"><i class="fa fa-check"></i><b>5.4</b> Actualisation du dossier</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lecture-des-données.html"><a href="lecture-des-données.html"><i class="fa fa-check"></i><b>6</b> Lecture des données</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lecture-des-données.html"><a href="lecture-des-données.html#chargement-des-données-dans-la-mémoire-de-r"><i class="fa fa-check"></i><b>6.1</b> Chargement des données (dans la mémoire de R)</a></li>
+<li class="chapter" data-level="6.2" data-path="lecture-des-données.html"><a href="lecture-des-données.html#affichage-de-lobjet-exprs"><i class="fa fa-check"></i><b>6.2</b> Affichage de l’objet “exprs”</a></li>
+<li class="chapter" data-level="6.3" data-path="lecture-des-données.html"><a href="lecture-des-données.html#caractéristiques-dun-tableau-de-données"><i class="fa fa-check"></i><b>6.3</b> Caractéristiques d’un tableau de données</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="lecture-des-données.html"><a href="lecture-des-données.html#dimensions"><i class="fa fa-check"></i><b>6.3.1</b> Dimensions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="lecture-des-données.html"><a href="lecture-des-données.html#noms-des-colonnes-et-des-lignes"><i class="fa fa-check"></i><b>6.3.2</b> Noms des colonnes et des lignes</a></li>
+<li class="chapter" data-level="6.3.3" data-path="lecture-des-données.html"><a href="lecture-des-données.html#résumé-rapide-des-données-par-colonne"><i class="fa fa-check"></i><b>6.3.3</b> Résumé rapide des données par colonne</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html"><i class="fa fa-check"></i><b>7</b> Manipuler les données dans R</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-colonnes-dun-tableau"><i class="fa fa-check"></i><b>7.1</b> Sélection de colonnes d’un tableau</a></li>
+<li class="chapter" data-level="7.2" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-lignes-dun-tableau"><i class="fa fa-check"></i><b>7.2</b> Sélection de lignes d’un tableau</a></li>
+<li class="chapter" data-level="7.3" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#formulation-plus-intuitive"><i class="fa fa-check"></i><b>7.3</b> formulation plus intuitive</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html"><i class="fa fa-check"></i><b>8</b> Visualisation des données</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#histogrammes"><i class="fa fa-check"></i><b>8.1</b> Histogrammes</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#avec-r-de-base"><i class="fa fa-check"></i><b>8.1.1</b> Avec R de base</a></li>
+<li class="chapter" data-level="8.1.2" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#avec-ggplot2"><i class="fa fa-check"></i><b>8.1.2</b> Avec ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#boîtes-à-moustaches-boxplots"><i class="fa fa-check"></i><b>8.2</b> Boîtes à moustaches (boxplots)</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#avec-r-de-base-1"><i class="fa fa-check"></i><b>8.2.1</b> Avec R de base</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#nuage-de-points"><i class="fa fa-check"></i><b>8.3</b> Nuage de points</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html"><i class="fa fa-check"></i><b>9</b> Analyse d’expression différentielle : MA-plot</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#cest-quoi-un-ma-plot"><i class="fa fa-check"></i><b>9.1</b> C’est quoi un MA plot</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#nos-data"><i class="fa fa-check"></i><b>9.1.1</b> Nos data</a></li>
+<li class="chapter" data-level="9.1.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#la-théorie"><i class="fa fa-check"></i><b>9.1.2</b> La théorie</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#calculs-sur-les-colonnes"><i class="fa fa-check"></i><b>9.2</b> Calculs sur les colonnes</a></li>
+<li class="chapter" data-level="9.3" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#ma-plot-log2fc-vs-intensité"><i class="fa fa-check"></i><b>9.3</b> MA-plot : log2FC vs intensité</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#calcul-de-m-et-a"><i class="fa fa-check"></i><b>9.3.1</b> Calcul de M et A</a></li>
+<li class="chapter" data-level="9.3.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#visualisation"><i class="fa fa-check"></i><b>9.3.2</b> Visualisation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-sur-les-lignescolonnes"><i class="fa fa-check"></i><b>9.4</b> Appliquer une fonction sur les lignes/colonnes</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-ligne-dun-tableau"><i class="fa fa-check"></i><b>9.4.1</b> Appliquer une fonction (moyenne, variance, …) sur chaque ligne d’un tableau</a></li>
+<li class="chapter" data-level="9.4.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-colonne-dun-tableau"><i class="fa fa-check"></i><b>9.4.2</b> Appliquer une fonction (moyenne, variance, …) sur chaque colonne d’un tableau</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="intégration-des-données.html"><a href="intégration-des-données.html"><i class="fa fa-check"></i><b>10</b> Intégration des données</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#charger-les-annotations-des-gènes"><i class="fa fa-check"></i><b>10.1</b> Charger les annotations des gènes</a></li>
+<li class="chapter" data-level="10.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#combien"><i class="fa fa-check"></i><b>10.2</b> Combien ?</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#quizz"><i class="fa fa-check"></i><b>10.2.1</b> Quizz</a></li>
+<li class="chapter" data-level="10.2.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#solution-pour-y-répondre"><i class="fa fa-check"></i><b>10.2.2</b> Solution pour y répondre</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="intégration-des-données.html"><a href="intégration-des-données.html#ma-première-bioinformatique-intégrative"><i class="fa fa-check"></i><b>10.3</b> Ma première bioinformatique intégrative</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#étape-1---fusionner-les-tableaux-dexpressions-et-dannotations"><i class="fa fa-check"></i><b>10.3.1</b> Étape 1 - Fusionner les tableaux d’expressions et d’annotations :</a></li>
+<li class="chapter" data-level="10.3.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#étape-2---sous-ensemble-des-lignes-pour-lesquelles-chr-vaut-8"><i class="fa fa-check"></i><b>10.3.2</b> Étape 2 - Sous-ensemble des lignes pour lesquelles chr vaut 8 :</a></li>
+<li class="chapter" data-level="10.3.3" data-path="intégration-des-données.html"><a href="intégration-des-données.html#exporter-exprs_chr8-dans-un-fichier"><i class="fa fa-check"></i><b>10.3.3</b> Exporter exprs_chr8 dans un fichier</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="intégration-des-données.html"><a href="intégration-des-données.html#visualisation-1"><i class="fa fa-check"></i><b>10.4</b> Visualisation</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>11</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="conclusion.html"><a href="conclusion.html#take-home-messages"><i class="fa fa-check"></i><b>11.1</b> Take home messages</a></li>
+<li class="chapter" data-level="11.2" data-path="conclusion.html"><a href="conclusion.html#ressources-ifb"><i class="fa fa-check"></i><b>11.2</b> Ressources IFB</a></li>
+<li class="chapter" data-level="11.3" data-path="conclusion.html"><a href="conclusion.html#resource"><i class="fa fa-check"></i><b>11.3</b> Resource</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction à R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="manipuler-les-données-dans-r" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Manipuler les données dans R<a href="manipuler-les-données-dans-r.html#manipuler-les-données-dans-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sélection-de-colonnes-dun-tableau" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Sélection de colonnes d’un tableau<a href="manipuler-les-données-dans-r.html#sélection-de-colonnes-dun-tableau" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Afficher les noms des colonnes</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="manipuler-les-données-dans-r.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(exprs)</span></code></pre></div>
+<pre><code>## [1] &quot;id&quot;  &quot;WT1&quot; &quot;WT2&quot; &quot;KO1&quot; &quot;KO2&quot;</code></pre>
+<p>Valeurs stockées dans la colonne nommée “WT1”</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="manipuler-les-données-dans-r.html#cb116-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>WT1</span></code></pre></div>
+<pre><code>##  [1] 235960    116    118    450   4736   9002   1295   3353   2044   7022
+## [11]  15783   3133   1380  12089   1744    122    635     83  16013    552
+## [21]  62324   1225   1201     31    695  26866    273    202   3515   1988
+## [31]   2238   1236   3415    209  14741   1216   4044   1405    158     90
+## [41]    518    261     94     77   3025  15470   3801   1488    424     55</code></pre>
+<p>Notation alternative</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="manipuler-les-données-dans-r.html#cb118-1" aria-hidden="true" tabindex="-1"></a>exprs[ , <span class="st">&quot;WT1&quot;</span>]</span></code></pre></div>
+<pre><code>##  [1] 235960    116    118    450   4736   9002   1295   3353   2044   7022
+## [11]  15783   3133   1380  12089   1744    122    635     83  16013    552
+## [21]  62324   1225   1201     31    695  26866    273    202   3515   1988
+## [31]   2238   1236   3415    209  14741   1216   4044   1405    158     90
+## [41]    518    261     94     77   3025  15470   3801   1488    424     55</code></pre>
+<p>Sélection de plusieurs colonnes.</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="manipuler-les-données-dans-r.html#cb120-1" aria-hidden="true" tabindex="-1"></a>exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>)]</span></code></pre></div>
+<pre><code>##       WT1   WT2
+## 1  235960 94264
+## 2     116    71
+## 3     118   174
+## 4     450   655
+## 5    4736  5019
+## 6    9002  8623
+## 7    1295  2744
+## 8    3353  7449
+## 9    2044  4525
+## 10   7022  2526
+## 11  15783 17359
+## 12   3133  2775
+## 13   1380  3079
+## 14  12089  7958
+## 15   1744  2247
+## 16    122    66
+## 17    635   427
+## 18     83   246
+## 19  16013 17642
+## 20    552  1062
+## 21  62324 33973
+## 22   1225  1475
+## 23   1201  1034
+## 24     31   788
+## 25    695  1825
+## 26  26866 23111
+## 27    273   112
+## 28    202   181
+## 29   3515  1981
+## 30   1988  4788
+## 31   2238   974
+## 32   1236  2163
+## 33   3415  1703
+## 34    209   189
+## 35  14741 36309
+## 36   1216  4545
+## 37   4044  2575
+## 38   1405  8135
+## 39    158    94
+## 40     90    43
+## 41    518   718
+## 42    261   163
+## 43     94   114
+## 44     77    78
+## 45   3025  3707
+## 46  15470 11450
+## 47   3801  2465
+## 48   1488  1086
+## 49    424   162
+## 50     55    76</code></pre>
+<p>Sélection de colonnes par leur indice</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="manipuler-les-données-dans-r.html#cb122-1" aria-hidden="true" tabindex="-1"></a>exprs[ , <span class="dv">2</span>]</span></code></pre></div>
+<pre><code>##  [1] 235960    116    118    450   4736   9002   1295   3353   2044   7022
+## [11]  15783   3133   1380  12089   1744    122    635     83  16013    552
+## [21]  62324   1225   1201     31    695  26866    273    202   3515   1988
+## [31]   2238   1236   3415    209  14741   1216   4044   1405    158     90
+## [41]    518    261     94     77   3025  15470   3801   1488    424     55</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="manipuler-les-données-dans-r.html#cb124-1" aria-hidden="true" tabindex="-1"></a>exprs[ , <span class="fu">c</span>( <span class="dv">3</span>, <span class="dv">2</span>)]</span></code></pre></div>
+<pre><code>##      WT2    WT1
+## 1  94264 235960
+## 2     71    116
+## 3    174    118
+## 4    655    450
+## 5   5019   4736
+## 6   8623   9002
+## 7   2744   1295
+## 8   7449   3353
+## 9   4525   2044
+## 10  2526   7022
+## 11 17359  15783
+## 12  2775   3133
+## 13  3079   1380
+## 14  7958  12089
+## 15  2247   1744
+## 16    66    122
+## 17   427    635
+## 18   246     83
+## 19 17642  16013
+## 20  1062    552
+## 21 33973  62324
+## 22  1475   1225
+## 23  1034   1201
+## 24   788     31
+## 25  1825    695
+## 26 23111  26866
+## 27   112    273
+## 28   181    202
+## 29  1981   3515
+## 30  4788   1988
+## 31   974   2238
+## 32  2163   1236
+## 33  1703   3415
+## 34   189    209
+## 35 36309  14741
+## 36  4545   1216
+## 37  2575   4044
+## 38  8135   1405
+## 39    94    158
+## 40    43     90
+## 41   718    518
+## 42   163    261
+## 43   114     94
+## 44    78     77
+## 45  3707   3025
+## 46 11450  15470
+## 47  2465   3801
+## 48  1086   1488
+## 49   162    424
+## 50    76     55</code></pre>
+</div>
+<div id="sélection-de-lignes-dun-tableau" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Sélection de lignes d’un tableau<a href="manipuler-les-données-dans-r.html#sélection-de-lignes-dun-tableau" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sélection des lignes 4 et 11 du tableau des expressions</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="manipuler-les-données-dans-r.html#cb126-1" aria-hidden="true" tabindex="-1"></a>exprs[<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">11</span>), ]</span></code></pre></div>
+<pre><code>##                 id   WT1   WT2   KO1   KO2
+## 4  ENSG00000099958   450   655   301   472
+## 11 ENSG00000119285 15783 17359 18591 20077</code></pre>
+<p>Sélection des identifiants de deux gènes d’intérêt</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="manipuler-les-données-dans-r.html#cb128-1" aria-hidden="true" tabindex="-1"></a>my_genes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ENSG00000253991&quot;</span>, <span class="st">&quot;ENSG00000099958&quot;</span>)</span></code></pre></div>
+<p>Vecteur booléen indiquant si chaque ID du tableau fait partie des gènes d’intérêt</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="manipuler-les-données-dans-r.html#cb129-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>id <span class="sc">%in%</span> my_genes</span></code></pre></div>
+<pre><code>##  [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+## [49] FALSE FALSE</code></pre>
+<p>Indices des lignes correspondant aux IDs des gènes d’intérêt</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="manipuler-les-données-dans-r.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(exprs<span class="sc">$</span>id <span class="sc">%in%</span> my_genes)</span></code></pre></div>
+<pre><code>## [1]  4 44</code></pre>
+<p>Afficher les lignes correspondantes</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="manipuler-les-données-dans-r.html#cb133-1" aria-hidden="true" tabindex="-1"></a>exprs[<span class="fu">which</span>(exprs<span class="sc">$</span>id <span class="sc">%in%</span> my_genes),   ]</span></code></pre></div>
+<pre><code>##                 id WT1 WT2 KO1 KO2
+## 4  ENSG00000099958 450 655 301 472
+## 44 ENSG00000253991  77  78 134  92</code></pre>
+</div>
+<div id="formulation-plus-intuitive" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> formulation plus intuitive<a href="manipuler-les-données-dans-r.html#formulation-plus-intuitive" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="manipuler-les-données-dans-r.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(<span class="at">x =</span> exprs, id <span class="sc">%in%</span> my_genes)     </span></code></pre></div>
+<pre><code>##                 id WT1 WT2 KO1 KO2
+## 4  ENSG00000099958 450 655 301 472
+## 44 ENSG00000253991  77  78 134  92</code></pre>
+<p>Approche plus moderne, avec le package dplyr</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="manipuler-les-données-dans-r.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="do">## charger la librairie dplyr</span></span>
+<span id="cb137-2"><a href="manipuler-les-données-dans-r.html#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)  </span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="manipuler-les-données-dans-r.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="do">## envoyer le tableau exprs à la commande filter()</span></span>
+<span id="cb141-2"><a href="manipuler-les-données-dans-r.html#cb141-2" aria-hidden="true" tabindex="-1"></a>exprs <span class="sc">%&gt;%</span> <span class="fu">filter</span>(id <span class="sc">%in%</span> my_genes)  </span></code></pre></div>
+<pre><code>##                id WT1 WT2 KO1 KO2
+## 1 ENSG00000099958 450 655 301 472
+## 2 ENSG00000253991  77  78 134  92</code></pre>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="manipuler-les-données-dans-r.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="do">## plus avancé : enchaîner plusieurs commandes</span></span>
+<span id="cb143-2"><a href="manipuler-les-données-dans-r.html#cb143-2" aria-hidden="true" tabindex="-1"></a>exprs <span class="sc">%&gt;%</span> </span>
+<span id="cb143-3"><a href="manipuler-les-données-dans-r.html#cb143-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(id <span class="sc">%in%</span> my_genes) <span class="sc">%&gt;%</span> </span>
+<span id="cb143-4"><a href="manipuler-les-données-dans-r.html#cb143-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_KO =</span> (KO1 <span class="sc">+</span> KO2)<span class="sc">/</span><span class="dv">2</span>)   </span></code></pre></div>
+<pre><code>##                id WT1 WT2 KO1 KO2 mean_KO
+## 1 ENSG00000099958 450 655 301 472   386.5
+## 2 ENSG00000253991  77  78 134  92   113.0</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lecture-des-données.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualisation-des-données.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/IFB-ElixirFr/EBAII_IntroR/edit/BRANCH/06-manipulate.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Analyse d’expression différentielle : MA-plot | Introduction à R</title>
+  <meta name="description" content="Livre de cours pour EBAII : Introduction à R" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Analyse d’expression différentielle : MA-plot | Introduction à R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Livre de cours pour EBAII : Introduction à R" />
+  <meta name="github-repo" content="IFB-ElixirFr/EBAII_IntroR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Analyse d’expression différentielle : MA-plot | Introduction à R" />
+  
+  <meta name="twitter:description" content="Livre de cours pour EBAII : Introduction à R" />
+  
+
+<meta name="author" content="Thomas Denecker &amp; Stevenn Volant" />
+
+
+<meta name="date" content="2022-11-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualisation-des-données.html"/>
+<link rel="next" href="intégration-des-données.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction à R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Présentation du cours</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#a-propos-de-du-livre"><i class="fa fa-check"></i><b>1.1</b> A propos de du livre</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#demandez-le-programme"><i class="fa fa-check"></i><b>1.2</b> Demandez le programme</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#intervenants"><i class="fa fa-check"></i><b>1.3</b> Intervenants</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html"><i class="fa fa-check"></i><b>2</b> R en quelques mots</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#pourquoi"><i class="fa fa-check"></i><b>2.1</b> Pourquoi ?</a></li>
+<li class="chapter" data-level="2.2" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#comment-lavoir"><i class="fa fa-check"></i><b>2.2</b> Comment l’avoir ?</a></li>
+<li class="chapter" data-level="2.3" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#sur-quel-os"><i class="fa fa-check"></i><b>2.3</b> Sur quel OS ?</a></li>
+<li class="chapter" data-level="2.4" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#historique"><i class="fa fa-check"></i><b>2.4</b> Historique</a></li>
+<li class="chapter" data-level="2.5" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#r-vs-excel"><i class="fa fa-check"></i><b>2.5</b> R vs Excel</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#pourquoi-plus-excel"><i class="fa fa-check"></i><b>2.5.1</b> Pourquoi plus Excel ?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#avantages-et-inconvénients"><i class="fa fa-check"></i><b>2.6</b> Avantages et inconvénients</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#avantages"><i class="fa fa-check"></i><b>2.6.1</b> Avantages</a></li>
+<li class="chapter" data-level="2.6.2" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#inconvénients"><i class="fa fa-check"></i><b>2.6.2</b> Inconvénients</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#geeks-and-repetitive-tasks"><i class="fa fa-check"></i><b>2.7</b> Geeks and repetitive tasks</a></li>
+<li class="chapter" data-level="2.8" data-path="r-en-quelques-mots.html"><a href="r-en-quelques-mots.html#r-sait-tout-faire"><i class="fa fa-check"></i><b>2.8</b> R sait tout faire</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html"><i class="fa fa-check"></i><b>3</b> Comment utiliser R ?</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html#modes-dutilisation-liste-non-exhaustive"><i class="fa fa-check"></i><b>3.1</b> Modes d’utilisation (liste non exhaustive)</a></li>
+<li class="chapter" data-level="3.2" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html#ouverture-ou-connexion-à-rstudio"><i class="fa fa-check"></i><b>3.2</b> Ouverture ou connexion à RStudio</a></li>
+<li class="chapter" data-level="3.3" data-path="comment-utiliser-r.html"><a href="comment-utiliser-r.html#rstudio"><i class="fa fa-check"></i><b>3.3</b> RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="premiers-pas.html"><a href="premiers-pas.html"><i class="fa fa-check"></i><b>4</b> Premiers pas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="premiers-pas.html"><a href="premiers-pas.html#r-sait-tout-faire-il-compte"><i class="fa fa-check"></i><b>4.1</b> R sait tout faire : il compte !</a></li>
+<li class="chapter" data-level="4.2" data-path="premiers-pas.html"><a href="premiers-pas.html#notion-de-variableobjet"><i class="fa fa-check"></i><b>4.2</b> Notion de variable/objet</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="import-de-données.html"><a href="import-de-données.html"><i class="fa fa-check"></i><b>5</b> Import de données</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="import-de-données.html"><a href="import-de-données.html#version-avec-les-boutons"><i class="fa fa-check"></i><b>5.1</b> Version “Avec les boutons”</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="import-de-données.html"><a href="import-de-données.html#création-dun-dossier-intro_r-pour-vos-résultats-de-ce-tp"><i class="fa fa-check"></i><b>5.1.1</b> Création d’un dossier intro_R pour vos résultats de ce TP</a></li>
+<li class="chapter" data-level="5.1.2" data-path="import-de-données.html"><a href="import-de-données.html#déplacement-dans-le-dossier-intro_r"><i class="fa fa-check"></i><b>5.1.2</b> Déplacement dans le dossier “intro_R”</a></li>
+<li class="chapter" data-level="5.1.3" data-path="import-de-données.html"><a href="import-de-données.html#définissez-votre-dossier-espace-de-travail-working-directory"><i class="fa fa-check"></i><b>5.1.3</b> Définissez votre dossier espace de travail (working directory)</a></li>
+<li class="chapter" data-level="5.1.4" data-path="import-de-données.html"><a href="import-de-données.html#téléchargez-les-fichiers-sur-votre-machine"><i class="fa fa-check"></i><b>5.1.4</b> Téléchargez les fichiers sur votre machine</a></li>
+<li class="chapter" data-level="5.1.5" data-path="import-de-données.html"><a href="import-de-données.html#téléversement-upload-des-données"><i class="fa fa-check"></i><b>5.1.5</b> Téléversement (“upload”) des données</a></li>
+<li class="chapter" data-level="5.1.6" data-path="import-de-données.html"><a href="import-de-données.html#on-efface-tout-et-on-recommence"><i class="fa fa-check"></i><b>5.1.6</b> On efface tout et on recommence</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="import-de-données.html"><a href="import-de-données.html#the-r-geek-way-v2-directement-depuis-rstudio"><i class="fa fa-check"></i><b>5.2</b> The “R geek” way (V2, directement depuis Rstudio)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="import-de-données.html"><a href="import-de-données.html#creation-de-larborescence"><i class="fa fa-check"></i><b>5.2.1</b> Creation de l’arborescence</a></li>
+<li class="chapter" data-level="5.2.2" data-path="import-de-données.html"><a href="import-de-données.html#télécharger-un-fichier"><i class="fa fa-check"></i><b>5.2.2</b> Télécharger un fichier</a></li>
+<li class="chapter" data-level="5.2.3" data-path="import-de-données.html"><a href="import-de-données.html#on-efface-tout-et-on-recommence-1"><i class="fa fa-check"></i><b>5.2.3</b> On efface tout et on recommence</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="import-de-données.html"><a href="import-de-données.html#the-bash-geek-way-v3-directement-de-votre-home-du-cluster"><i class="fa fa-check"></i><b>5.3</b> The “bash geek” way (V3, directement de votre home du cluster)</a></li>
+<li class="chapter" data-level="5.4" data-path="import-de-données.html"><a href="import-de-données.html#actualisation-du-dossier"><i class="fa fa-check"></i><b>5.4</b> Actualisation du dossier</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lecture-des-données.html"><a href="lecture-des-données.html"><i class="fa fa-check"></i><b>6</b> Lecture des données</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lecture-des-données.html"><a href="lecture-des-données.html#chargement-des-données-dans-la-mémoire-de-r"><i class="fa fa-check"></i><b>6.1</b> Chargement des données (dans la mémoire de R)</a></li>
+<li class="chapter" data-level="6.2" data-path="lecture-des-données.html"><a href="lecture-des-données.html#affichage-de-lobjet-exprs"><i class="fa fa-check"></i><b>6.2</b> Affichage de l’objet “exprs”</a></li>
+<li class="chapter" data-level="6.3" data-path="lecture-des-données.html"><a href="lecture-des-données.html#caractéristiques-dun-tableau-de-données"><i class="fa fa-check"></i><b>6.3</b> Caractéristiques d’un tableau de données</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="lecture-des-données.html"><a href="lecture-des-données.html#dimensions"><i class="fa fa-check"></i><b>6.3.1</b> Dimensions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="lecture-des-données.html"><a href="lecture-des-données.html#noms-des-colonnes-et-des-lignes"><i class="fa fa-check"></i><b>6.3.2</b> Noms des colonnes et des lignes</a></li>
+<li class="chapter" data-level="6.3.3" data-path="lecture-des-données.html"><a href="lecture-des-données.html#résumé-rapide-des-données-par-colonne"><i class="fa fa-check"></i><b>6.3.3</b> Résumé rapide des données par colonne</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html"><i class="fa fa-check"></i><b>7</b> Manipuler les données dans R</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-colonnes-dun-tableau"><i class="fa fa-check"></i><b>7.1</b> Sélection de colonnes d’un tableau</a></li>
+<li class="chapter" data-level="7.2" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#sélection-de-lignes-dun-tableau"><i class="fa fa-check"></i><b>7.2</b> Sélection de lignes d’un tableau</a></li>
+<li class="chapter" data-level="7.3" data-path="manipuler-les-données-dans-r.html"><a href="manipuler-les-données-dans-r.html#formulation-plus-intuitive"><i class="fa fa-check"></i><b>7.3</b> formulation plus intuitive</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html"><i class="fa fa-check"></i><b>8</b> Visualisation des données</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#histogrammes"><i class="fa fa-check"></i><b>8.1</b> Histogrammes</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#avec-r-de-base"><i class="fa fa-check"></i><b>8.1.1</b> Avec R de base</a></li>
+<li class="chapter" data-level="8.1.2" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#avec-ggplot2"><i class="fa fa-check"></i><b>8.1.2</b> Avec ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#boîtes-à-moustaches-boxplots"><i class="fa fa-check"></i><b>8.2</b> Boîtes à moustaches (boxplots)</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#avec-r-de-base-1"><i class="fa fa-check"></i><b>8.2.1</b> Avec R de base</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="visualisation-des-données.html"><a href="visualisation-des-données.html#nuage-de-points"><i class="fa fa-check"></i><b>8.3</b> Nuage de points</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html"><i class="fa fa-check"></i><b>9</b> Analyse d’expression différentielle : MA-plot</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#cest-quoi-un-ma-plot"><i class="fa fa-check"></i><b>9.1</b> C’est quoi un MA plot</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#nos-data"><i class="fa fa-check"></i><b>9.1.1</b> Nos data</a></li>
+<li class="chapter" data-level="9.1.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#la-théorie"><i class="fa fa-check"></i><b>9.1.2</b> La théorie</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#calculs-sur-les-colonnes"><i class="fa fa-check"></i><b>9.2</b> Calculs sur les colonnes</a></li>
+<li class="chapter" data-level="9.3" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#ma-plot-log2fc-vs-intensité"><i class="fa fa-check"></i><b>9.3</b> MA-plot : log2FC vs intensité</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#calcul-de-m-et-a"><i class="fa fa-check"></i><b>9.3.1</b> Calcul de M et A</a></li>
+<li class="chapter" data-level="9.3.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#visualisation"><i class="fa fa-check"></i><b>9.3.2</b> Visualisation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-sur-les-lignescolonnes"><i class="fa fa-check"></i><b>9.4</b> Appliquer une fonction sur les lignes/colonnes</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-ligne-dun-tableau"><i class="fa fa-check"></i><b>9.4.1</b> Appliquer une fonction (moyenne, variance, …) sur chaque ligne d’un tableau</a></li>
+<li class="chapter" data-level="9.4.2" data-path="analyse-dexpression-différentielle-ma-plot.html"><a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-colonne-dun-tableau"><i class="fa fa-check"></i><b>9.4.2</b> Appliquer une fonction (moyenne, variance, …) sur chaque colonne d’un tableau</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="intégration-des-données.html"><a href="intégration-des-données.html"><i class="fa fa-check"></i><b>10</b> Intégration des données</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#charger-les-annotations-des-gènes"><i class="fa fa-check"></i><b>10.1</b> Charger les annotations des gènes</a></li>
+<li class="chapter" data-level="10.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#combien"><i class="fa fa-check"></i><b>10.2</b> Combien ?</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#quizz"><i class="fa fa-check"></i><b>10.2.1</b> Quizz</a></li>
+<li class="chapter" data-level="10.2.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#solution-pour-y-répondre"><i class="fa fa-check"></i><b>10.2.2</b> Solution pour y répondre</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="intégration-des-données.html"><a href="intégration-des-données.html#ma-première-bioinformatique-intégrative"><i class="fa fa-check"></i><b>10.3</b> Ma première bioinformatique intégrative</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="intégration-des-données.html"><a href="intégration-des-données.html#étape-1---fusionner-les-tableaux-dexpressions-et-dannotations"><i class="fa fa-check"></i><b>10.3.1</b> Étape 1 - Fusionner les tableaux d’expressions et d’annotations :</a></li>
+<li class="chapter" data-level="10.3.2" data-path="intégration-des-données.html"><a href="intégration-des-données.html#étape-2---sous-ensemble-des-lignes-pour-lesquelles-chr-vaut-8"><i class="fa fa-check"></i><b>10.3.2</b> Étape 2 - Sous-ensemble des lignes pour lesquelles chr vaut 8 :</a></li>
+<li class="chapter" data-level="10.3.3" data-path="intégration-des-données.html"><a href="intégration-des-données.html#exporter-exprs_chr8-dans-un-fichier"><i class="fa fa-check"></i><b>10.3.3</b> Exporter exprs_chr8 dans un fichier</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="intégration-des-données.html"><a href="intégration-des-données.html#visualisation-1"><i class="fa fa-check"></i><b>10.4</b> Visualisation</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>11</b> Conclusion</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="conclusion.html"><a href="conclusion.html#take-home-messages"><i class="fa fa-check"></i><b>11.1</b> Take home messages</a></li>
+<li class="chapter" data-level="11.2" data-path="conclusion.html"><a href="conclusion.html#ressources-ifb"><i class="fa fa-check"></i><b>11.2</b> Ressources IFB</a></li>
+<li class="chapter" data-level="11.3" data-path="conclusion.html"><a href="conclusion.html#resource"><i class="fa fa-check"></i><b>11.3</b> Resource</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction à R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analyse-dexpression-différentielle-ma-plot" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Analyse d’expression différentielle : MA-plot<a href="analyse-dexpression-différentielle-ma-plot.html#analyse-dexpression-différentielle-ma-plot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="cest-quoi-un-ma-plot" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> C’est quoi un MA plot<a href="analyse-dexpression-différentielle-ma-plot.html#cest-quoi-un-ma-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="nos-data" class="section level3 hasAnchor" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Nos data<a href="analyse-dexpression-différentielle-ma-plot.html#nos-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs, <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##                 id    WT1   WT2    KO1   KO2
+## 1  ENSG00000034510 235960 94264 202381 91336
+## 2  ENSG00000064201    116    71     64    56
+## 3  ENSG00000065717    118   174    124   182
+## 4  ENSG00000099958    450   655    301   472
+## 5  ENSG00000104164   4736  5019   4845  4934
+## 6  ENSG00000104783   9002  8623   7720  7142
+## 7  ENSG00000105229   1295  2744   1113  2887
+## 8  ENSG00000105723   3353  7449   3589  7202
+## 9  ENSG00000116199   2044  4525   2604  4902
+## 10 ENSG00000118939   7022  2526   6269  3068</code></pre>
+</div>
+<div id="la-théorie" class="section level3 hasAnchor" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> La théorie<a href="analyse-dexpression-différentielle-ma-plot.html#la-théorie" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/MAplot.png" /></p>
+<p>Le MA plot représente le lien entre différence d’expression et intensité moyenne.
+- M (magnitude) est le logarithme en base 2 du rapport d’expression (“log2 fold-change”)
+- A (average intensity) est la moyenne des logarithmes des valeurs d’expression.</p>
+<p><strong>log2 fold change, “magnitude”</strong></p>
+<pre><code>M = log2(KO/WT) =  log2(KO) - log2(WT)</code></pre>
+<p><strong>average log2 value</strong></p>
+<pre><code>A = ½ log2(KO x WT) = ½ (log2(KO) + log2(WT))</code></pre>
+</div>
+</div>
+<div id="calculs-sur-les-colonnes" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Calculs sur les colonnes<a href="analyse-dexpression-différentielle-ma-plot.html#calculs-sur-les-colonnes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Calcul de moyennes par ligne (<code>rowMeans</code>) pour un sous-ensemble donné des colonnes (WT1 et WT2).</li>
+</ol>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>,<span class="st">&quot;WT2&quot;</span>)])</span></code></pre></div>
+<pre><code>##  [1] 165112.0     93.5    146.0    552.5   4877.5   8812.5   2019.5   5401.0
+##  [9]   3284.5   4774.0  16571.0   2954.0   2229.5  10023.5   1995.5     94.0
+## [17]    531.0    164.5  16827.5    807.0  48148.5   1350.0   1117.5    409.5
+## [25]   1260.0  24988.5    192.5    191.5   2748.0   3388.0   1606.0   1699.5
+## [33]   2559.0    199.0  25525.0   2880.5   3309.5   4770.0    126.0     66.5
+## [41]    618.0    212.0    104.0     77.5   3366.0  13460.0   3133.0   1287.0
+## [49]    293.0     65.5</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Ajout de colonnes avec les expressions moyennes des WT et des KO</li>
+</ol>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb171-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>meanWT <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>,<span class="st">&quot;WT2&quot;</span>)])</span>
+<span id="cb171-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb171-2" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>meanKO <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;KO1&quot;</span>,<span class="st">&quot;KO2&quot;</span>)])</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Vérification des résultats</li>
+</ol>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs) </span></code></pre></div>
+<pre><code>##                id    WT1   WT2    KO1   KO2   meanWT   meanKO
+## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5
+## 2 ENSG00000064201    116    71     64    56     93.5     60.0
+## 3 ENSG00000065717    118   174    124   182    146.0    153.0
+## 4 ENSG00000099958    450   655    301   472    552.5    386.5
+## 5 ENSG00000104164   4736  5019   4845  4934   4877.5   4889.5
+## 6 ENSG00000104783   9002  8623   7720  7142   8812.5   7431.0</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Fold-change KO vs WT</li>
+</ol>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb174-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>FC <span class="ot">&lt;-</span> exprs<span class="sc">$</span>meanKO <span class="sc">/</span> exprs<span class="sc">$</span>meanWT</span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>Vérification des résultats</li>
+</ol>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs) </span></code></pre></div>
+<pre><code>##                id    WT1   WT2    KO1   KO2   meanWT   meanKO        FC
+## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5 0.8894478
+## 2 ENSG00000064201    116    71     64    56     93.5     60.0 0.6417112
+## 3 ENSG00000065717    118   174    124   182    146.0    153.0 1.0479452
+## 4 ENSG00000099958    450   655    301   472    552.5    386.5 0.6995475
+## 5 ENSG00000104164   4736  5019   4845  4934   4877.5   4889.5 1.0024603
+## 6 ENSG00000104783   9002  8623   7720  7142   8812.5   7431.0 0.8432340</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Moyenne de tous les échantillons</li>
+</ol>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb177-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>mean <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(exprs[   , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)])</span></code></pre></div>
+<ol start="7" style="list-style-type: decimal">
+<li>Vérification des résultats</li>
+</ol>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exprs) </span></code></pre></div>
+<pre><code>##                id    WT1   WT2    KO1   KO2   meanWT   meanKO        FC
+## 1 ENSG00000034510 235960 94264 202381 91336 165112.0 146858.5 0.8894478
+## 2 ENSG00000064201    116    71     64    56     93.5     60.0 0.6417112
+## 3 ENSG00000065717    118   174    124   182    146.0    153.0 1.0479452
+## 4 ENSG00000099958    450   655    301   472    552.5    386.5 0.6995475
+## 5 ENSG00000104164   4736  5019   4845  4934   4877.5   4889.5 1.0024603
+## 6 ENSG00000104783   9002  8623   7720  7142   8812.5   7431.0 0.8432340
+##        mean
+## 1 155985.25
+## 2     76.75
+## 3    149.50
+## 4    469.50
+## 5   4883.50
+## 6   8121.75</code></pre>
+</div>
+<div id="ma-plot-log2fc-vs-intensité" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> MA-plot : log2FC vs intensité<a href="analyse-dexpression-différentielle-ma-plot.html#ma-plot-log2fc-vs-intensité" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="calcul-de-m-et-a" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Calcul de M et A<a href="analyse-dexpression-différentielle-ma-plot.html#calcul-de-m-et-a" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-1" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>M <span class="ot">&lt;-</span> <span class="fu">log2</span>(exprs<span class="sc">$</span>FC)</span>
+<span id="cb180-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb180-2" aria-hidden="true" tabindex="-1"></a>exprs<span class="sc">$</span>A <span class="ot">&lt;-</span> (<span class="fu">log2</span>(exprs<span class="sc">$</span>meanKO) <span class="sc">+</span> <span class="fu">log2</span>(exprs<span class="sc">$</span>meanWT)) <span class="sc">/</span><span class="dv">2</span></span></code></pre></div>
+</div>
+<div id="visualisation" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Visualisation<a href="analyse-dexpression-différentielle-ma-plot.html#visualisation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>On peut ensuite dessiner un nuage de points (en l’agrémentant un peu)</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> exprs<span class="sc">$</span>A, <span class="at">y =</span> exprs<span class="sc">$</span>M, <span class="at">main =</span> <span class="st">&quot;MA plot&quot;</span>,</span>
+<span id="cb181-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">xlab =</span> <span class="st">&quot;A = intensity&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;M = log2FC&quot;</span>)</span>
+<span id="cb181-3"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>(<span class="at">lty =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">col =</span> <span class="st">&quot;lightgray&quot;</span>)</span>
+<span id="cb181-4"><a href="analyse-dexpression-différentielle-ma-plot.html#cb181-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
+</div>
+</div>
+<div id="appliquer-une-fonction-sur-les-lignescolonnes" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Appliquer une fonction sur les lignes/colonnes<a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-sur-les-lignescolonnes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="appliquer-une-fonction-moyenne-variance-sur-chaque-ligne-dun-tableau" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Appliquer une fonction (moyenne, variance, …) sur chaque ligne d’un tableau<a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-ligne-dun-tableau" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-1" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">1</span>, mean)</span>
+<span id="cb182-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb182-3"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-3" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)], <span class="dv">1</span>, mean)</span>
+<span id="cb182-4"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb182-5"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-5" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="sc">-</span><span class="dv">1</span> ], <span class="dv">1</span>, mean)</span>
+<span id="cb182-6"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb182-7"><a href="analyse-dexpression-différentielle-ma-plot.html#cb182-7" aria-hidden="true" tabindex="-1"></a>mean_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">which</span>(<span class="fu">sapply</span>(exprs, class) <span class="sc">!=</span> <span class="st">&quot;factor&quot;</span>)], <span class="dv">1</span>, mean)</span></code></pre></div>
+<pre><code>## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA
+
+## Warning in mean.default(newX[, i], ...): argument is not numeric or logical:
+## returning NA</code></pre>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb184-1" aria-hidden="true" tabindex="-1"></a>var_per_row <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">1</span>, var)</span></code></pre></div>
+</div>
+<div id="appliquer-une-fonction-moyenne-variance-sur-chaque-colonne-dun-tableau" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> Appliquer une fonction (moyenne, variance, …) sur chaque colonne d’un tableau<a href="analyse-dexpression-différentielle-ma-plot.html#appliquer-une-fonction-moyenne-variance-sur-chaque-colonne-dun-tableau" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="analyse-dexpression-différentielle-ma-plot.html#cb185-1" aria-hidden="true" tabindex="-1"></a>mean_per_col <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">2</span>, mean)</span>
+<span id="cb185-2"><a href="analyse-dexpression-différentielle-ma-plot.html#cb185-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb185-3"><a href="analyse-dexpression-différentielle-ma-plot.html#cb185-3" aria-hidden="true" tabindex="-1"></a>var_per_col <span class="ot">&lt;-</span> <span class="fu">apply</span>(exprs[ , <span class="fu">c</span>(<span class="st">&quot;WT1&quot;</span>, <span class="st">&quot;WT2&quot;</span>, <span class="st">&quot;KO1&quot;</span>, <span class="st">&quot;KO2&quot;</span>)], <span class="dv">2</span>, var)</span></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualisation-des-données.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intégration-des-données.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/IFB-ElixirFr/EBAII_IntroR/edit/BRANCH/08-analyseDiff.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
