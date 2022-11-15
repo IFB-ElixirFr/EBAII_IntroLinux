@@ -72,4 +72,60 @@ library(DT)
 datatable(exprs)
 ```
 
+## Caractéristiques d’un tableau de données
 
+### Dimensions
+
+Nombre de colonnes
+
+```{r}
+ncol(exprs)
+```
+
+Nombre de lignes
+```{r}
+nrow(exprs)	
+```
+
+Dimensions
+```{r}
+dim(exprs)
+```
+
+### Noms des colonnes et des lignes
+
+Noms des colonnes
+
+```{r}
+colnames(exprs)
+```
+
+Idem
+
+```{r}
+names(exprs) 
+```
+
+Noms des lignes
+
+```{r}
+rownames(exprs)
+```
+
+
+### Résumé rapide des données par colonne
+
+Statistiques par colonne
+
+```{r}
+summary(exprs)
+```
+
+Structure de la variable
+```{r}
+str(exprs)
+```
+
+Même résultat que dans le panneau “Environment”
+
+![](images/envExpr.png)
