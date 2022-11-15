@@ -3,6 +3,7 @@
 ## C'est quoi un MA plot
 
 ### Nos data
+
 ```{r}
 head(exprs, 10)
 ```

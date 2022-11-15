@@ -317,14 +317,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.1.1</span> Avec R de base<a href="visualisation-des-données.html#avec-r-de-base" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Histogramme des valeurs d’expression pour l’échantillon WT1</p>
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="visualisation-des-données.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(exprs<span class="sc">$</span>WT1)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-72-1.png" width="672" /></p>
 <p>Histogramme du logarithme de ces valeurs</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="visualisation-des-données.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">log</span>(exprs<span class="sc">$</span>WT1))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-73-1.png" width="672" /></p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="visualisation-des-données.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">log10</span>(exprs<span class="sc">$</span>WT1))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-74-1.png" width="672" /></p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="visualisation-des-données.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">log2</span>(exprs<span class="sc">$</span>WT1))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-75-1.png" width="672" /></p>
 </div>
 <div id="avec-ggplot2" class="section level3 hasAnchor" number="8.1.2">
 <h3><span class="header-section-number">8.1.2</span> Avec ggplot2<a href="visualisation-des-données.html#avec-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -332,7 +332,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.1.3</code></pre>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="visualisation-des-données.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(exprs, <span class="fu">aes</span>(<span class="at">x=</span>WT1)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-76-1.png" width="672" /></p>
 </div>
 </div>
 <div id="boîtes-à-moustaches-boxplots" class="section level2 hasAnchor" number="8.2">
@@ -341,36 +341,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.2.1</span> Avec R de base<a href="visualisation-des-données.html#avec-r-de-base-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Boite à moustache des valeurs d’expression pour l’échantillon WT1</p>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="visualisation-des-données.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(exprs<span class="sc">$</span>WT1)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-77-1.png" width="672" /></p>
 <p>Boite à moustache du logarithme de ces valeurs</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="visualisation-des-données.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">log</span>(exprs<span class="sc">$</span>WT1))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-78-1.png" width="672" /></p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="visualisation-des-données.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">log2</span>(exprs<span class="sc">$</span>WT1))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-79-1.png" width="672" /></p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="visualisation-des-données.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">log10</span>(exprs<span class="sc">$</span>WT1))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-80-1.png" width="672" /></p>
 <p>Boite à moustache des valeurs d’expression pour les 4 échantillons</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="visualisation-des-données.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(exprs)</span></code></pre></div>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="visualisation-des-données.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ignorer la première colonne</span></span>
 <span id="cb158-2"><a href="visualisation-des-données.html#cb158-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(exprs[,<span class="sc">-</span><span class="dv">1</span>])     </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-81-1.png" width="672" /></p>
 <div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="visualisation-des-données.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">log2</span>(exprs[,<span class="sc">-</span><span class="dv">1</span>]))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-82-1.png" width="672" /></p>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="visualisation-des-données.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(exprs[,<span class="sc">-</span><span class="dv">1</span>], <span class="at">log =</span> <span class="st">&quot;y&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-83-1.png" width="672" /></p>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="visualisation-des-données.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="do">## afficher les étiquettes des axes horizontalement</span></span>
 <span id="cb161-2"><a href="visualisation-des-données.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(exprs[,<span class="sc">-</span><span class="dv">1</span>], <span class="at">log =</span> <span class="st">&quot;y&quot;</span>, <span class="at">las =</span> <span class="dv">1</span>) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-84-1.png" width="672" /></p>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="visualisation-des-données.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Encore plus beau</span></span>
 <span id="cb162-2"><a href="visualisation-des-données.html#cb162-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(exprs[,<span class="sc">-</span><span class="dv">1</span>], <span class="at">log =</span> <span class="st">&quot;x&quot;</span>, <span class="at">las =</span> <span class="dv">1</span>, <span class="at">horizontal =</span> <span class="cn">TRUE</span>) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-85-1.png" width="672" /></p>
 </div>
 </div>
 <div id="nuage-de-points" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Nuage de points<a href="visualisation-des-données.html#nuage-de-points" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Expressions KO1 vs WT1</p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="visualisation-des-données.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">log</span>(exprs<span class="sc">$</span>WT1), <span class="at">y =</span> <span class="fu">log</span>(exprs<span class="sc">$</span>KO1))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-86-1.png" width="672" /></p>
 <p>Personnalisation des paramètres graphiques</p>
 <div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="visualisation-des-données.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">log</span>(exprs<span class="sc">$</span>WT1),                <span class="do">## données pour l’abscisse</span></span>
 <span id="cb164-2"><a href="visualisation-des-données.html#cb164-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="fu">log</span>(exprs<span class="sc">$</span>KO1),                    <span class="do">## données pour l’ordonnée</span></span>
@@ -382,7 +382,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb164-8"><a href="visualisation-des-données.html#cb164-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)                       <span class="do">## couleur des points</span></span>
 <span id="cb164-9"><a href="visualisation-des-données.html#cb164-9" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()                              <span class="do">## ajout d’une grille</span></span>
 <span id="cb164-10"><a href="visualisation-des-données.html#cb164-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>)                        <span class="do">## ajouter la droite X = Y (intercept a = 0, pente b = 1).</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
+<p><img src="images/unnamed-chunk-87-1.png" width="672" /></p>
 
 </div>
 </div>
